@@ -12,19 +12,35 @@ const Navbar = () => {
   ];
 
   const [darkMode, setDarkMode] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
     document.body.classList.toggle("dark-mode", darkMode);
   }, [darkMode]);
 
+  // 👇 Detect scroll
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 50) setScrolled(true);
+      else setScrolled(false);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
-    <nav className="navbar-container">
-      {/* Logo Section */}
+    <nav className={`navbar-container ${scrolled ? "scrolled" : ""}`}>
+      {/* ✅ Logo Section */}
       <div className="navbar-logo">
-        <img src="/W.svg" alt="Webblers Logo" />
+        <img
+          src={scrolled ? "/Webblers.svg" : "/W.svg"}
+          alt="Webblers Logo"
+          className={`logo-img ${scrolled ? "large-logo" : ""}`}
+        />
       </div>
 
-      {/* Navigation Menu */}
+      {/* ✅ Navigation Menu */}
       <ul className="navbar-menu">
         {navItems.map((item) => (
           <li key={item.name}>
@@ -35,7 +51,7 @@ const Navbar = () => {
         ))}
       </ul>
 
-      {/* Dark Mode Switch */}
+      {/* ✅ Dark Mode Switch */}
       <div className="theme-toggle" onClick={() => setDarkMode(!darkMode)}>
         <div className={`toggle-circle ${darkMode ? "move-right" : ""}`}>
           {darkMode ? "🌙" : "☀️"}
