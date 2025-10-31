@@ -1,0 +1,132 @@
+/* ✅ NAVBAR CONTAINER */
+.navbar-container {
+  position: fixed;
+  top: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+  padding: 14px 26px;
+  background: #ffffff;
+  border-radius: 50px;
+  border: 2px solid #d3d3d3;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1000;
+  transition: background 0.3s ease, border-color 0.3s ease;
+}
+
+/* ✅ LOGO */
+.navbar-logo img {
+  height: 42px;
+  width: auto;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.navbar-logo img:hover {
+  transform: scale(1.08);
+}
+
+/* ✅ MENU */
+.navbar-menu {
+  list-style: none;
+  display: flex;
+  gap: 35px;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-link {
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 600;
+  color: #222;
+  padding: 8px 20px;
+  border-radius: 40px;
+  transition: background 0.3s ease-in-out, color 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+}
+
+/* Pill Hover Effect */
+.nav-link:hover {
+  background: #0066cc;
+  color: #ffffff;
+  box-shadow: 0 0 10px rgba(0, 102, 204, 0.45);
+}
+
+/* ✅ RIGHT SIDE ICONS */
+.navbar-icons {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.hamburger:hover,
+.github-icon:hover {
+  color: #0066cc;
+}
+
+/* ✅ DARK MODE TOGGLE */
+.theme-toggle {
+  width: 50px;
+  height: 26px;
+  border-radius: 20px;
+  background-color: #cccccc;
+  cursor: pointer;
+  position: relative;
+  transition: background 0.35s ease;
+  border: 1px solid #aaa;
+}
+
+.toggle-circle {
+  width: 22px;
+  height: 22px;
+  background: #ffffff;
+  border-radius: 50%;
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  transition: all 0.35s ease;
+}
+
+.toggle-circle.move-right {
+  left: 26px;
+}
+
+/* ✅ DARK MODE (ONLY NAVBAR-SPECIFIC) */
+body.dark-mode .navbar-container {
+  background: #1a1a1a;
+  border-color: #333333;
+}
+
+body.dark-mode .nav-link {
+  color: #e6e6e6;
+}
+
+body.dark-mode .nav-link:hover {
+  background: #4c63ff;
+  color: #ffffff;
+}
+
+/* Toggle active state */
+body.dark-mode .theme-toggle {
+  background-color: #555;
+}
+
+body.dark-mode .toggle-circle {
+  background: #eaeaea;
+}
+
+/* ✅ MOBILE RESPONSIVE */
+@media (max-width: 768px) {
+  .navbar-menu {
+    display: none;
+  }
+}
