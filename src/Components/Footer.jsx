@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import "./Footer.css";
 import { ThemeContext } from "../ThemeContext";
-import { FaLinkedin, FaTwitter, FaGithub, FaEnvelope } from "react-icons/fa";
+import { FaLinkedin, FaGithub, FaEnvelope, FaWhatsapp, FaInstagram } from "react-icons/fa";
 
 const Footer = () => {
   const { darkMode } = useContext(ThemeContext);
@@ -9,12 +9,13 @@ const Footer = () => {
   return (
     <footer className={`footer ${darkMode ? "dark" : ""}`}>
       <div className="footer-content">
+        {/* 🔹 Left Section */}
         <div className="footer-left">
-          {/* ✅ Use public path directly */}
-          <img src="/Webblers.svg" alt="Webblers Logo" className="footer-logo" />
-          <p> " Keep IT Simple " .</p>
+          <img src="/Footer_logo.svg" alt="Webblers Logo" className="footer-logo" />
+          <p>" Keep IT Simple ".</p>
         </div>
 
+        {/* 🔹 Center Section */}
         <div className="footer-center">
           <h4>Quick Links</h4>
           <ul>
@@ -25,13 +26,15 @@ const Footer = () => {
           </ul>
         </div>
 
+        {/* 🔹 Right Section */}
         <div className="footer-right">
           <h4>Connect With Us</h4>
           <div className="social-icons">
             <a href="#"><FaLinkedin /></a>
-            <a href="#"><FaTwitter /></a>
-            <a href="#"><FaGithub /></a>
+            <a href="#"><FaInstagram /></a>
+            <a href="#"><FaWhatsapp /></a>
             <a href="mailto:info@webblers.com"><FaEnvelope /></a>
+            <a href="#"><FaGithub /></a>
           </div>
         </div>
       </div>
