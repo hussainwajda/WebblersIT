@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import "./Navbar.css";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
+import { ThemeContext } from "../ThemeContext.jsx";
 
 const Navbar = () => {
   const navItems = [
@@ -11,12 +12,8 @@ const Navbar = () => {
     { name: "Contact", path: "/contact" },
   ];
 
-  const [darkMode, setDarkMode] = useState(false);
+  const { darkMode, toggleTheme } = useContext(ThemeContext);
   const [scrolled, setScrolled] = useState(false);
-
-  useEffect(() => {
-    document.body.classList.toggle("dark-mode", darkMode);
-  }, [darkMode]);
 
   // 👇 Detect scroll
   useEffect(() => {
@@ -52,7 +49,7 @@ const Navbar = () => {
       </ul>
 
       {/* ✅ Dark Mode Switch */}
-      <div className="theme-toggle" onClick={() => setDarkMode(!darkMode)}>
+      <div className="theme-toggle" onClick={toggleTheme}>
         <div className={`toggle-circle ${darkMode ? "move-right" : ""}`}>
           {darkMode ? "🌙" : "☀️"}
         </div>

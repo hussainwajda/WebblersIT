@@ -1,14 +1,42 @@
 import "./Home.css";
-import { useEffect } from "react";
+import { useEffect, useState, useContext } from "react";
+import Iridescence from "../Components/Hero-Bg";
+import { ThemeContext } from "../ThemeContext.jsx";
 
 const Home = () => {
+  const { darkMode } = useContext(ThemeContext);
+
+  const [bgColor, setBgColor] = useState(() => {
+    try {
+      const theme = localStorage.getItem("theme");
+      if (theme) return theme === "dark" ? [0, 0, 0.2] : [0, 0.4, 0.9];
+    } catch (e) {
+      // ignore
+    }
+    return darkMode ? [0, 0, 0.2] : [0, 0.4, 0.9];
+  });
+
+  useEffect(() => {
+    // keep bgColor in sync with context changes
+    setBgColor(darkMode ? [0, 0, 0.2] : [0, 0.4, 0.9]);
+  }, [darkMode]);
+
+  useEffect(() => {
+    const onStorage = (e) => {
+      if (e.key === "theme") {
+        setBgColor(e.newValue === "dark" ? [0, 0, 0.2] : [0, 0.4, 0.9]);
+      }
+    };
+    window.addEventListener("storage", onStorage);
+    return () => window.removeEventListener("storage", onStorage);
+  }, []);
+
   useEffect(() => {
     const elements = document.querySelectorAll(".reveal");
-
     // Use IntersectionObserver with idle callback
     const observer = new IntersectionObserver(
-      entries => {
-        entries.forEach(entry => {
+      (entries) => {
+        entries.forEach((entry) => {
           if (entry.isIntersecting) {
             // Smoothly reveal in idle time to prevent blocking scroll
             if ("requestIdleCallback" in window) {
@@ -23,7 +51,7 @@ const Home = () => {
       { threshold: 0.15 }
     );
 
-    elements.forEach(el => observer.observe(el));
+    elements.forEach((el) => observer.observe(el));
     return () => observer.disconnect();
   }, []);
 
@@ -31,6 +59,14 @@ const Home = () => {
     <div className="home-container">
       {/* HERO SECTION */}
       <section className="hero-section">
+        <div className="hero-bg">
+          <Iridescence
+            color={bgColor}
+            mouseReact={true}
+            amplitude={0.1}
+            speed={1.0}
+          />
+        </div>
         <h1 className="hero-title">Grow Your Business Online 🚀</h1>
         <p className="hero-subtitle">
           We help brands build a strong and professional online presence.
