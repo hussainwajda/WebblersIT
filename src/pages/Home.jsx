@@ -1,6 +1,7 @@
 import "./Home.css";
 import { useEffect, useState, useContext } from "react";
-import Iridescence from "../Components/Hero-Bg";
+import { motion } from "framer-motion";
+import DotGrid from "../Components/Hero-Bg";
 import { ThemeContext } from "../ThemeContext.jsx";
 
 const Home = () => {
@@ -9,62 +10,55 @@ const Home = () => {
   const [bgColor, setBgColor] = useState(() => {
     try {
       const theme = localStorage.getItem("theme");
-      if (theme) return theme === "dark" ? [0, 0, 0.2] : [0, 0.4, 0.9];
+      if (theme) return theme === "dark" ? [0, 0, 0.2] : [0, 0.5, 1];
     } catch (e) {
       // ignore
     }
-    return darkMode ? [0, 0, 0.2] : [0, 0.4, 0.9];
+    return darkMode ? [0, 0, 0.2] : [0, 0.5, 1];
   });
 
   useEffect(() => {
     // keep bgColor in sync with context changes
-    setBgColor(darkMode ? [0, 0, 0.2] : [0, 0.4, 0.9]);
+    setBgColor(darkMode ? [0, 0, 0.2] : [0, 0.5, 1]);
   }, [darkMode]);
 
   useEffect(() => {
     const onStorage = (e) => {
       if (e.key === "theme") {
-        setBgColor(e.newValue === "dark" ? [0, 0, 0.2] : [0, 0.4, 0.9]);
+        setBgColor(e.newValue === "dark" ? [0, 0, 0.2] : [1, 1, 1]);
       }
     };
     window.addEventListener("storage", onStorage);
     return () => window.removeEventListener("storage", onStorage);
   }, []);
 
-  useEffect(() => {
-    const elements = document.querySelectorAll(".reveal");
-    // Use IntersectionObserver with idle callback
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            // Smoothly reveal in idle time to prevent blocking scroll
-            if ("requestIdleCallback" in window) {
-              requestIdleCallback(() => entry.target.classList.add("active"), { timeout: 200 });
-            } else {
-              entry.target.classList.add("active");
-            }
-            observer.unobserve(entry.target);
-          }
-        });
-      },
-      { threshold: 0.15 }
-    );
+  // IntersectionObserver-based reveal removed in favor of Framer Motion
+  // helper: convert normalized rgb array [r,g,b] (0-1) to hex string
+  const rgbArrayToHex = (arr) => {
+    if (!Array.isArray(arr) || arr.length < 3) return "#0077ff";
+    const to255 = (v) => Math.max(0, Math.min(255, Math.round(v * 255)));
+    const [r, g, b] = arr;
+    const hex =
+      "#" + [r, g, b].map((v) => to255(v).toString(16).padStart(2, "0")).join("");
+    return hex;
+  };
 
-    elements.forEach((el) => observer.observe(el));
-    return () => observer.disconnect();
-  }, []);
-
+  const bgHex = rgbArrayToHex(bgColor);
   return (
     <div className="home-container">
       {/* HERO SECTION */}
       <section className="hero-section">
         <div className="hero-bg">
-          <Iridescence
-            color={bgColor}
-            mouseReact={true}
-            amplitude={0.1}
-            speed={1.0}
+          <DotGrid
+            dotSize={8}
+            gap={40}
+            baseColor={bgHex}
+            activeColor={darkMode ? "#ffffff" : "#0066cc"}
+            proximity={120}
+            shockRadius={250}
+            shockStrength={5}
+            resistance={750}
+            returnDuration={1.5}
           />
         </div>
         <h1 className="hero-title">Grow Your Business Online 🚀</h1>
@@ -75,32 +69,62 @@ const Home = () => {
       </section>
 
       {/* WHY SECTION */}
-      <div className="benefits-section reveal">
+      <motion.section
+        className="benefits-section"
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, ease: "easeOut" }}
+        viewport={{ once: true, amount: 0.2 }}
+      >
         <h2 className="section-title">Why Every Business Needs a Website?</h2>
 
         <div className="benefits-grid">
-          <div className="benefit-card">
+          <motion.div
+            className="benefit-card"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.05 }}
+            viewport={{ once: true, amount: 0.2 }}
+          >
             <span className="benefit-icon">🌐</span>
             <h3>24/7 Presence</h3>
             <p>Your business is always reachable — even while you sleep.</p>
-          </div>
+          </motion.div>
 
-          <div className="benefit-card">
+          <motion.div
+            className="benefit-card"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.12 }}
+            viewport={{ once: true, amount: 0.2 }}
+          >
             <span className="benefit-icon">📈</span>
             <h3>More Customers</h3>
             <p>Appear on Google and attract customers from everywhere.</p>
-          </div>
+          </motion.div>
 
-          <div className="benefit-card">
+          <motion.div
+            className="benefit-card"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.18 }}
+            viewport={{ once: true, amount: 0.2 }}
+          >
             <span className="benefit-icon">✅</span>
             <h3>Build Trust</h3>
             <p>A professional website increases credibility and confidence.</p>
-          </div>
+          </motion.div>
         </div>
-      </div>
+      </motion.section>
 
       {/* SERVICES SECTION */}
-      <section className="services-section reveal">
+      <motion.section
+        className="services-section"
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, ease: "easeOut" }}
+        viewport={{ once: true, amount: 0.2 }}
+      >
         <h2 className="section-title">What We Offer</h2>
 
         <div className="services">
@@ -122,13 +146,19 @@ const Home = () => {
             <p>Improve visibility, rank higher & boost brand presence.</p>
           </div>
         </div>
-      </section>
+      </motion.section>
 
       {/* CTA FOOTER */}
-      <section className="cta-section reveal">
+      <motion.section
+        className="cta-section"
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+        viewport={{ once: true, amount: 0.2 }}
+      >
         <h2>Ready to Boost Your Business?</h2>
         <button className="cta-button">Get Free Consultation</button>
-      </section>
+      </motion.section>
     </div>
   );
 };

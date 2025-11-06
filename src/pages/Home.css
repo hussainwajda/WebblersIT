@@ -4,9 +4,20 @@
   overflow-x: hidden;
 }
 
+/* Ensure consistent box sizing and prevent horizontal overflow globally for this page */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+/* Guard against accidental horizontal scroll from other elements */
+html, body {
+  overflow-x: hidden;
+}
+
 /* ✅ HERO SECTION */
 .hero-section {
-  width: 100vw;
+  /* use 100% instead of 100vw to avoid scrollbar-induced overflow */
+  width: 100%;
   height: 100vh;
   /* background replaced by the Iridescence component */
   background: transparent;

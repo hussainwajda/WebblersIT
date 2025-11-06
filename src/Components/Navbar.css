@@ -21,8 +21,7 @@
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
 }
 
-
-  /* ✅ LOGO */
+/* ✅ LOGO */
 .navbar-logo img {
   height: 42px;
   width: auto;
@@ -31,74 +30,71 @@
   object-fit: contain;
 }
 
-  .navbar-logo img:hover {
-    transform: scale(1.08);
-  }
+.navbar-logo img:hover {
+  transform: scale(1.08);
+}
 
-  /* ✅ MENU */
-  .navbar-menu {
-    list-style: none;
-    display: flex;
-    gap: 35px;
-    margin: 0;
-    padding: 0;
-  }
+/* ✅ MENU */
+.navbar-menu {
+  list-style: none;
+  display: flex;
+  gap: 35px;
+  margin: 0;
+  padding: 0;
+}
 
-  .nav-link {
-    text-decoration: none;
-    font-size: 16px;
-    font-weight: 600;
-    color: #222;
-    padding: 8px 20px;
-    border-radius: 40px;
-    transition: background 0.3s ease-in-out, color 0.3s ease, box-shadow 0.3s ease;
-    position: relative;
-  }
+.nav-link {
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 600;
+  color: #222;
+  padding: 8px 20px;
+  border-radius: 40px;
+  transition: background 0.3s ease-in-out, color 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+}
 
-  /* Pill Hover Effect */
-  .nav-link:hover {
-    background: #0066cc;
-    color: #ffffff;
-    box-shadow: 0 0 10px rgba(0, 102, 204, 0.45);
-  }
+/* Pill Hover Effect */
+.nav-link:hover {
+  background: #0066cc;
+  color: #ffffff;
+  box-shadow: 0 0 10px rgba(0, 102, 204, 0.45);
+}
 
-  /* ✅ RIGHT SIDE ICONS */
-  .navbar-icons {
-    display: flex;
-    align-items: center;
-    gap: 18px;
-    font-size: 20px;
-    cursor: pointer;
-  }
+/* ✅ RIGHT SIDE ICONS */
+.navbar-icons {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  font-size: 20px;
+  cursor: pointer;
+}
 
-  .hamburger:hover,
-  .github-icon:hover {
-    color: #0066cc;
-  }
+.hamburger:hover,
+.github-icon:hover {
+  color: #0066cc;
+}
 
-  /* ✅ When user scrolls down */
- /* ✅ Smooth logo resizing on scroll */
+/* ✅ When user scrolls down */
+/* ✅ Smooth logo resizing on scroll */
 .navbar-container.scrolled .navbar-logo img {
   transform: scale(1.25) translateY(2px); /* smaller, more natural scaling */
   transform-origin: left center; /* grows smoothly from left */
   transition: transform 0.5s cubic-bezier(0.25, 0.1, 0.25, 1); /* soft easing */
 }
 
-
-  /* ✅ Logo Styling */
+/* ✅ Logo Styling */
 .navbar-logo img {
   height: 60px;
   width: auto;
   cursor: pointer;
   object-fit: contain;
-  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1),
-              filter 0.3s ease; /* smooth animation */
+  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1), filter 0.3s ease; /* smooth animation */
   transform-origin: left center;
   margin-top: 5px;
 }
 
-
- /* ✅ Larger horizontal logo after scroll */
+/* ✅ Larger horizontal logo after scroll */
 .navbar-logo .large-logo {
   height: 106px; /* keep same physical height so navbar doesn’t grow */
   width: auto;
@@ -108,16 +104,14 @@
   margin-top: -5px;
 }
 
+/* ✅ Dark Mode Adjustments */
+body.dark-mode .navbar-container.scrolled {
+  background: rgba(26, 26, 26, 0.9);
+  border-color: #333333;
+  box-shadow: 0 4px 20px rgba(255, 255, 255, 0.08);
+}
 
-  /* ✅ Dark Mode Adjustments */
-  body.dark-mode .navbar-container.scrolled {
-    background: rgba(26, 26, 26, 0.9);
-    border-color: #333333;
-    box-shadow: 0 4px 20px rgba(255, 255, 255, 0.08);
-  }
-
-
-  /* ✅ DARK MODE TOGGLE */
+/* ✅ DARK MODE TOGGLE */
 .theme-toggle {
   width: 50px;
   height: 26px;
@@ -146,9 +140,8 @@
   line-height: 1; /* ✅ ensures emoji sits in true vertical center */
   transition: transform 0.35s cubic-bezier(0.45, 0, 0.25, 1);
   transform: translateX(0);
-  box-shadow: 0 1px 3px rgba(0,0,0,0.15);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
 }
-
 
 /* ✅ perfectly balanced toggle movement */
 .toggle-circle.move-right {
@@ -157,11 +150,10 @@
 
 /* optional: subtle shadow for better depth */
 .toggle-circle {
-  box-shadow: 0 1px 3px rgba(0,0,0,0.15);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
 }
 
-
-  /* ✅ DARK MODE (ONLY NAVBAR-SPECIFIC) */
+/* ✅ DARK MODE (ONLY NAVBAR-SPECIFIC) */
 body.dark-mode .navbar-container {
   background: rgba(25, 25, 25, 0.35);
   border: 1px solid rgba(255, 255, 255, 0.1);
@@ -170,28 +162,98 @@ body.dark-mode .navbar-container {
   box-shadow: 0 6px 24px rgba(0, 0, 0, 0.4);
 }
 
+body.dark-mode .nav-link {
+  color: #e6e6e6;
+}
 
-  body.dark-mode .nav-link {
-    color: #e6e6e6;
+body.dark-mode .nav-link:hover {
+  background: #4c63ff;
+  color: #ffffff;
+}
+
+/* Toggle active state */
+body.dark-mode .theme-toggle {
+  background-color: #555;
+}
+
+body.dark-mode .toggle-circle {
+  background: #eaeaea;
+}
+
+/* Add styles for navbar controls container and bubble menu toggle button */
+.navbar-controls {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* Hamburger Menu Toggle for Mobile */
+.bubble-menu-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  gap: 6px;
+}
+
+.hamburger-line {
+  width: 24px;
+  height: 2px;
+  background-color: #222;
+  border-radius: 2px;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  display: block;
+}
+
+/* Hamburger Animation - Open State */
+.hamburger-line.open:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+
+.hamburger-line.open:nth-child(2) {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
+/* Dark Mode - Hamburger Color */
+body.dark-mode .hamburger-line {
+  background-color: #e6e6e6;
+}
+
+/* ✅ MOBILE RESPONSIVE */
+@media (max-width: 768px) {
+  .navbar-menu {
+    display: none;
+  }
+}
+
+/* Show hamburger toggle only on mobile/tablet devices */
+@media (max-width: 900px) {
+  .bubble-menu-toggle {
+    display: flex;
+  }
+}
+
+/* Add mobile menu responsive styles for BubbleMenu integration */
+@media (max-width: 900px) {
+  .navbar-menu {
+    display: none;
   }
 
-  body.dark-mode .nav-link:hover {
-    background: #4c63ff;
-    color: #ffffff;
+  /* Ensure BubbleMenu has proper spacing from navbar */
+  .bubble-menu {
+    top: 80px !important;
   }
+}
 
-  /* Toggle active state */
-  body.dark-mode .theme-toggle {
-    background-color: #555;
+@media (min-width: 900px) {
+  /* Hide BubbleMenu on desktop */
+  .bubble-menu {
+    display: none;
   }
-
-  body.dark-mode .toggle-circle {
-    background: #eaeaea;
-  }
-
-  /* ✅ MOBILE RESPONSIVE */
-  @media (max-width: 768px) {
-    .navbar-menu {
-      display: none;
-    }
-  }
+}
