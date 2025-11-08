@@ -1,110 +1,73 @@
 import React from "react";
-import { FaLinkedin, FaGithub, FaInstagram } from "react-icons/fa";
+import ProfileCard from "../Components/ProfileCard";
 import "./About.css";
 
 const About = ({ darkMode }) => {
   return (
     <section className={`about-section ${darkMode ? "dark" : ""}`}>
       <div className="about-header">
-        <h2>About Webblers IT </h2>
+        <h2>About Webblers IT</h2>
         <p>
           Webblers is a forward-thinking tech startup driven by a passion for
-          innovation, design, and digital transformation. Our Tagline Clarifies "Keep IT Simple ".
-          We specialize in building scalable web solutions that empower businesses to grow and
-          connect seamlessly in the digital age.
+          innovation, design, and digital transformation. Our tagline clarifies —
+          <strong> “Keep IT Simple.”</strong> We specialize in building scalable web
+          solutions that empower businesses to grow and connect seamlessly in
+          the digital age.
         </p>
       </div>
 
       <div className="founders-container">
-        {/* Founder 1 */}
-        <div className="founder-card">
-          <img
-            src="/images/founder1.jpg"
-            alt="Founder 1"
-            className="founder-img"
-          />
-          <div className="founder-info">
-            <h3>Murtaza Dawoodjee</h3>
-            <p className="role">Co-Founder & CEO</p>
-            <p className="bio">
-              Vision-driven leader passionate about innovation and user-centric
-              product development. Murtaza brings creative direction and
-              strategic growth to Webblers.
-            </p>
+        <ProfileCard
+          name="Murtaza Dawoodjee"
+          title="Co-Founder & CEO"
+          handle="murtaza_0710"
+          status="Online"
+          contactText="Follow"
+          avatarUrl="/founder1.jpg"
+          miniAvatarUrl="/avatar1.png"
+          linkedinUrl="https://linkedin.com/in/murtazaali"
+          githubUrl="https://github.com/murtzdev07"
+          twitterUrl="https://twitter.com/murtazaali"
+          showUserInfo={true}
+          enableTilt={true}
+          innerGradient={
+            darkMode
+              ? "linear-gradient(145deg, #0a192f 0%, #0f4c75 60%, #3282b8 100%)"
+              : "linear-gradient(145deg, #8ec5fc 0%, #e0c3fc 100%)"
+          }
+          behindGlowColor={
+            darkMode ? "rgba(50,130,184,0.4)" : "rgba(142,197,252,0.5)"
+          }
+          onContactClick={() =>
+            window.open("https://instagram.com/murtaza_0710", "_blank")
+          }
+        />
 
-            <div className="social-links">
-              <a
-                href="https://linkedin.com/in/murtazaali"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="LinkedIn"
-              >
-                <FaLinkedin />
-              </a>
-              <a
-                href="https://github.com/murtaza"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="GitHub"
-              >
-                <FaGithub />
-              </a>
-              <a
-                href="https://instagram.com/murtaza"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Instagram"
-              >
-                <FaInstagram />
-              </a>
-            </div>
-          </div>
-        </div>
-
-        {/* Founder 2 */}
-        <div className="founder-card reverse">
-          <img
-            src="/images/founder2.jpg"
-            alt="Founder 2"
-            className="founder-img"
-          />
-          <div className="founder-info">
-            <h3>Hussain Wajdawala</h3>
-            <p className="role">Co-Founder & CTO</p>
-            <p className="bio">
-              Tech enthusiast with deep expertise in full-stack development and
-              system architecture. Ahmed leads the engineering and innovation
-              behind every Webblers project.
-            </p>
-
-            <div className="social-links">
-              <a
-                href="https://linkedin.com/in/ahmedraza"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="LinkedIn"
-              >
-                <FaLinkedin />
-              </a>
-              <a
-                href="https://github.com/ahmedraza"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="GitHub"
-              >
-                <FaGithub />
-              </a>
-              <a
-                href="https://instagram.com/ahmedraza"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Instagram"
-              >
-                <FaInstagram />
-              </a>
-            </div>
-          </div>
-        </div>
+        <ProfileCard
+          name="Hussain Wajdawala"
+          title="Co-Founder & CTO"
+          handle="hussaintech"
+          status="Online"
+          contactText="Follow"
+          avatarUrl="/images/founder2.jpg"
+          miniAvatarUrl="/images/founder2.jpg"
+          linkedinUrl="https://linkedin.com/in/hussaintech"
+          githubUrl="https://github.com/hussaintech"
+          twitterUrl="https://twitter.com/hussaintech"
+          showUserInfo={true}
+          enableTilt={true}
+          innerGradient={
+            darkMode
+              ? "linear-gradient(145deg, #001f3f 0%, #005b96 50%, #00a8e8 100%)"
+              : "linear-gradient(145deg, #7ed6df 0%, #82ccdd 100%)"
+          }
+          behindGlowColor={
+            darkMode ? "rgba(0,168,232,0.4)" : "rgba(126,214,223,0.5)"
+          }
+          onContactClick={() =>
+            window.open("https://linkedin.com/in/hussaintech", "_blank")
+          }
+        />
       </div>
     </section>
   );

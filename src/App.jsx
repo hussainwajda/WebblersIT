@@ -7,6 +7,7 @@ import About from "./pages/About"; // ✅ Fixed typo
 import Contact from "./pages/Contact"
 import CursorGlow from "./Components/CursorGlow";
 import ScrollToTopButton from "./Components/ScrollToTopButton";
+import ProfileCard from "./Components/ProfileCard";
 import "./App.css";
 
 function App() {
@@ -15,6 +16,7 @@ function App() {
       <Navbar />
       <CursorGlow />
       <ScrollToTopButton />
+      {/* <ProfileCard/> */}
 
       <Routes>
         <Route path="/" element={<Home />} />

@@ -27,9 +27,21 @@
 /* 🔹 FOUNDER CARDS CONTAINER */
 .founders-container {
   display: flex;
-  flex-direction: column;
-  gap: 60px;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 6rem;
+  margin-top: 3rem;
 }
+
+.pc-card-wrapper {
+  max-width: 320px;
+  transition: transform 0.3s ease;
+}
+
+.about-section.dark .pc-card-wrapper {
+  filter: brightness(0.9);
+}
+
 
 /* 🔹 INDIVIDUAL CARD */
 .founder-card {
