@@ -2,6 +2,7 @@
   font-family: "Poppins", sans-serif;
   width: 100%;
   overflow-x: hidden;
+  overflow-y: hidden;
 }
 
 /* Ensure consistent box sizing and prevent horizontal overflow globally for this page */
@@ -16,10 +17,8 @@ html, body {
 
 /* ✅ HERO SECTION */
 .hero-section {
-  /* use 100% instead of 100vw to avoid scrollbar-induced overflow */
   width: 100%;
   height: 100vh;
-  /* background replaced by the Iridescence component */
   background: transparent;
   display: flex;
   flex-direction: column;
@@ -30,6 +29,107 @@ html, body {
   color: #111;
   position: relative;
   overflow: hidden;
+  margin-top: 10px;
+}
+
+/* 🌈 HERO GLASS — True iOS Control Center Frosted Glass */
+/* 🌫️ Hero Glass — Semi-translucent gray tint */
+.hero-glass {
+  position: relative;
+  z-index: 2;
+  padding: 60px 80px;
+  border-radius: 35px;
+
+  /* Translucent glass base with neutral gray tone */
+  background: rgba(240, 240, 240, 0.15);
+  backdrop-filter: blur(35px) saturate(160%);
+  -webkit-backdrop-filter: blur(35px) saturate(160%);
+
+  /* Soft gradient overlay for realism */
+  background-image: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.08),
+    rgba(180, 180, 180, 0.05)
+  );
+
+  /* Frosted border and subtle shadow */
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  box-shadow:
+    inset 0 0 30px rgba(255, 255, 255, 0.05),
+    0 20px 60px rgba(0, 0, 0, 0.25),
+    0 0 80px rgba(0, 150, 255, 0.08);
+
+  color: #fff;
+  text-align: center;
+  overflow: hidden;
+  transition: all 0.35s ease;
+}
+
+/* Light shimmer on top for realism */
+.hero-glass::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.15) 0%,
+    rgba(255, 255, 255, 0.05) 40%,
+    rgba(0, 100, 255, 0.08) 100%
+  );
+  opacity: 0.4;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.hero-glass h1,
+.hero-glass p,
+.hero-glass button {
+  position: relative;
+  z-index: 2;
+}
+
+/* 🌙 DARK MODE */
+.hero-glass.dark {
+  background: rgba(25, 25, 25, 0.4);
+  backdrop-filter: blur(40px) saturate(160%);
+  -webkit-backdrop-filter: blur(40px) saturate(160%);
+  border-color: rgba(255, 255, 255, 0.15);
+  box-shadow:
+    inset 0 0 20px rgba(255, 255, 255, 0.03),
+    0 25px 60px rgba(0, 0, 0, 0.7),
+    0 0 60px rgba(0, 128, 255, 0.12);
+  color: #f2f2f2;
+}
+
+/* 🌞 LIGHT MODE */
+.hero-glass.light {
+  background: rgba(245, 245, 245, 0.25);
+  backdrop-filter: blur(35px) saturate(180%);
+  -webkit-backdrop-filter: blur(35px) saturate(180%);
+  border-color: rgba(255, 255, 255, 0.35);
+  box-shadow:
+    inset 0 0 25px rgba(255, 255, 255, 0.04),
+    0 15px 45px rgba(0, 0, 0, 0.2);
+  color: #111;
+}
+
+/* 🪶 Hover - minimal and elegant */
+.hero-glass:hover {
+  transform: translateY(-2px) scale(1.002);
+  box-shadow:
+    inset 0 0 20px rgba(255, 255, 255, 0.05),
+    0 12px 32px rgba(0, 0, 0, 0.25);
+  transition: all 0.3s ease;
+}
+
+
+/* Responsive */
+@media (max-width: 768px) {
+  .hero-glass {
+    padding: 40px 30px;
+    border-radius: 20px;
+  }
 }
 
 /* Floating shapes */
@@ -37,26 +137,132 @@ html, body {
 .hero-section::after {
   content: "";
   position: absolute;
-  width: 400px;
-  height: 400px;
+  width: 600px;
+  height: 600px;
   border-radius: 50%;
-  background: radial-gradient(circle at center, rgba(99, 102, 241, 0.18) 0%, transparent 70%);
-  filter: blur(90px);
+  z-index: 1;
+  filter: blur(120px);
+  opacity: 0.6;
+}
+
+.hero-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 50px;
+  flex-wrap: wrap;
+  padding: 2rem;
+}
+
+.hero-text {
+  flex: 1;
+  text-align: left;
+  min-width: 280px;
+}
+
+.hero-carousel {
+  flex: 1;
+  min-width: 320px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  height: 360px;
+  perspective: 1200px;
+}
+
+/* Each card */
+.carousel-card {
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  width: 100%;
+  max-width: 550px;
+  height: 100%;
+  border-radius: 18px;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 15px 35px rgba(64, 64, 64, 0.25);
+  transform-style: preserve-3d;
+  transition:
+    transform 0.7s cubic-bezier(0.25, 0.1, 0.25, 1),
+    opacity 0.6s ease;
+  opacity: 0;
   z-index: 0;
 }
+
+/* Active card (frontmost) */
+.carousel-card.active {
+  opacity: 1;
+  transform: translateY(0) translateZ(0) scale(1.02);
+  z-index: 10;
+  box-shadow: 0 20px 45px rgba(4, 56, 109, 0.35);
+}
+
+/* Top header bar like the screenshot */
+.carousel-header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 38px;
+  background: rgba(0, 0, 0, 0.35);
+  display: flex;
+  align-items: center;
+  padding: 0 12px;
+  font-size: 0.9rem;
+  color: #fff;
+  font-weight: 500;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(8px);
+}
+
+.carousel-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #3b82f6; /* blue dot */
+  margin-right: 8px;
+}
+
+.carousel-card img {
+  width: 100%;
+  height: 100%;
+  object-fit:contain;
+  border-radius: 18px;
+}
+
+
+/* Responsive adjustments */
+@media (max-width: 900px) {
+  .hero-content {
+    flex-direction: column-reverse;
+    text-align: center;
+  }
+
+  .hero-text {
+    text-align: center;
+  }
+
+  .hero-carousel {
+    max-width: 90%;
+  }
+}
+
 
 /* hero background wrapper for the Iridescence component */
 .hero-bg {
   position: absolute;
-  inset: 0; /* top:0; right:0; bottom:0; left:0 */
+  inset: 0;
   width: 100%;
   height: 100%;
-  z-index: 0; /* behind content (content uses z-index:1) */
-  pointer-events: none; /* let clicks pass through */
+  z-index: 0;
+  pointer-events: none;
   overflow: hidden;
 }
 
-/* If Iridescence renders a canvas or svg, make it fill the wrapper */
 .hero-bg > * {
   position: absolute;
   inset: 0;
@@ -118,7 +324,6 @@ html, body {
 }
 
 /* ✅ Scroll Reveal Animations */
-/* ⚡ Smooth, GPU-Accelerated Reveal Animations */
 .reveal {
   opacity: 0;
   transform: translateY(50px);
@@ -134,7 +339,6 @@ html, body {
   transform: translateY(0);
   filter: blur(0);
 }
-
 
 /* ✅ SECTION TITLE */
 .section-title {

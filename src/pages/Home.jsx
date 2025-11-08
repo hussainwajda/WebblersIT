@@ -1,24 +1,22 @@
 import "./Home.css";
 import { useEffect, useState, useContext } from "react";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import DotGrid from "../Components/Hero-Bg";
 import { ThemeContext } from "../ThemeContext.jsx";
 
 const Home = () => {
   const { darkMode } = useContext(ThemeContext);
 
+  // 🌈 Background color handling
   const [bgColor, setBgColor] = useState(() => {
     try {
       const theme = localStorage.getItem("theme");
       if (theme) return theme === "dark" ? [0, 0, 0.2] : [0, 0.5, 1];
-    } catch (e) {
-      // ignore
-    }
+    } catch (e) {}
     return darkMode ? [0, 0, 0.2] : [0, 0.5, 1];
   });
 
   useEffect(() => {
-    // keep bgColor in sync with context changes
     setBgColor(darkMode ? [0, 0, 0.2] : [0, 0.5, 1]);
   }, [darkMode]);
 
@@ -32,28 +30,44 @@ const Home = () => {
     return () => window.removeEventListener("storage", onStorage);
   }, []);
 
-  // IntersectionObserver-based reveal removed in favor of Framer Motion
-  // helper: convert normalized rgb array [r,g,b] (0-1) to hex string
+  // 🎨 Convert RGB array to HEX
   const rgbArrayToHex = (arr) => {
     if (!Array.isArray(arr) || arr.length < 3) return "#0077ff";
     const to255 = (v) => Math.max(0, Math.min(255, Math.round(v * 255)));
     const [r, g, b] = arr;
-    const hex =
-      "#" + [r, g, b].map((v) => to255(v).toString(16).padStart(2, "0")).join("");
-    return hex;
+    return (
+      "#" + [r, g, b].map((v) => to255(v).toString(16).padStart(2, "0")).join("")
+    );
   };
 
   const bgHex = rgbArrayToHex(bgColor);
+
+  // 🖼️ Website Preview Carousel
+  const carouselItems = [
+    { image: "src/assets/previews/website1.png", alt: "Website Preview 1" },
+    { image: "src/assets/previews/website1.png", alt: "Website Preview 2" },
+    { image: "src/assets/previews/website1.png", alt: "Website Preview 3" },
+  ];
+
+  const [carouselIndex, setCarouselIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCarouselIndex((prev) => (prev + 1) % carouselItems.length);
+    }, 4000);
+    return () => clearInterval(interval);
+  }, [carouselItems.length]);
+
   return (
     <div className="home-container">
-      {/* HERO SECTION */}
+      {/* 🌌 HERO SECTION */}
       <section className="hero-section">
         <div className="hero-bg">
           <DotGrid
-            dotSize={8}
-            gap={40}
-            baseColor={bgHex}
-            activeColor={darkMode ? "#ffffff" : "#0066cc"}
+            dotSize={5}
+            gap={35}
+            baseColor={darkMode ? "#ffffff" : "#0066cc"}
+            activeColor={darkMode ? "#0066cc" : "#ffffff"}
             proximity={120}
             shockRadius={250}
             shockStrength={5}
@@ -61,11 +75,51 @@ const Home = () => {
             returnDuration={1.5}
           />
         </div>
-        <h1 className="hero-title">Grow Your Business Online 🚀</h1>
-        <p className="hero-subtitle">
-          We help brands build a strong and professional online presence.
-        </p>
-        <button className="cta-button">Build My Website</button>
+
+        {/* 🌈 Frosted Glass Card */}
+        <div className={`hero-glass ${darkMode ? "dark" : "light"}`}>
+          <div className="hero-content">
+            {/* Left Text */}
+            <div className="hero-text">
+              <h1 className="hero-title">Grow Your Business Online 🚀</h1>
+              <p className="hero-subtitle">
+                We help brands build a strong and professional online presence.
+              </p>
+              <button className="cta-button">Build My Website</button>
+            </div>
+
+            {/* Right Carousel */}
+<div className="hero-carousel">
+  {carouselItems.map((item, i) => {
+    // Calculate how far each card is from the active one
+    const offset = (i - carouselIndex + carouselItems.length) % carouselItems.length;
+
+    return (
+      <div
+        key={i}
+        className={`carousel-card ${offset === 0 ? "active" : ""}`}
+        style={{
+          transform: `
+            translateY(${offset * -40}px)
+            translateZ(${offset * -80}px)
+            scale(${1 - offset * 0.04})
+          `,
+          opacity: offset > 2 ? 0 : 1,
+          zIndex: 10 - offset,
+        }}
+      >
+        <div className="carousel-header">
+          <span className="carousel-dot"></span>
+          <span className="carousel-title">{item.title}</span>
+        </div>
+        <img src={item.image} alt={item.alt} />
+      </div>
+    );
+  })}
+</div>
+
+          </div>
+        </div>
       </section>
 
       {/* WHY SECTION */}

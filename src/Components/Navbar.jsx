@@ -97,9 +97,19 @@ const Navbar = () => {
           )}
 
           {/* ✅ Dark Mode Switch */}
-          <div className="theme-toggle" onClick={toggleTheme}>
-            <div className={`toggle-circle ${darkMode ? "move-right" : ""}`}>{darkMode ? "🌙" : "☀️"}</div>
-          </div>
+          <div
+  className={`theme-toggle-illustrated ${darkMode ? "night" : "day"}`}
+  onClick={toggleTheme}
+>
+  <div className="sky-elements">
+    <div className="sun"></div>
+    <div className="moon"></div>
+    <div className="cloud cloud-1"></div>
+    <div className="cloud cloud-2"></div>
+    <div className="stars"></div>
+  </div>
+</div>
+
         </div>
       </nav>
 
