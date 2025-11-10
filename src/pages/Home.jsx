@@ -45,8 +45,8 @@ const Home = () => {
   // 🖼️ Website Preview Carousel
   const carouselItems = [
     { image: "src/assets/previews/website1.png", alt: "Website Preview 1" },
-    { image: "src/assets/previews/website1.png", alt: "Website Preview 2" },
-    { image: "src/assets/previews/website1.png", alt: "Website Preview 3" },
+    { image: "src/assets/previews/website2.png", alt: "Website Preview 2" },
+    { image: "src/assets/previews/website3.png", alt: "Website Preview 3" },
   ];
 
   const [carouselIndex, setCarouselIndex] = useState(0);
