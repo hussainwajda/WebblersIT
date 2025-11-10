@@ -31,10 +31,10 @@ const Footer = () => {
           <h4>Connect With Us</h4>
           <div className="social-icons">
             <a href="#"><FaLinkedin /></a>
-            <a href="#"><FaInstagram /></a>
-            <a href="#"><FaWhatsapp /></a>
+            <a href="https://www.instagram.com/webblersdotcom"><FaInstagram /></a>
+            <a href="https://wa.me/+919329848282"><FaWhatsapp /></a>
             <a href="mailto:info@webblers.com"><FaEnvelope /></a>
-            <a href="#"><FaGithub /></a>
+            <a href="https://github.com/murtzdev07"><FaGithub /></a>
           </div>
         </div>
       </div>

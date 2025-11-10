@@ -85,7 +85,7 @@ const Home = () => {
               <p className="hero-subtitle">
                 We help brands build a strong and professional online presence.
               </p>
-              <button className="cta-button">Build My Website</button>
+          <a href="/Contact" > <button  className="cta-button">Build My Website</button></a>
             </div>
 
             {/* Right Carousel */}
@@ -211,7 +211,7 @@ const Home = () => {
         viewport={{ once: true, amount: 0.2 }}
       >
         <h2>Ready to Boost Your Business?</h2>
-        <button className="cta-button">Get Free Consultation</button>
+        <a href="/Contact"> <button className="cta-button">Get Free Consultation</button> </a>
       </motion.section>
     </div>
   );

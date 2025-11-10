@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./Contact.css";
-import { FaEnvelope, FaWhatsapp, FaPhoneAlt } from "react-icons/fa";
+import { FaEnvelope, FaWhatsapp, FaPhoneAlt, FaInstagram } from "react-icons/fa";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -15,7 +15,6 @@ const Contact = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // 📨 Send form to email via mailto or backend service
     const mailtoLink = `mailto:yourmail@example.com?subject=Message from ${formData.name}&body=${formData.message}%0A%0AFrom: ${formData.email}`;
     window.location.href = mailtoLink;
   };
@@ -80,6 +79,25 @@ const Contact = () => {
           <p>Prefer speaking directly? We’re available for calls.</p>
           <a href="tel:+919999999999">
             <button>Call Now</button>
+          </a>
+        </div>
+
+        {/* 📸 Instagram QR Card */}
+        <div className="contact-card instagram-card">
+          <FaInstagram className="contact-icon" />
+          <h3>Follow us on Instagram</h3>
+          <p>Scan the QR below or click to follow our official account.</p>
+          <img
+            src="/instagramQR.png"
+            alt="Instagram QR Code"
+            className="qr-image"
+          />
+          <a
+            href="https://www.instagram.com/webblersdotcom"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <button>Follow on Instagram</button>
           </a>
         </div>
       </div>
