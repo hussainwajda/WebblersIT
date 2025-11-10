@@ -59,6 +59,11 @@
   font-weight: 500;
   margin-left:15px;
 }
+.footer-left p .highlight-it {
+  color: #000000; /* black color */
+  font-weight: 700; /* bold */
+}
+
 
 /* 🔹 CENTER LINKS */
 .footer-center h4,

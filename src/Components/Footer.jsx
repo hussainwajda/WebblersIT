@@ -12,7 +12,8 @@ const Footer = () => {
         {/* 🔹 Left Section */}
         <div className="footer-left">
           <img src="/Footer_logo.svg" alt="Webblers Logo" className="footer-logo" />
-          <p>Keep IT Simple</p>
+         <p>Keep <span class="highlight-it">IT</span> Simple</p>
+
         </div>
 
         {/* 🔹 Center Section */}
