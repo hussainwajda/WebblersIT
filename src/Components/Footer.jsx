@@ -12,17 +12,17 @@ const Footer = () => {
         {/* 🔹 Left Section */}
         <div className="footer-left">
           <img src="/Footer_logo.svg" alt="Webblers Logo" className="footer-logo" />
-          <p>" Keep IT Simple ".</p>
+          <p>Keep IT Simple</p>
         </div>
 
         {/* 🔹 Center Section */}
         <div className="footer-center">
           <h4>Quick Links</h4>
           <ul>
-            <li><a href="#about">About Us</a></li>
-            <li><a href="#services">Services</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#contact">Contact</a></li>
+            <li><a href="/About">About Us</a></li>
+            <li><a href="/Services">Services</a></li>
+            <li><a href="/Projects">Projects</a></li>
+            <li><a href="/Contact">Contact</a></li>
           </ul>
         </div>
 

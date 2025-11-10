@@ -64,7 +64,7 @@ const Home = () => {
       <section className="hero-section">
         <div className="hero-bg">
           <DotGrid
-            dotSize={5}
+            dotSize={4}
             gap={35}
             baseColor={darkMode ? "#ffffff" : "#0066cc"}
             activeColor={darkMode ? "#0066cc" : "#ffffff"}
