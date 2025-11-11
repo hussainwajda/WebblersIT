@@ -1,0 +1,90 @@
+/* 📱 Container in Navbar */
+.navbar-floating-menu {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  z-index: 1;
+}
+
+/* 🔘 Floating Circular Button */
+.nav-float-btn {
+  background: rgba(255, 255, 255, 0.6);
+  border: 1px solid rgba(0, 122, 255, 0.25);
+  backdrop-filter: blur(12px);
+  color: #007aff;
+  font-size: 1.3rem;
+  border-radius: 50%;
+  width: 42px;
+  height: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 3px 12px rgba(0, 122, 255, 0.2);
+  transition: all 0.3s ease;
+  z-index: 30;
+  margin-left: 10px; /* space from theme toggle */
+}
+
+.nav-float-btn:hover {
+  background: linear-gradient(135deg, #007aff, #00c6ff);
+  color: #fff;
+  transform: scale(1.05);
+}
+
+.nav-float-btn.open {
+  background: linear-gradient(135deg, #007aff, #00c6ff);
+  color: #fff;
+}
+
+/* 🧊 Dropdown Panel */
+.nav-float-panel {
+  position: absolute;
+  top: 60px;
+  right: 0;
+  background: rgba(255, 255, 255, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(20px);
+  border-radius: 20px;
+  padding: 16px 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  box-shadow: 0 8px 30px rgba(0, 122, 255, 0.25);
+  opacity: 0;
+  transform: translateY(-10px) scale(0.95);
+  pointer-events: none;
+  transition: all 0.3s ease;
+  width: 180px;
+}
+
+.nav-float-panel.open {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  pointer-events: all;
+  z-index: 1;
+}
+
+/* 🔗 Links */
+.nav-float-panel a {
+  color: #000;
+  font-weight: 500;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.95rem;
+  transition: color 0.3s ease;
+}
+
+.nav-float-panel a:hover {
+  color: #007aff;
+}
+
+/* 💻 Hide on Desktop */
+@media (min-width: 900px) {
+  .navbar-floating-menu {
+    display: none;
+  }
+}
