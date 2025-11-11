@@ -39,14 +39,15 @@ const Navbar = () => {
     <>
       <nav className={`navbar-container ${scrolled ? "scrolled" : ""}`}>
         {/* ✅ Logo Section */}
-        <div className="navbar-logo">
-          <img
-            src={scrolled ? "/Webblers.svg" : "/W.svg"}
-            alt="Webblers Logo"
-            className={`logo-img ${scrolled ? "large-logo" : ""}`}
-          />
-        </div>
-
+       <div className="navbar-logo">
+  <Link to="/">
+    <img
+      src={scrolled ? "/Webblers.svg" : "/W.svg"}
+      alt="Webblers Logo"
+      className={`logo-img ${scrolled ? "large-logo" : ""}`}
+    />
+  </Link>
+</div>
         {/* ✅ Desktop Menu */}
         {!isMobileView && (
           <ul className="navbar-menu">

@@ -40,6 +40,11 @@
   text-align: center;
 }
 
+.footer-center ,
+.footer-right{
+  margin-top: 17px;
+}
+
 .footer-left::after {
   content: "";
   position: absolute;
@@ -73,6 +78,7 @@
   font-weight: 600;
   color: #003366;
   letter-spacing: 0.3px;
+  
 }
 
 .footer-center ul {
