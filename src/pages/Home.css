@@ -247,7 +247,7 @@ html, body {
   }
 
   .hero-carousel {
-    max-width: 90%;
+   display: none !important;
   }
 }
 
@@ -560,8 +560,13 @@ html, body {
     margin-bottom: 40px;
   }
   .benefits-grid {
-    padding: 0 20px;
+    padding: 0 20px; /* reduce padding */
+    justify-content: center; /* centers cards */
   }
+   .benefit-card {
+    margin: 0 auto; /* ensure cards center align */
+  }
+
   .hero-title {
     font-size: 2rem;
   }
