@@ -434,7 +434,7 @@ html, body {
   font-size: 0.95rem;
   color: #555;
   line-height: 1.5;
-}
+} */
 
 /* 🌟 CTA SECTION */
 .cta-section {
@@ -575,4 +575,79 @@ html, body {
   .hero-subtitle {
     font-size: 1.1rem;
   }
+}
+
+/* ✅ HOME PAGE DARK MODE */
+body.dark-mode .home-container {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+}
+
+body.dark-mode .hero-section {
+  background: linear-gradient(135deg, var(--primary-gradient-start), var(--primary-gradient-end));
+  color: var(--text-primary);
+}
+
+body.dark-mode .hero-title {
+  color: var(--text-primary);
+}
+
+body.dark-mode .hero-subtitle {
+  color: var(--text-tertiary);
+}
+
+body.dark-mode .cta-button {
+  background: var(--primary);
+  color: var(--text-inverse);
+  border: none;
+}
+
+body.dark-mode .cta-button:hover {
+  background: var(--primary-hover);
+}
+
+body.dark-mode .benefit-card {
+  background: var(--bg-card);
+  color: var(--text-primary);
+  border: 1px solid var(--border-secondary);
+}
+
+body.dark-mode .benefit-icon {
+  filter: brightness(1.2);
+}
+
+body.dark-mode .services-section {
+  background: var(--bg-secondary);
+  color: var(--text-primary);
+}
+
+body.dark-mode .service-box {
+  background: var(--bg-card-alt);
+  border: 1px solid var(--border-secondary);
+  color: var(--text-secondary);
+}
+
+body.dark-mode .service-box h4 {
+  color: var(--text-secondary);
+}
+
+body.dark-mode .service-box p {
+  color: var(--text-tertiary);
+}
+
+body.dark-mode .cta-section {
+  background: var(--bg-tertiary);
+  color: var(--text-primary);
+}
+
+body.dark-mode .section-title {
+  color: var(--text-primary);
+}
+
+body.dark-mode .section-title::after {
+  background: var(--accent-purple);
+}
+
+body.dark-mode .icon {
+  filter: brightness(1.3);
 }

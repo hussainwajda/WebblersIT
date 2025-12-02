@@ -3,6 +3,10 @@ import { useEffect, useState, useContext } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import DotGrid from "../Components/Hero-Bg";
 import { ThemeContext } from "../ThemeContext.jsx";
+import WhyChooseUs from "../Components/WhyChooseUs";
+import ServicesSection from "../Components/services-section";
+import { ProcessSection } from "../Components/Services/page/ProcessSection";
+import { BottomRevealBlur } from "../Components/ui/bottom-reveal-blur";
 
 const Home = () => {
   const { darkMode } = useContext(ThemeContext);
@@ -44,8 +48,8 @@ const Home = () => {
 
   // 🖼️ Website Preview Carousel
   const carouselItems = [
-    { image: "src/assets/previews/website1.png", alt: "Website Preview 1" },
-    { image: "src/assets/previews/website2.png", alt: "Website Preview 2" },
+    { image: "src/assets/previews/securesharethumb.png", alt: "Website Preview 1" },
+    { image: "src/assets/previews/theboringteethumb.png", alt: "Website Preview 2" },
     { image: "src/assets/previews/website3.png", alt: "Website Preview 3" },
   ];
 
@@ -59,7 +63,8 @@ const Home = () => {
   }, [carouselItems.length]);
 
   return (
-    <div className="home-container">
+    <div className="relative">
+      <div className="home-container">
       {/* 🌌 HERO SECTION */}
       <section className="hero-section">
         <div className="hero-bg">
@@ -89,41 +94,43 @@ const Home = () => {
             </div>
 
             {/* Right Carousel */}
-<div className="hero-carousel">
-  {carouselItems.map((item, i) => {
-    // Calculate how far each card is from the active one
-    const offset = (i - carouselIndex + carouselItems.length) % carouselItems.length;
+            <div className="hero-carousel">
+              {carouselItems.map((item, i) => {
+                // Calculate how far each card is from the active one
+                const offset = (i - carouselIndex + carouselItems.length) % carouselItems.length;
 
-    return (
-      <div
-        key={i}
-        className={`carousel-card ${offset === 0 ? "active" : ""}`}
-        style={{
-          transform: `
-            translateY(${offset * -40}px)
-            translateZ(${offset * -80}px)
-            scale(${1 - offset * 0.04})
-          `,
-          opacity: offset > 2 ? 0 : 1,
-          zIndex: 10 - offset,
-        }}
-      >
-        <div className="carousel-header">
-          <span className="carousel-dot"></span>
-          <span className="carousel-title">{item.title}</span>
-        </div>
-        <img src={item.image} alt={item.alt} />
-      </div>
-    );
-  })}
-</div>
-
+                return (
+                  <div
+                    key={i}
+                    className={`carousel-card ${offset === 0 ? "active" : ""}`}
+                    style={{
+                      transform: `
+                        translateY(${offset * -40}px)
+                        translateZ(${offset * -80}px)
+                        scale(${1 - offset * 0.04})
+                      `,
+                      opacity: offset > 2 ? 0 : 1,
+                      zIndex: 10 - offset,
+                    }}
+                  >
+                    <div className="carousel-header">
+                      <span className="carousel-dot"></span>
+                      <span className="carousel-title">{item.title}</span>
+                    </div>
+                    <img src={item.image} alt={item.alt} />
+                  </div>
+                );
+              })}
+            </div>
           </div>
         </div>
       </section>
+      <ServicesSection />
+      <WhyChooseUs />
+      <ProcessSection />
 
       {/* WHY SECTION */}
-      <motion.section
+      {/* <motion.section
         className="benefits-section"
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -169,9 +176,9 @@ const Home = () => {
             <p>A professional website increases credibility and confidence.</p>
           </motion.div>
         </div>
-      </motion.section>
+      </motion.section> */}
 
-      {/* SERVICES SECTION */}
+      {/* SERVICES SECTION
       <motion.section
         className="services-section"
         initial={{ opacity: 0, y: 40 }}
@@ -200,7 +207,7 @@ const Home = () => {
             <p>Improve visibility, rank higher & boost brand presence.</p>
           </div>
         </div>
-      </motion.section>
+      </motion.section> */}
 
       {/* CTA FOOTER */}
       <motion.section
@@ -213,6 +220,9 @@ const Home = () => {
         <h2>Ready to Boost Your Business?</h2>
         <a href="/Contact"> <button className="cta-button">Get Free Consultation</button> </a>
       </motion.section>
+      </div>
+      {/* Fixed bottom blur that reveals sections as you scroll, hidden near page end */}
+      <BottomRevealBlur height="20vh" />
     </div>
   );
 };

@@ -21,7 +21,7 @@ const Contact = () => {
 
   const handleWhatsApp = () => {
     const message = encodeURIComponent("Hello, I’d like to get in touch!");
-    window.open(`https://wa.me/91XXXXXXXXXX?text=${message}`, "_blank");
+    window.open(`https://wa.me/919329848282?text=${message}`, "_blank");
   };
 
   return (
@@ -77,7 +77,7 @@ const Contact = () => {
           <FaPhoneAlt className="contact-icon" />
           <h3>Call Us</h3>
           <p>Prefer speaking directly? We’re available for calls.</p>
-          <a href="tel:+919999999999">
+          <a href="tel:+919329848282">
             <button>Call Now</button>
           </a>
         </div>

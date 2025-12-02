@@ -15,13 +15,15 @@ body.menu-open {
 }
 
 
-/* ✅ NAVBAR CONTAINER - Glassmorphic Effect */
+/* ===============================
+   NAVBAR CONTAINER - Glassmorphic
+   =============================== */
 .navbar-container {
   position: fixed;
   top: 15px;
   left: 50%;
   transform: translateX(-50%);
-  width: 90%;
+  width: 55%;
   padding: 14px 26px;
   border-radius: 50px;
   border: 1px solid rgba(255, 255, 255, 0.25);
@@ -34,28 +36,30 @@ body.menu-open {
   z-index: 1000;
   transition: background 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
   height: 70px;
-  overflow: visible;
+  overflow: hidden;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
 }
 
-/* ✅ LOGO */
+/* LOGO */
 .navbar-logo img {
-  height: 42px;
+  height: 60px;
   width: auto;
   cursor: pointer;
-  transition: transform 0.4s ease-in-out;
   object-fit: contain;
+  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1), filter 0.3s ease;
+  transform-origin: left center;
+  margin-top: 5px;
 }
 
 .navbar-logo img:hover {
   transform: scale(1.08);
 }
 
-/* ✅ MENU */
+/* MENU */
 .navbar-menu {
   list-style: none;
   display: flex;
-  gap: 35px;
+  gap: 25px;
   margin: 0;
   padding: 0;
 }
@@ -68,311 +72,191 @@ body.menu-open {
   padding: 8px 20px;
   border-radius: 40px;
   transition: background 0.3s ease-in-out, color 0.3s ease, box-shadow 0.3s ease;
-  position: relative;
 }
 
-/* Pill Hover Effect */
+/* Hover Pill */
 .nav-link:hover {
   background: #0066cc;
   color: #ffffff;
   box-shadow: 0 0 10px rgba(0, 102, 204, 0.45);
 }
 
-/* ✅ RIGHT SIDE ICONS */
-.navbar-icons {
-  display: flex;
-  align-items: center;
-  gap: 18px;
-  font-size: 20px;
-  cursor: pointer;
+/* Scroll State */
+.navbar-container.scrolled {
+  width: 90%;
+  transition: all 0.3s ease-in-out;
 }
 
-.hamburger:hover,
-.github-icon:hover {
-  color: #0066cc;
-}
-
-/* ✅ When user scrolls down */
 .navbar-container.scrolled .navbar-logo img {
-  transform: scale(1.25) translateY(2px);
-  transform-origin: left center;
-  transition: transform 0.5s cubic-bezier(0.25, 0.1, 0.25, 1);
+  transform: scale(2.45) translateY(1px);
+  margin-bottom: 7px;
 }
 
-/* ✅ Logo Styling */
-.navbar-logo img {
-  height: 60px;
-  width: auto;
-  cursor: pointer;
-  object-fit: contain;
-  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1), filter 0.3s ease;
-  transform-origin: left center;
-  margin-top: 5px;
+/* DARK MODE */
+body.dark-mode .navbar-container {
+  background: var(--bg-card-alt);
+  border-color: var(--border-primary);
 }
 
-/* ✅ Larger horizontal logo after scroll */
-.navbar-logo .large-logo {
-  height: 106px;
-  width: auto;
-  transform: scale(1.7);
-  transform-origin: left center;
-  transition: all 0.35s ease-in-out;
-  margin-top: -5px;
-}
-
-/* ✅ Dark Mode Adjustments */
 body.dark-mode .navbar-container.scrolled {
   background: rgba(26, 26, 26, 0.9);
   border-color: #333333;
   box-shadow: 0 4px 20px rgba(255, 255, 255, 0.08);
 }
 
-/* ✅ DARK MODE TOGGLE (Desktop) */
-.theme-toggle {
-  width: 50px;
-  height: 26px;
-  border-radius: 20px;
-  background-color: #cccccc;
-  cursor: pointer;
-  position: relative;
-  transition: background 0.35s ease;
-  border: 1px solid #aaa;
-  display: flex;
-  align-items: center;
-  padding: 0 2px;
-  box-sizing: border-box;
-  justify-content: flex-start;
+body.dark-mode .nav-link {
+  color: var(--text-tertiary);
 }
 
-.toggle-circle {
-  width: 22px;
-  height: 22px;
-  background: #ffffff;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 13px;
-  line-height: 1;
-  transition: transform 0.35s cubic-bezier(0.45, 0, 0.25, 1);
-  transform: translateX(0);
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
+body.dark-mode .nav-link:hover {
+  background: var(--primary);
+  color: var(--text-inverse);
 }
 
-.toggle-circle.move-right {
-  transform: translateX(23px);
-}
-
-body.dark-mode .theme-toggle {
-  background-color: #555;
-}
-
-body.dark-mode .toggle-circle {
-  background: #eaeaea;
-}
-
-/* 🌤️ Illustrated Theme Toggle (Desktop) */
-.theme-toggle-illustrated {
-  width: 80px;
-  height: 40px;
-  border-radius: 50px;
-  position: relative;
-  cursor: pointer;
-  overflow: hidden;
-  transition: background 0.6s ease-in-out;
-  border: 2px solid rgba(255, 255, 255, 0.25);
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
-}
-
-.theme-toggle-illustrated.day {
-  background: linear-gradient(180deg, #8ed8ff 0%, #c9f1ff 100%);
-}
-
-.theme-toggle-illustrated.night {
-  background: linear-gradient(180deg, #2b1055 0%, #7597de 100%);
-}
-
-.sun {
-  width: 22px;
-  height: 22px;
-  background: #ffd93b;
-  border-radius: 50%;
-  position: absolute;
-  left: 12px;
-  top: 9px;
-  transition: all 0.7s ease;
-  z-index: 3;
-}
-
-.moon {
-  width: 22px;
-  height: 22px;
-  background: #f4f4f4;
-  border-radius: 50%;
-  position: absolute;
-  right: -25px;
-  top: 9px;
-  box-shadow: inset -4px -4px 0 0 #d9d9d9;
-  transition: all 0.7s ease;
-  z-index: 3;
-}
-
-.cloud {
-  position: absolute;
-  background: #ffffff;
-  border-radius: 50%;
-  opacity: 0.9;
-  transition: all 0.7s ease;
-}
-
-.cloud-1 {
-  width: 24px;
-  height: 24px;
-  left: 35px;
-  top: 14px;
-  box-shadow: 15px 4px 0 0 #fff, 30px 2px 0 0 #fff;
-}
-
-.cloud-2 {
-  width: 18px;
-  height: 18px;
-  left: 10px;
-  top: 18px;
-  box-shadow: 12px 2px 0 0 #fff, 25px 1px 0 0 #fff;
-}
-
-.stars {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background: radial-gradient(white 1px, transparent 1px);
-  background-size: 6px 6px;
-  opacity: 0;
-  transition: opacity 0.7s ease;
-  z-index: 2;
-}
-
-.theme-toggle-illustrated.night .sun {
-  transform: translateX(50px) scale(0.7);
-  opacity: 0;
-}
-
-.theme-toggle-illustrated.night .moon {
-  right: 14px;
-  opacity: 1;
-}
-
-.theme-toggle-illustrated.night .cloud {
-  opacity: 0;
-}
-
-.theme-toggle-illustrated.night .stars {
-  opacity: 0.11;
-}
-
-
-/* Add styles for navbar controls container and bubble menu toggle button */
+/* CONTROLS */
 .navbar-controls {
   display: flex;
   align-items: center;
   gap: 12px;
 }
 
-/* Hamburger Menu Toggle for Mobile */
-.bubble-menu-toggle {
-  display: none;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 40px;
-  height: 40px;
-  background: none;
-  border: none;
+
+/* ================================
+   GLASS THEME TOGGLE (FINAL)
+================================ */
+.theme-toggle {
+  width: 72px;
+  height: 36px;
+  border-radius: 999px;
+  padding: 3px;
   cursor: pointer;
-  padding: 0;
-  gap: 6px;
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  background: rgba(255,255,255,0.14);
+  border: 1px solid rgba(255,255,255,0.18);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+
+  transition: border-color 180ms ease, box-shadow 180ms ease, transform 180ms ease;
 }
 
-.hamburger-line {
-  width: 24px;
-  height: 2px;
-  background-color: #222;
-  border-radius: 2px;
-  transition: transform 0.3s ease, opacity 0.3s ease;
-  display: block;
+body.dark-mode .theme-toggle {
+  background: rgba(0,0,0,0.28);
+  border-color: rgba(255,255,255,0.12);
 }
 
-/* Hamburger Animation - Open State */
-.hamburger-line.open:nth-child(1) {
-  transform: translateY(8px) rotate(45deg);
+.toggle-grid {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  background-image:
+    linear-gradient(to right, rgba(255,255,255,0.03) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255,255,255,0.03) 1px, transparent 1px);
+  background-size: 14px 14px;
+  opacity: 0.22;
+  z-index: 0;
 }
 
-.hamburger-line.open:nth-child(2) {
-  transform: translateY(-8px) rotate(-45deg);
+.theme-toggle-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: inherit;
 }
 
-/* Dark Mode - Hamburger Color */
-body.dark-mode .hamburger-line {
-  background-color: #e6e6e6;
+.toggle-knob {
+  position: absolute;
+  top: 50%;
+  left: 4px;
+  transform: translateY(-50%);
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: #ffffff;
+  box-shadow: 0 6px 14px rgba(0,0,0,0.18);
+  z-index: 3;
+  transition: left 0.22s cubic-bezier(.25, .9, .35, 1.25), 
+  background-color 0.25s ease;
 }
 
-/* ✅ MOBILE RESPONSIVE */
+.theme-toggle-inner.dark .toggle-knob {
+  left: calc(100% - 32px);
+}
+
+.theme-toggle:hover {
+  transform: translateY(-1px);
+  border-color: rgba(0,120,255,0.85);
+  box-shadow: 0 6px 22px rgba(0,120,255,0.12);
+}
+
+
+/* ================================
+   SVG ICONS (SUN / MOON) — FIXED
+================================ */
+.toggle-icon {
+  position: absolute;
+  top: 50%;
+  width: 18px;
+  height: 18px;
+  transform: translateY(-50%);
+  pointer-events: none;
+  z-index: 4;
+  opacity: 0;
+  color: white;
+  stroke: currentColor !important;
+  fill: none !important;
+  transition: opacity 180ms ease;
+}
+
+.sun-icon  { left: 10px; }
+.moon-icon { right: 10px; }
+
+/* Show sun in light mode */
+.theme-toggle-inner.light .sun-icon {
+  opacity: 1;
+  color: #0049c6;
+}
+
+/* Show moon in dark mode */
+.theme-toggle-inner.dark .moon-icon {
+  opacity: 1;
+  color: #000000;
+  justify-items: center;
+  align-items: center;
+  margin-top: 2.5px;
+  margin-right: 1px;
+}
+
+/* Hide opposite icon */
+.theme-toggle-inner.light .moon-icon { opacity: 0; }
+.theme-toggle-inner.dark  .sun-icon  { opacity: 0; }
+
+
+/* MOBILE */
 @media (max-width: 900px) {
-  .navbar-menu {
-    display: none;
-  }
+  .navbar-menu { display: none; }
+ 
 
-  /* Hide illustrated toggle on mobile */
-  .theme-toggle-illustrated {
-    display: none;
-  }
-
-  /* ✅ Simple button for theme switching (mobile view only) */
-  .theme-toggle-btn {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: rgba(255, 255, 255, 0.25);
-    border: none;
-    border-radius: 50%;
-    font-size: 22px;
-    width: 42px;
-    height: 42px;
-    cursor: pointer;
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    transition: all 0.3s ease;
-    color: #000;
-  }
-
-  .theme-toggle-btn:hover {
-    background: rgba(255, 255, 255, 0.4);
-    transform: scale(1.05);
-  }
-
-  body.dark-mode .theme-toggle-btn {
-    background: rgba(0, 0, 0, 0.3);
-    color: #fff;
-  }
-
-  body.dark-mode .theme-toggle-btn:hover {
-    background: rgba(0, 0, 0, 0.5);
-  }
-
-  /* Show hamburger toggle only on mobile/tablet devices */
-  .bubble-menu-toggle {
-    display: flex;
-  }
-
-  /* Ensure BubbleMenu has proper spacing from navbar */
-  .bubble-menu {
-    top: 80px !important;
-  }
+  .bubble-menu { top: 80px !important; }
 }
 
-/* Hide BubbleMenu on desktop */
+/* DESKTOP */
 @media (min-width: 900px) {
-  .bubble-menu {
-    display: none;
-  }
+  .bubble-menu { display: none; }
 }
+/* Smooth theme transitions */
+body, .navbar-container, .nav-link, .theme-toggle, .toggle-knob {
+  transition: 
+    background-color 0.25s ease,
+    color 0.25s ease,
+    border-color 0.25s ease,
+    box-shadow 0.25s ease,
+    filter 0.25s ease,
+    stroke 0.25s ease,
+    fill 0.25s ease;
+}
+

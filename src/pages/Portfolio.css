@@ -1,0 +1,239 @@
+/* 🌙 PORTFOLIO SECTION - THEME AWARE */
+.portfolio-section {
+  padding: 5rem 1rem;
+  background: var(--bg-primary);
+  transition: background-color 0.25s ease;
+}
+
+.portfolio-container {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* 🏷 HEADER */
+.portfolio-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.portfolio-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-top: 20px;
+  margin-bottom: 1rem;
+  transition: color 0.25s ease;
+}
+
+.portfolio-subtitle {
+  font-size: 1.125rem;
+  color: var(--text-muted);
+  max-width: 42rem;
+  margin: 0 auto;
+  transition: color 0.25s ease;
+}
+
+/* 📌 MAIN LIST - VERTICAL STACK */
+.portfolio-list {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+/* 🧱 HORIZONTAL CARD */
+.portfolio-horizontal-card {
+  display: flex;
+  gap: 2rem;
+  background: var(--bg-card);
+  border-radius: 1.25rem;
+  padding: 1.75rem;
+  border: 1px solid var(--border-primary);
+  box-shadow: 0px 12px 30px var(--shadow-md);
+  backdrop-filter: blur(12px);
+  transition: all 0.35s ease;
+  align-items: center;
+  cursor: pointer;
+}
+
+.portfolio-horizontal-card:hover {
+  transform: translateY(-8px);
+  border-color: var(--primary);
+  box-shadow: 0px 16px 42px var(--shadow-lg);
+}
+
+/* 🖼 IMAGE AREA */
+.portfolio-image-area {
+  flex: 1;
+  min-width: 45%;
+}
+
+.portfolio-image {
+  width: 100%;
+  height: 240px;
+  object-fit: contain;
+  border-radius: 1rem;
+  transition: transform 0.35s ease;
+}
+
+.portfolio-horizontal-card:hover .portfolio-image {
+  transform: scale(1.04);
+}
+
+/* ℹ CONTENT AREA */
+.portfolio-info-area {
+  flex: 1.35;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.ph-title {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.ph-description {
+  font-size: 0.975rem;
+  color: var(--text-muted);
+  line-height: 1.55rem;
+}
+
+/* 🔹 Section Sub-Titles */
+.ph-block h4 {
+  font-size: 0.95rem;
+  color: var(--primary);
+  font-weight: 700;
+  margin-bottom: 0.4rem;
+}
+
+/* 🏷 Tech Tags */
+.ph-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+
+/* 🏷 Tech Tags - Modern Style */
+.ph-tags li {
+  background: transparent;
+  color: var(--text-primary);
+  padding: 0.5rem 1rem;
+  border-radius: 0.6rem;
+  font-size: 0.78rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  text-transform: uppercase;
+  border: 1px solid var(--border-primary);
+  transition: 0.3s ease;
+  cursor: default;
+}
+
+.ph-tags li i {
+  font-size: 1rem;
+}
+
+.ph-tags li:hover {
+  border-color: var(--primary);
+  transform: translateY(-3px);
+}
+
+/* ⭐ Feature List */
+.ph-features {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.ph-features li {
+  color: var(--text-primary);
+  font-size: 0.85rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.ph-features li i {
+  color: var(--primary);
+  font-size: 0.9rem;
+}
+
+/* 🎯 Buttons */
+.ph-btn-group {
+  display: flex;
+  gap: 0.75rem;
+  margin-top: 0.3rem;
+}
+
+.portfolio-btn {
+  padding: 0.65rem 1.4rem;
+  border-radius: 0.6rem;
+  background: transparent;
+  border: 1px solid var(--border-primary);
+  color: var(--text-primary);
+  font-size: 0.85rem;
+  font-weight: 600;
+  gap: 0.45rem;
+  transition: 0.3s ease;
+  text-decoration: none;
+}
+
+.portfolio-btn:hover {
+  border-color: var(--primary);
+  transform: translateY(-3px);
+  background: transparent;
+}
+
+/* 📱 RESPONSIVE */
+@media (max-width: 1200px) {
+  .portfolio-horizontal-card {
+    gap: 1.5rem;
+  }
+  .portfolio-image {
+    height: 220px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .portfolio-horizontal-card {
+    flex-direction: column;
+    text-align: center;
+    padding: 1.5rem;
+  }
+  .portfolio-image-area {
+    width: 100%;
+  }
+  .portfolio-info-area {
+    align-items: center;
+  }
+  .ph-tags,
+  .ph-features,
+  .ph-btn-group {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .portfolio-section {
+    padding: 3.5rem 1rem;
+  }
+  .portfolio-title {
+    font-size: 2rem;
+  }
+  .portfolio-image {
+    height: 200px;
+  }
+}
+
+/* 🌚 DARK MODE */
+body.dark-mode .portfolio-horizontal-card {
+  background: var(--bg-card-alt);
+  border-color: var(--border-primary);
+}
+body.dark-mode .ph-tags li,
+body.dark-mode .portfolio-btn {
+  background: rgba(255, 255, 255, 0.03);
+}
+

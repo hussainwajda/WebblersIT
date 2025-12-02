@@ -1,0 +1,247 @@
+/* ✅ LAYOUT */
+.why-choose-us-section {
+  padding: 4rem 1rem;
+  background: var(--bg-primary);
+}
+
+.why-choose-us-container {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* ✅ HEADER CONTENT */
+.why-choose-us-header {
+  text-align: center;
+  margin-bottom: 3.5rem;
+}
+
+.why-choose-title {
+  font-size: 3rem;
+  font-weight: 700;
+  margin: 0 0 0.5rem 0;
+  color: var(--text-primary);
+}
+
+.why-choose-title .italic {
+  font-style: italic;
+  color: var(--text-tertiary);
+}
+
+.why-choose-sub {
+  color: var(--text-muted);
+  font-size: 1.125rem;
+  margin: 0;
+}
+
+/* ✅ CARDS GRID */
+.why-grid {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .why-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* ✅ CARD STYLES - THEME AWARE */
+.why-card {
+  background: var(--bg-card);
+  border-radius: 16px;
+  padding: 2rem;
+  border: 1px solid var(--border-primary);
+  box-shadow: 0 6px 18px var(--shadow-sm);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.25s ease, border-color 0.25s ease;
+  cursor: pointer;
+}
+
+.why-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 14px 30px var(--shadow-md);
+  border-color: var(--primary);
+}
+
+/* ✅ CARD CONTENT */
+.why-card-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.why-card-icon {
+  width: 10rem;
+  height: 10rem;
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.why-card-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin: 0 0 0.75rem 0;
+  color: var(--text-primary);
+}
+
+.why-card-description {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* ✅ INTERACTIVE COMPONENTS SIZING FALLBACKS */
+.w-32 { width: 8rem; }
+.h-32 { height: 8rem; }
+.w-40 { width: 10rem; }
+.h-40 { height: 10rem; }
+.w-3 { width: 0.75rem; }
+.h-3 { height: 0.75rem; }
+.w-1 { width: 0.25rem; }
+.h-6 { height: 1.5rem; }
+.w-0\:5 { width: 0.125rem; }
+.h-12 { height: 3rem; }
+.h-14 { height: 3.5rem; }
+
+.relative { position: relative; }
+.absolute { position: absolute; }
+.rounded-full { border-radius: 9999px; }
+.border-4 { border-width: 4px; }
+.flex { display: flex; }
+.items-center { align-items: center; }
+.justify-center { justify-content: center; }
+.rounded-2xl { border-radius: 1rem; }
+.p-8 { padding: 2rem; }
+
+/* ✅ UTILITY CLASSES WITH THEME VARIABLES */
+.bg-primary { background-color: var(--primary); }
+.bg-primary\/40 { background-color: rgba(0, 102, 204, 0.4); }
+.bg-primary\/60 { background-color: rgba(0, 102, 204, 0.6); }
+.bg-card\/50 { background-color: rgba(255, 255, 255, 0.5); }
+.border-primary\/30 { border-color: rgba(0, 102, 204, 0.3); }
+.border-border { border-color: var(--border-primary); }
+.text-muted-foreground { color: var(--text-muted); }
+.bg-card { background: var(--bg-card); }
+
+/* Additional utility fallbacks */
+.border-primary\/40 { border-color: rgba(0, 102, 204, 0.4); }
+.rounded-t-sm { border-top-left-radius: 6px; border-top-right-radius: 6px; }
+.gap-3 { gap: 0.75rem; }
+.h-32 { height: 8rem; }
+.p-4 { padding: 1rem; }
+
+/* ✅ INTERACTIVE CLOCK - THEME AWARE */
+.interactive-clock-root {
+  position: relative;
+  width: 8rem;
+  height: 8rem;
+  border-radius: 50%;
+  border: 4px solid rgba(0, 102, 204, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, rgba(0, 102, 204, 0.06), transparent);
+  transition: border-color 0.25s ease;
+}
+
+body.dark-mode .interactive-clock-root {
+  border-color: rgba(0, 84, 166, 0.4);
+  background: linear-gradient(135deg, rgba(0, 84, 166, 0.1), transparent);
+}
+
+.clock-center {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background: var(--primary);
+  border-radius: 50%;
+  z-index: 10;
+  transition: background-color 0.25s ease;
+}
+
+.clock-hand {
+  position: absolute;
+  left: 50%;
+  bottom: 50%;
+  transform-origin: 50% 100%;
+  background: rgba(0, 102, 204, 0.6);
+  border-radius: 6px;
+  transition: background-color 0.25s ease;
+}
+
+body.dark-mode .clock-hand {
+  background: rgba(0, 84, 166, 0.7);
+}
+
+.hour-hand {
+  width: 4px;
+  height: 40px;
+  margin-left: -2px;
+}
+
+.minute-hand {
+  width: 2px;
+  height: 60px;
+  margin-left: -1px;
+  background: rgba(0, 102, 204, 0.4);
+}
+
+body.dark-mode .minute-hand {
+  background: rgba(0, 84, 166, 0.5);
+}
+
+.second-hand {
+  width: 1px;
+  height: 70px;
+  margin-left: 0;
+  background: rgba(0, 102, 204, 0.2);
+}
+
+body.dark-mode .second-hand {
+  background: rgba(0, 84, 166, 0.3);
+}
+
+.clock-marker {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  background: rgba(0, 102, 204, 0.35);
+  border-radius: 50%;
+  transition: background-color 0.25s ease;
+}
+
+body.dark-mode .clock-marker {
+  background: rgba(0, 84, 166, 0.5);
+}
+
+/* ✅ DECORATIVE SPACING */
+.section-title {
+  margin-bottom: 1.5rem;
+}
+
+/* ✅ SECTION TITLE DARK MODE */
+body.dark-mode .section-title {
+  color: var(--text-primary);
+}
+
+body.dark-mode .section-title::after {
+  background: var(--accent-purple);
+}
+
+/* ✅ CARDS DARK MODE */
+body.dark-mode .why-box {
+  background: var(--bg-card);
+  color: var(--text-primary);
+  border-color: var(--border-secondary);
+}
+
+/* ✅ CAROUSEL IMAGES */
+.carousel-card img {
+  max-width: 100%;
+  display: block;
+}
+
