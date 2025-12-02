@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import "./navbar.css";
 import FloatingMenu from "./FloatingMenu.jsx";
 import { ThemeContext } from "../ThemeContext.jsx";
+import { ShineBorder } from "./ui/shine-border";
 
 const Navbar = () => {
   const navItems = [
@@ -38,6 +39,7 @@ const Navbar = () => {
   return (
     <>
       <nav className={`navbar-container ${scrolled ? "scrolled" : ""}`}>
+      <ShineBorder shineColor={["#00459a"]} />
         {/* ✅ Logo Section */}
         <div className="navbar-logo">
           <Link to="/">

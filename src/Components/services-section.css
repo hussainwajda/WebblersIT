@@ -1,0 +1,445 @@
+/* ✅ SERVICES SECTION - THEME AWARE STYLES */
+.services-section {
+  padding: 5rem 1rem;
+  background: var(--bg-primary);
+  transition: background-color 0.25s ease;
+}
+
+.services-section-container {
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+/* ✅ HEADER STYLES */
+.services-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.services-badge {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.services-badge-dot {
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 50%;
+  background: var(--primary);
+  transition: background-color 0.25s ease;
+}
+
+.services-badge-text {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--primary);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  transition: color 0.25s ease;
+}
+
+.services-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 1rem;
+  transition: color 0.25s ease;
+}
+
+.services-title .italic {
+  font-style: italic;
+  color: var(--text-muted);
+}
+
+.services-subtitle {
+  font-size: 1.125rem;
+  color: var(--text-muted);
+  max-width: 42rem;
+  margin: 0 auto;
+  transition: color 0.25s ease;
+}
+
+/* ✅ SERVICE CARD STYLES */
+.services-section .service-card {
+  position: relative;
+  height: 100%;
+  border-radius: 1rem;
+  border: 1px solid var(--border-primary);
+  background: var(--bg-card);
+  backdrop-filter: blur(8px);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.3s ease, background-color 0.25s ease, border-color 0.25s ease;
+  cursor: pointer;
+}
+
+.service-card:hover {
+  transform: translateY(-8px);
+  border-color: var(--primary);
+  box-shadow: 0 20px 40px var(--shadow-md);
+}
+
+/* ✅ CARD VISUAL AREA */
+.service-card-visual {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  background: linear-gradient(to bottom, rgba(0, 102, 204, 0.05), var(--bg-card));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.25s ease;
+}
+
+body.dark-mode .service-card-visual {
+  background: linear-gradient(to bottom, rgba(0, 84, 166, 0.1), var(--bg-card));
+}
+
+.service-card-visual.tall {
+  height: 18rem;
+}
+
+.service-card-visual.medium {
+  height: 12rem;
+}
+
+/* Grid pattern */
+.service-card-grid {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    linear-gradient(to right, rgba(128, 128, 128, 0.07) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(128, 128, 128, 0.07) 1px, transparent 1px);
+  background-size: 24px 24px;
+  transition: opacity 0.3s ease;
+}
+
+body.dark-mode .service-card-grid {
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+}
+
+.service-card-grid.hovered {
+  opacity: 0.8;
+}
+
+.service-card-grid.normal {
+  opacity: 0.4;
+}
+
+/* Vignette overlay */
+.service-card-vignette {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.1));
+  opacity: 0.1;
+}
+
+body.dark-mode .service-card-vignette {
+  background: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.3));
+}
+
+/* ✅ CARD CONTENT */
+.service-card-content {
+  flex: 1;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start !important;
+  background: var(--bg-card);
+  transition: background-color 0.25s ease;
+}
+
+.service-card-content > div:first-child {
+  padding: 1.5rem 1.5rem 0 1.5rem;
+}
+
+.service-card-content > div:last-child {
+  padding: 0 1.5rem 1.5rem 1.5rem;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.service-card-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 0.5rem;
+  transition: color 0.25s ease;
+  text-align: left !important;
+}
+
+.service-card-description {
+  font-size: 0.875rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+  margin-bottom: 0;
+  transition: color 0.25s ease;
+  text-align: left !important;
+}
+
+/* ✅ VISUAL WRAPPERS TO CONTROL SIZE */
+.service-visual-wrap {
+  max-width: 100%;
+  max-height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.service-visual-wrap--marketing {
+  transform: scale(0.45);
+  transform-origin: center;
+}
+
+.service-visual-wrap--api {
+  transform: scale(0.7);
+  transform-origin: center;
+}
+
+/* ✅ CARD BUTTON */
+.service-card-button {
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  background: var(--primary);
+  color: var(--text-inverse);
+  font-size: 0.875rem;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease, background-color 0.25s ease;
+  margin-top: 0.5rem;
+}
+
+.service-card-button:hover {
+  background: var(--primary-hover);
+  transform: scale(0.95);
+}
+
+/* ✅ ANIMATED BORDER */
+.service-card-border {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(to right, var(--primary), transparent);
+  transform-origin: left;
+  transition: transform 0.3s ease;
+}
+
+/* ✅ VISUAL COMPONENTS - THEME AWARE */
+.service-visual-container {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Icon colors */
+.service-icon {
+  color: var(--primary);
+  transition: color 0.25s ease;
+}
+
+/* Orbiting icon container */
+.service-orbit-icon {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  background: var(--bg-card);
+  border: 1px solid var(--border-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.25s ease, border-color 0.25s ease;
+}
+
+/* Code window styles */
+.service-code-window {
+  border-radius: 0.5rem;
+  border: 1px solid var(--border-primary);
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.2), var(--bg-card));
+  padding: 0.75rem;
+  overflow: hidden;
+  transition: background 0.25s ease, border-color 0.25s ease;
+}
+
+body.dark-mode .service-code-window {
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.4), var(--bg-card));
+}
+
+body.dark-mode .service-card-visual {
+  background: linear-gradient(to bottom, rgba(0, 84, 166, 0.1), var(--bg-card));
+}
+
+body.dark-mode .service-orbit-icon {
+  background: var(--bg-card);
+  border-color: var(--border-primary);
+}
+
+body.dark-mode .service-node {
+  background: var(--bg-card);
+  border-color: var(--border-primary);
+  color: var(--primary);
+}
+
+body.dark-mode .service-bar {
+  background: var(--primary);
+}
+
+.service-code-header {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.75rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--border-primary);
+}
+
+.service-code-dot {
+  width: 0.75rem;
+  height: 0.75rem;
+  border-radius: 50%;
+}
+
+.service-code-text {
+  font-size: 0.625rem;
+  color: var(--text-muted);
+  margin-left: 0.5rem;
+}
+
+.service-code-content {
+  font-size: 0.75rem;
+  font-family: monospace;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+
+.service-code-keyword {
+  color: var(--primary);
+}
+
+/* Bar chart bars */
+.service-bar {
+  border-radius: 0.125rem;
+  background: var(--primary);
+  transition: background-color 0.25s ease;
+}
+
+/* Network node */
+.service-node {
+  border-radius: 50%;
+  border: 1px solid var(--border-primary);
+  background: var(--bg-card);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  color: var(--primary);
+  transition: background-color 0.25s ease, border-color 0.25s ease, color 0.25s ease;
+}
+
+/* ✅ CARDS GRID */
+.services-section .services-grid {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 1.5rem;
+}
+
+/* ✅ GRID RESPONSIVE - MEDIUM, LARGE & WIDE SCREENS (768px+) */
+@media (min-width: 768px) {
+  .services-section .services-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+  }
+  
+  /* Row 1: Card 1 (1 col), Card 2 (2 cols) */
+  .services-section .services-grid > div:nth-child(1) {
+    grid-column: span 1;
+  }
+  
+  .services-section .services-grid > div:nth-child(2) {
+    grid-column: span 2;
+  }
+  
+  /* Row 2: Card 3, 4, 5 (each 1 col) */
+  .services-section .services-grid > div:nth-child(3),
+  .services-section .services-grid > div:nth-child(4),
+  .services-section .services-grid > div:nth-child(5) {
+    grid-column: span 1;
+  }
+  
+  /* Row 3: Card 6 (2 cols), Card 7 (1 col) */
+  .services-section .services-grid > div:nth-child(6) {
+    grid-column: span 2;
+  }
+  
+  .services-section .services-grid > div:nth-child(7) {
+    grid-column: span 1;
+  }
+}
+
+/* ✅ LARGE SCREENS (1024px+) - Same layout, better spacing */
+@media (min-width: 1024px) {
+  .services-section-container {
+    max-width: 1400px;
+  }
+  
+  .services-section .services-grid {
+    gap: 2rem;
+  }
+}
+
+/* ✅ WIDE SCREENS (1440px+) - Maintain layout with optimal spacing */
+@media (min-width: 1440px) {
+  .services-section-container {
+    max-width: 1600px;
+  }
+  
+  .services-section .services-grid {
+    gap: 2.5rem;
+  }
+}
+
+/* ✅ RESPONSIVE */
+@media (max-width: 768px) {
+  .services-section {
+    padding: 3rem 1rem;
+  }
+
+  .services-title {
+    font-size: 2rem;
+  }
+
+  .services-subtitle {
+    font-size: 1rem;
+  }
+
+  .service-card-visual.tall {
+    height: 14rem;
+  }
+
+  .service-card-visual.medium {
+    height: 10rem;
+  }
+}
+
+/* ✅ SERVICES SECTION DARK MODE */
+body.dark-mode .services-section {
+  background: var(--bg-secondary);
+  color: var(--text-primary);
+}
+
