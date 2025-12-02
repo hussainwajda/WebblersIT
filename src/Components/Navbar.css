@@ -14,6 +14,7 @@ body.menu-open {
   overflow-y: hidden;
 }
 
+
 /* ✅ NAVBAR CONTAINER - Glassmorphic Effect */
 .navbar-container {
   position: fixed;
@@ -33,6 +34,7 @@ body.menu-open {
   z-index: 1000;
   transition: background 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
   height: 70px;
+  overflow: visible;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
 }
 
@@ -69,21 +71,49 @@ body.menu-open {
   position: relative;
 }
 
+/* Pill Hover Effect */
 .nav-link:hover {
   background: #0066cc;
   color: #ffffff;
   box-shadow: 0 0 10px rgba(0, 102, 204, 0.45);
 }
 
-/* ✅ When user scrolls */
+/* ✅ RIGHT SIDE ICONS */
+.navbar-icons {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.hamburger:hover,
+.github-icon:hover {
+  color: #0066cc;
+}
+
+/* ✅ When user scrolls down */
 .navbar-container.scrolled .navbar-logo img {
   transform: scale(1.25) translateY(2px);
   transform-origin: left center;
   transition: transform 0.5s cubic-bezier(0.25, 0.1, 0.25, 1);
 }
 
-/* ✅ Larger logo when scrolled */
+/* ✅ Logo Styling */
+.navbar-logo img {
+  height: 60px;
+  width: auto;
+  cursor: pointer;
+  object-fit: contain;
+  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1), filter 0.3s ease;
+  transform-origin: left center;
+  margin-top: 5px;
+}
+
+/* ✅ Larger horizontal logo after scroll */
 .navbar-logo .large-logo {
+  height: 106px;
+  width: auto;
   transform: scale(1.7);
   transform-origin: left center;
   transition: all 0.35s ease-in-out;
@@ -97,7 +127,51 @@ body.dark-mode .navbar-container.scrolled {
   box-shadow: 0 4px 20px rgba(255, 255, 255, 0.08);
 }
 
-/* 🌤️ Illustrated Theme Toggle (Desktop Only) */
+/* ✅ DARK MODE TOGGLE (Desktop) */
+.theme-toggle {
+  width: 50px;
+  height: 26px;
+  border-radius: 20px;
+  background-color: #cccccc;
+  cursor: pointer;
+  position: relative;
+  transition: background 0.35s ease;
+  border: 1px solid #aaa;
+  display: flex;
+  align-items: center;
+  padding: 0 2px;
+  box-sizing: border-box;
+  justify-content: flex-start;
+}
+
+.toggle-circle {
+  width: 22px;
+  height: 22px;
+  background: #ffffff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  line-height: 1;
+  transition: transform 0.35s cubic-bezier(0.45, 0, 0.25, 1);
+  transform: translateX(0);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
+}
+
+.toggle-circle.move-right {
+  transform: translateX(23px);
+}
+
+body.dark-mode .theme-toggle {
+  background-color: #555;
+}
+
+body.dark-mode .toggle-circle {
+  background: #eaeaea;
+}
+
+/* 🌤️ Illustrated Theme Toggle (Desktop) */
 .theme-toggle-illustrated {
   width: 80px;
   height: 40px;
@@ -110,19 +184,12 @@ body.dark-mode .navbar-container.scrolled {
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
 }
 
-/* ☀️ Day Mode */
 .theme-toggle-illustrated.day {
   background: linear-gradient(180deg, #8ed8ff 0%, #c9f1ff 100%);
 }
 
-/* 🌙 Night Mode */
 .theme-toggle-illustrated.night {
   background: linear-gradient(180deg, #2b1055 0%, #7597de 100%);
-}
-
-.sun, .moon, .cloud, .stars {
-  position: absolute;
-  transition: all 0.7s ease;
 }
 
 .sun {
@@ -130,8 +197,10 @@ body.dark-mode .navbar-container.scrolled {
   height: 22px;
   background: #ffd93b;
   border-radius: 50%;
+  position: absolute;
   left: 12px;
   top: 9px;
+  transition: all 0.7s ease;
   z-index: 3;
 }
 
@@ -140,16 +209,20 @@ body.dark-mode .navbar-container.scrolled {
   height: 22px;
   background: #f4f4f4;
   border-radius: 50%;
+  position: absolute;
   right: -25px;
   top: 9px;
   box-shadow: inset -4px -4px 0 0 #d9d9d9;
+  transition: all 0.7s ease;
   z-index: 3;
 }
 
 .cloud {
+  position: absolute;
   background: #ffffff;
   border-radius: 50%;
   opacity: 0.9;
+  transition: all 0.7s ease;
 }
 
 .cloud-1 {
@@ -169,33 +242,78 @@ body.dark-mode .navbar-container.scrolled {
 }
 
 .stars {
+  position: absolute;
   width: 100%;
   height: 100%;
   background: radial-gradient(white 1px, transparent 1px);
   background-size: 6px 6px;
   opacity: 0;
+  transition: opacity 0.7s ease;
+  z-index: 2;
 }
 
 .theme-toggle-illustrated.night .sun {
   transform: translateX(50px) scale(0.7);
   opacity: 0;
 }
+
 .theme-toggle-illustrated.night .moon {
   right: 14px;
   opacity: 1;
 }
+
 .theme-toggle-illustrated.night .cloud {
   opacity: 0;
 }
+
 .theme-toggle-illustrated.night .stars {
   opacity: 0.11;
 }
 
-/* ✅ Controls container */
+
+/* Add styles for navbar controls container and bubble menu toggle button */
 .navbar-controls {
   display: flex;
   align-items: center;
   gap: 12px;
+}
+
+/* Hamburger Menu Toggle for Mobile */
+.bubble-menu-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  gap: 6px;
+}
+
+.hamburger-line {
+  width: 24px;
+  height: 2px;
+  background-color: #222;
+  border-radius: 2px;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  display: block;
+}
+
+/* Hamburger Animation - Open State */
+.hamburger-line.open:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+
+.hamburger-line.open:nth-child(2) {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
+/* Dark Mode - Hamburger Color */
+body.dark-mode .hamburger-line {
+  background-color: #e6e6e6;
 }
 
 /* ✅ MOBILE RESPONSIVE */
@@ -204,57 +322,57 @@ body.dark-mode .navbar-container.scrolled {
     display: none;
   }
 
-  /* Hide desktop toggle */
+  /* Hide illustrated toggle on mobile */
   .theme-toggle-illustrated {
     display: none;
   }
 
-  /* Show mobile theme button */
-  .theme-toggle-button {
-    display: inline-flex;
+  /* ✅ Simple button for theme switching (mobile view only) */
+  .theme-toggle-btn {
+    display: flex;
     align-items: center;
     justify-content: center;
-    background: rgba(255, 255, 255, 0.85);
-    border: 2px solid rgba(0, 0, 0, 0.15);
-    color: #111;
-    font-size: 18px;
-    font-weight: 600;
+    background: rgba(255, 255, 255, 0.25);
+    border: none;
     border-radius: 50%;
+    font-size: 22px;
     width: 42px;
     height: 42px;
     cursor: pointer;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
     transition: all 0.3s ease;
+    color: #000;
   }
 
-  .theme-toggle-button:hover {
-    background: #0066cc;
-    color: white;
+  .theme-toggle-btn:hover {
+    background: rgba(255, 255, 255, 0.4);
+    transform: scale(1.05);
   }
 
-  body.dark-mode .theme-toggle-button {
-    background: rgba(25, 25, 25, 0.9);
-    color: #f8f8f8;
-    border: 1px solid #555;
-  }
-
-  body.dark-mode .theme-toggle-button:hover {
-    background: #4c63ff;
+  body.dark-mode .theme-toggle-btn {
+    background: rgba(0, 0, 0, 0.3);
     color: #fff;
   }
 
-  .navbar-controls {
-    gap: 10px;
+  body.dark-mode .theme-toggle-btn:hover {
+    background: rgba(0, 0, 0, 0.5);
   }
 
-  /* Ensure button visible */
-  .navbar-container {
-    justify-content: space-between;
+  /* Show hamburger toggle only on mobile/tablet devices */
+  .bubble-menu-toggle {
+    display: flex;
+  }
+
+  /* Ensure BubbleMenu has proper spacing from navbar */
+  .bubble-menu {
+    top: 80px !important;
   }
 }
 
-@media (min-width: 901px) {
-  .theme-toggle-button {
+/* Hide BubbleMenu on desktop */
+@media (min-width: 900px) {
+  .bubble-menu {
     display: none;
   }
 }
