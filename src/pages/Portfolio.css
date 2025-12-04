@@ -185,6 +185,9 @@
   mask-composite: exclude; 
   opacity: 0;
   transition: opacity 0.4s ease;
+
+  /* 👇 ADD THIS LINE TO FIX THE HOVER ISSUE 👇 */
+  pointer-events: none;
 }
 
 .portfolio-horizontal-card:hover::before {
