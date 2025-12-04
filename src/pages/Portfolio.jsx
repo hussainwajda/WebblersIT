@@ -7,7 +7,7 @@ const projects = [
     id: 1,
     title: "Anchor Tr LLC Website",
     description:
-      "A modern responsive website with contact automation and service showcase.",
+      "A modern responsive website with contact automation and service showcase. based on Arabic color scheme",
     technologies: [
       { name: "React", icon: "devicon-react-original colored" },
       //{ name: "Node.js", icon: "devicon-nodejs-plain colored" },
@@ -21,17 +21,18 @@ const projects = [
       "Search and Sort",
     ],
     image: "src/assets/previews/website3.png",
-    live: "https://anchortrdg.com",
+    live: "https://anchortrdg.co",
     code: "#",
   },
   {
     id: 2,
-    title: "Branding & Logo Design",
+    title: "Website for a Religious Community Gathering ",
     description:
-      "High-quality branding package with clear visual identity and guidelines.",
+      "We Developed Responsive website for Ashara Mubaraka 1447h for community people ",
     technologies: [
-      { name: "Illustrator", icon: "devicon-illustrator-plain colored" },
-      { name: "Photoshop", icon: "devicon-photoshop-plain colored" },
+      { name: "React", icon: "devicon-react-original colored" },
+      { name: "CSS Modules", icon: "devicon-css3-plain colored" },
+      { name: "Node.js", icon: "devicon-nodejs-plain colored" },
     ],
     features: [
       "Logo Pack",
@@ -39,7 +40,30 @@ const projects = [
       "Typography System",
       "Business Card Design",
     ],
-    image: "https://via.placeholder.com/450x300",
+    image: "src/assets/previews/website2.png",
+    live: "#",
+    code: "#",
+  },
+
+  {
+    id: 3,
+    title: "Frontend Design For Recipix A Recipe Management Webapp",
+    description:
+      "Developed Responsive Frontend for Recipix A Recipe Management Webapp ",
+    technologies: [
+      { name: "React", icon: "devicon-react-original colored" },
+      { name: "CSS Modules", icon: "devicon-css3-plain colored" },
+      { name: "Tailwind CSS", icon: "devicon-tailwindcss-plain colored" },
+    //   { name: "Node.js", icon: "devicon-nodejs-plain colored" },
+    ],
+    features: [
+      "Logo Pack",
+      "Brand Colors",
+      "Typography System",
+      "UI/UX Design",
+      "Fast & Interactive",
+    ],
+    image: "src/assets/previews/Recipix.png",
     live: "#",
     code: "#",
   },
@@ -92,14 +116,14 @@ const Portfolio = () => {
                 </div>
 
                 {/* Buttons */}
-                <div className="ph-btn-group">
+                {/* <div className="ph-btn-group">
                   <a href={project.live} target="_blank" className="portfolio-btn live-btn">
                     <i className="fa-solid fa-arrow-up-right-from-square"></i> Live
                   </a>
                   <a href={project.code} target="_blank" className="portfolio-btn code-btn">
                     <i className="fa-brands fa-github"></i> Code
                   </a>
-                </div>
+                </div> */}
               </div>
             </div>
           ))}

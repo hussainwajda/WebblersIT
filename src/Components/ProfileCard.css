@@ -178,6 +178,7 @@
   width: 100%;
   position: absolute;
   left: 50%;
+  top:20px;
   transform-origin: 50% 100%;
   transform: translateX(calc(-50% + (var(--pointer-from-left) - 0.5) * 6px));
   bottom: -1px;

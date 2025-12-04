@@ -68,6 +68,33 @@ const About = ({ darkMode }) => {
             window.open("https://linkedin.com/in/hussaintech", "_blank")
           }
         />
+        <div className="CApc-card">
+           <ProfileCard
+          name="Sakina Kalabhai"
+          title="Company Advisor"
+          handle="sakina_kalabhai04"
+          status="Online"
+          contactText="Follow"
+          avatarUrl="/CA.jpg"
+          miniAvatarUrl="/images/founder2.jpg"
+          linkedinUrl="https://www.linkedin.com/in/sakina-kalabhai-8979b4330?utm_source=share_via&utm_content=profile&utm_medium=member_android"
+          // githubUrl="https://github.com/hussaintech"
+          // twitterUrl="https://twitter.com/hussaintech"
+          showUserInfo={true}
+          enableTilt={true}
+          innerGradient={
+            darkMode
+              ? "linear-gradient(145deg, #001f3f 0%, #005b96 50%, #00a8e8 100%)"
+              : "linear-gradient(145deg, #7ed6df 0%, #82ccdd 100%)"
+          }
+          behindGlowColor={
+            darkMode ? "rgba(0,168,232,0.4)" : "rgba(126,214,223,0.5)"
+          }
+          onContactClick={() =>
+            window.open("https://instagram.com/sakina_kalabhai04", "_blank")
+          }
+        />
+        </div>
       </div>
     </section>
   );
