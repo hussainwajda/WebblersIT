@@ -10,7 +10,6 @@ const projects = [
       "A modern responsive website with contact automation and service showcase. based on Arabic color scheme",
     technologies: [
       { name: "React", icon: "devicon-react-original colored" },
-      //{ name: "Node.js", icon: "devicon-nodejs-plain colored" },
       { name: "CSS Modules", icon: "devicon-css3-plain colored" },
       { name: "EmailJS", icon: "fa-regular fa-envelope" },
     ],
@@ -54,7 +53,6 @@ const projects = [
       { name: "React", icon: "devicon-react-original colored" },
       { name: "CSS Modules", icon: "devicon-css3-plain colored" },
       { name: "Tailwind CSS", icon: "devicon-tailwindcss-plain colored" },
-    //   { name: "Node.js", icon: "devicon-nodejs-plain colored" },
     ],
     features: [
       "Logo Pack",
@@ -73,18 +71,29 @@ const Portfolio = () => {
   return (
     <section className="portfolio-section">
       <div className="portfolio-container">
+        
+        {/* ANIMATED HEADER */}
         <div className="portfolio-header">
-          <h2 className="portfolio-title">Our Portfolio</h2>
+          <span className="section-badge">Selected Projects</span>
+          <h2 className="portfolio-title">
+            Our <span className="highlight-text">Digital Craft</span>
+          </h2>
           <p className="portfolio-subtitle">
-            Premium digital work we’ve crafted for our clients.
+            Premium digital experiences we’ve built for our clients.
+            Bridging imagination with code.
           </p>
+          <div className="header-decoration-line"></div>
         </div>
 
         <div className="portfolio-list">
           {projects.map((project) => (
             <div className="portfolio-horizontal-card" key={project.id}>
               <div className="portfolio-image-area">
-                <img src={project.image} alt={project.title} className="portfolio-image" />
+                <img
+                  src={project.image}
+                  alt={project.title}
+                  className="portfolio-image"
+                />
               </div>
 
               <div className="portfolio-info-area">
@@ -114,23 +123,12 @@ const Portfolio = () => {
                     ))}
                   </ul>
                 </div>
-
-                {/* Buttons */}
-                {/* <div className="ph-btn-group">
-                  <a href={project.live} target="_blank" className="portfolio-btn live-btn">
-                    <i className="fa-solid fa-arrow-up-right-from-square"></i> Live
-                  </a>
-                  <a href={project.code} target="_blank" className="portfolio-btn code-btn">
-                    <i className="fa-brands fa-github"></i> Code
-                  </a>
-                </div> */}
               </div>
             </div>
           ))}
         </div>
       </div>
       <BottomRevealBlur height="20vh" />
-
     </section>
   );
 };

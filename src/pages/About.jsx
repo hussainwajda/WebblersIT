@@ -5,18 +5,27 @@ import "./About.css";
 const About = ({ darkMode }) => {
   return (
     <section className={`about-section ${darkMode ? "dark" : ""}`}>
+      
+      {/* ANIMATED HEADER */}
       <div className="about-header">
-        <h2>About Webblers IT</h2>
-        <p>
+        <span className="section-badge">Who We Are</span>
+        <h2 className="about-title">
+          About <span className="highlight-text">Webblers IT</span>
+        </h2>
+        <p className="about-subtitle">
           Webblers is a forward-thinking tech startup driven by a passion for
           innovation, design, and digital transformation. Our tagline clarifies —
           <strong> “Keep IT Simple.”</strong> We specialize in building scalable web
           solutions that empower businesses to grow and connect seamlessly in
           the digital age.
         </p>
+        <div className="header-decoration-line"></div>
       </div>
 
-      <div className="founders-container">
+      {/* TEAM GRID (All Cards in One Line) */}
+      <div className="team-grid">
+        
+        {/* Card 1: Murtaza */}
         <ProfileCard
           name="Murtaza Dawoodjee"
           title="Co-Founder & CEO"
@@ -43,6 +52,7 @@ const About = ({ darkMode }) => {
           }
         />
 
+        {/* Card 2: Hussain */}
         <ProfileCard
           name="Hussain Wajdawala"
           title="Co-Founder & CTO"
@@ -68,8 +78,9 @@ const About = ({ darkMode }) => {
             window.open("https://linkedin.com/in/hussaintech", "_blank")
           }
         />
-        <div className="CApc-card">
-           <ProfileCard
+
+        {/* Card 3: Sakina (Now in same line) */}
+        <ProfileCard
           name="Sakina Kalabhai"
           title="Company Advisor"
           handle="sakina_kalabhai04"
@@ -77,9 +88,7 @@ const About = ({ darkMode }) => {
           contactText="Follow"
           avatarUrl="/CA.jpg"
           miniAvatarUrl="/images/founder2.jpg"
-          linkedinUrl="https://www.linkedin.com/in/sakina-kalabhai-8979b4330?utm_source=share_via&utm_content=profile&utm_medium=member_android"
-          // githubUrl="https://github.com/hussaintech"
-          // twitterUrl="https://twitter.com/hussaintech"
+          linkedinUrl="https://www.linkedin.com/in/sakina-kalabhai-8979b4330"
           showUserInfo={true}
           enableTilt={true}
           innerGradient={
@@ -94,8 +103,9 @@ const About = ({ darkMode }) => {
             window.open("https://instagram.com/sakina_kalabhai04", "_blank")
           }
         />
-        </div>
+
       </div>
+      
     </section>
   );
 };

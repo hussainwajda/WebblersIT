@@ -1,194 +1,395 @@
-/* 🌙 CONTACT SECTION */
+/* 🌙 CONTACT SECTION - THEME AWARE */
 .contact-section {
-  padding: 120px 10% 80px;
+  padding: 6rem 1rem;
   background: var(--bg-primary);
   color: var(--text-primary);
-  text-align: center;
   font-family: "Poppins", sans-serif;
-  transition: background 0.3s ease, color 0.3s ease;
+  transition: background-color 0.25s ease, color 0.25s ease;
+  overflow: hidden;
 }
 
-/* Section Header */
-.contact-header h2 {
-  font-size: 2.4rem;
-  margin-bottom: 10px;
-  color: var(--primary);
-}
+/* =========================================
+   ✨ ANIMATED HEADER STYLES (MATCHING PORTFOLIO)
+   ========================================= */
 
-.contact-header p {
-  font-size: 1rem;
-  color: var(--text-muted);
-  margin-bottom: 50px;
-}
-
-/* 🧱 Cards Container (perfect alignment + equal column sizing) */
-.contact-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
-  gap: 40px;
-  justify-content: center;
-  align-items: stretch;
-}
-
-/* ✨ Glassmorphic Card (equal height + centered content) */
-.contact-card {
-  background: var(--bg-card);
-  border-radius: 20px;
-  padding: 40px 30px;
-  border: 1px solid var(--border-primary);
-  box-shadow: 0px 12px 30px var(--shadow-md);
-  backdrop-filter: blur(14px);
-  transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
-
+.contact-header {
+  text-align: center;
+  margin-bottom: 5rem;
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-between;
+  gap: 1rem;
+}
 
+.section-badge {
+  display: inline-block;
+  padding: 0.5rem 1.2rem;
+  border-radius: 50px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  background: rgba(var(--primary-rgb, 100, 100, 255), 0.1); 
+  border: 1px solid var(--primary);
+  color: var(--primary);
+  opacity: 0;
+  animation: slideDownFade 0.8s ease-out forwards;
+}
+
+.contact-title {
+  font-size: 3.5rem;
+  font-weight: 800;
+  line-height: 1.1;
+  color: var(--text-primary);
+  margin: 0;
+  opacity: 0;
+  animation: fadeInUp 0.8s ease-out 0.2s forwards;
+}
+
+.highlight-text {
+  background: linear-gradient(
+    135deg, 
+    var(--primary) 0%, 
+    #a855f7 50%, 
+    #3b82f6 100%
+  );
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+  animation: gradientFlow 5s linear infinite;
+}
+
+.contact-subtitle {
+  font-size: 1.1rem;
+  color: var(--text-muted);
+  max-width: 40rem;
+  margin: 0 auto;
+  line-height: 1.6;
+  opacity: 0;
+  animation: fadeInUp 0.8s ease-out 0.4s forwards;
+}
+
+.header-decoration-line {
+  width: 60px;
+  height: 4px;
+  background: var(--primary);
+  border-radius: 2px;
+  margin-top: 1rem;
+  width: 0;
+  animation: expandWidth 0.8s ease-out 0.6s forwards;
+}
+
+/* =========================================
+   🧱 GRID LAYOUT & CARDS
+   ========================================= */
+
+.contact-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2.5rem;
+  max-width: 1400px;
+  margin: 0 auto;
+  opacity: 0;
+  animation: fadeInUp 1s ease-out 0.6s forwards;
+}
+
+/* Base Card Style - Glassmorphism */
+.contact-card {
+  background: var(--bg-card);
+  border-radius: 1.5rem;
+  padding: 2.5rem 2rem;
+  border: 1px solid var(--border-primary);
+  box-shadow: 0px 10px 40px -10px rgba(0,0,0,0.05);
+  backdrop-filter: blur(12px);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
   text-align: center;
-  min-height: 420px; /* Ensures perfect alignment */
+  position: relative;
+  overflow: hidden;
+}
+
+/* Gradient Border Hover Effect */
+/* Gradient Border Hover Effect */
+.contact-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 1.5rem; 
+  padding: 2px; 
+  background: linear-gradient(45deg, transparent, rgba(255,255,255,0.1), transparent); 
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0); 
+  -webkit-mask-composite: xor; 
+  mask-composite: exclude; 
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  
+  /* 👇 ADD THIS LINE TO FIX THE CLICK ISSUE 👇 */
+  pointer-events: none; 
+}
+
+.contact-card:hover::before {
+  opacity: 1;
 }
 
 .contact-card:hover {
-  transform: translateY(-6px);
+  transform: translateY(-8px);
   border-color: var(--primary);
-  box-shadow: 0px 16px 42px var(--shadow-lg);
+  box-shadow: 0px 20px 50px -10px rgba(var(--primary-rgb, 0,0,0), 0.15);
 }
 
-/* Icon – perfectly centered */
+/* Icon Styling */
+.icon-wrapper {
+  width: 70px;
+  height: 70px;
+  background: rgba(var(--primary-rgb, 100, 100, 255), 0.08);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+  transition: transform 0.3s ease;
+}
+
 .contact-icon {
-  font-size: 2.7rem;
+  font-size: 1.8rem;
   color: var(--primary);
-  margin-bottom: 12px;
 }
 
-/* Card Titles */
+.contact-card:hover .icon-wrapper {
+  transform: scale(1.1) rotate(5deg);
+  background: rgba(var(--primary-rgb, 100, 100, 255), 0.15);
+}
+
+/* Text Styling */
 .contact-card h3 {
-  font-size: 1.45rem;
-  margin-bottom: 12px;
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin-bottom: 0.8rem;
   color: var(--text-primary);
 }
 
-/* Subtext */
 .contact-card p {
-  font-size: 0.98rem;
+  font-size: 0.95rem;
   color: var(--text-muted);
-  margin-bottom: 18px;
-  line-height: 1.5;
+  margin-bottom: 2rem;
+  line-height: 1.6;
 }
 
-/* 📬 Email Form */
+/* =========================================
+   📬 FORM STYLING
+   ========================================= */
+
+.email-card {
+  grid-row: span 2; /* Make email card taller if grid allows */
+}
+
 .email-card form {
+  width: 100%;
   display: flex;
   flex-direction: column;
-  gap: 14px;
+  gap: 1.2rem;
+}
+
+.input-group {
+  position: relative;
   width: 100%;
-  margin-top: 10px;
 }
 
 .email-card input,
 .email-card textarea {
   width: 100%;
-  padding: 12px 15px;
+  padding: 1rem 1.2rem;
+  border-radius: 0.8rem;
   border: 1px solid var(--border-primary);
-  border-radius: 8px;
-  background: rgba(255, 255, 255, 0.03);
+  background: rgba(128, 128, 128, 0.05);
   color: var(--text-primary);
-  font-size: 1rem;
+  font-size: 0.95rem;
   font-family: inherit;
   outline: none;
-  transition: border-color 0.3s ease, background 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.email-card textarea {
+  min-height: 120px;
+  resize: vertical;
 }
 
 .email-card input:focus,
 .email-card textarea:focus {
+  background: var(--bg-card);
   border-color: var(--primary);
+  box-shadow: 0 0 0 4px rgba(var(--primary-rgb, 0, 84, 166), 0.1);
 }
 
-/* Buttons — perfectly centered & responsive */
-.contact-card button {
+/* =========================================
+   🎯 BUTTONS
+   ========================================= */
+
+.contact-btn {
   width: 100%;
-  padding: 12px 0;
-  background: rgba(255, 255, 255, 0.03);
+  padding: 0.8rem 1.5rem;
+  border-radius: 50px;
   border: 1px solid var(--border-primary);
+  background: transparent;
   color: var(--text-primary);
-  font-size: 1rem;
-  border-radius: 70px;
+  font-weight: 600;
+  font-size: 0.95rem;
   cursor: pointer;
-  transition: 0.3s ease;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: auto;
 }
 
-.contact-card button:hover {
+.contact-btn:hover {
+  background: var(--bg-primary);
+  border-color: #0054A6;
+  color: #0054A6;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+}
+
+/* Primary Button (Send Message) */
+.primary-btn {
+  background: var(--primary);
+  color: #fff;
   border-color: var(--primary);
-  transform: translateY(-3px);
 }
 
-/* ♻ Make buttons inside <a> look correct */
-.contact-card a {
+.primary-btn:hover {
+  background: #004494; /* Darker shade of primary */
+  color: #fff;
+  box-shadow: 0 4px 20px rgba(0, 84, 166, 0.3);
+}
+
+.full-width-link {
   width: 100%;
   text-decoration: none;
 }
 
-/* 📸 Instagram Card */
-.instagram-card img.qr-image {
-  width: 150px;
-  height: 150px;
-  margin: 18px auto;
-  border-radius: 12px;
-  box-shadow: var(--shadow-md);
+/* =========================================
+   📸 QR CODE
+   ========================================= */
+
+.qr-container {
+  padding: 10px;
+  background: #fff;
+  border-radius: 1rem;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+  margin-bottom: 1.5rem;
+  transition: transform 0.3s ease;
 }
 
-/* 🌚 DARK MODE */
+.contact-card:hover .qr-container {
+  transform: scale(1.05);
+}
+
+.qr-image {
+  width: 140px;
+  height: 140px;
+  display: block;
+}
+
+/* =========================================
+   🎬 ANIMATIONS
+   ========================================= */
+
+@keyframes slideDownFade {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes gradientFlow {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes expandWidth {
+  from { width: 0; opacity: 0; }
+  to { width: 80px; opacity: 1; }
+}
+
+/* =========================================
+   🌙 DARK MODE OVERRIDES
+   ========================================= */
+
 body.dark-mode .contact-section {
-  background: var(--bg-primary);
-  color: var(--text-primary);
+  background: #111111;
+  color: #f5f5f5;
 }
 
 body.dark-mode .contact-card {
-  background: var(--bg-card-alt);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  backdrop-filter: blur(15px);
+  background: rgba(255, 255, 255, 0.02);
+  border-color: rgba(255, 255, 255, 0.08);
 }
 
-body.dark-mode .contact-icon {
-  color: var(--primary);
+body.dark-mode .contact-title {
+  color: #fff;
+}
+
+body.dark-mode .highlight-text {
+  background: linear-gradient(
+    135deg, 
+    #60a5fa 0%, 
+    #c084fc 50%, 
+    #2dd4bf 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
 }
 
 body.dark-mode .email-card input,
 body.dark-mode .email-card textarea {
-  background: rgba(255, 255, 255, 0.06);
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.1);
+  color: #f5f5f5;
 }
 
-/* Buttons */
-body.dark-mode .contact-card button {
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  color: #ffffff;
+body.dark-mode .email-card input:focus,
+body.dark-mode .email-card textarea:focus {
+  border-color: #0054A6;
+  background: rgba(255, 255, 255, 0.08);
 }
 
-body.dark-mode .contact-card button:hover {
+body.dark-mode .contact-btn {
+  border-color: rgba(255, 255, 255, 0.15);
+  color: #e2e8f0;
+}
+
+body.dark-mode .contact-btn:hover {
+  border-color: #0054A6;
+  color: #fff;
+  background: rgba(255,255,255,0.05);
+}
+
+body.dark-mode .primary-btn {
+  background: var(--primary);
   border-color: var(--primary);
+  color: #fff;
 }
 
-/* 📱 Responsive */
-@media (max-width: 900px) {
-  .contact-card {
-    min-height: 380px;
-    padding: 32px 24px;
-  }
+/* Tablet / Mobile Adjustments */
+@media (max-width: 1024px) {
+  .contact-title { font-size: 2.5rem; }
+  .email-card { grid-row: auto; }
 }
 
 @media (max-width: 768px) {
-  .contact-section {
-    padding: 80px 6%;
-  }
-  .contact-card {
-    padding: 30px 20px;
-  }
-}
-
-@media (max-width: 480px) {
-  .contact-card {
-    min-height: auto;
-  }
+  .contact-section { padding: 4rem 1rem; }
+  .contact-title { font-size: 2.2rem; }
+  .contact-container { grid-template-columns: 1fr; max-width: 500px; }
 }
