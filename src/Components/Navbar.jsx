@@ -35,7 +35,7 @@ const Navbar = () => {
     }
   }, [isMobileMenuOpen]);
 
-  // Close menu when route changes (optional helper)
+  // Close menu when route changes
   const handleLinkClick = () => {
     setIsMobileMenuOpen(false);
   };

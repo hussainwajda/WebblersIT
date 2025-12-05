@@ -217,8 +217,8 @@ const Home = () => {
         transition={{ duration: 0.6 }}
         viewport={{ once: true, amount: 0.2 }}
       >
-        <h2>Ready to Boost Your Business?</h2>
-        <a href="/Contact"> <button className="cta-button">Get Free Consultation</button> </a>
+        <h2 className="!text-primary">Ready to Boost Your Business?</h2>
+        <a href="/Contact"> <button className="cta-button !bg-primary !text-white">Get Free Consultation</button> </a>
       </motion.section>
       </div>
       {/* Fixed bottom blur that reveals sections as you scroll, hidden near page end */}

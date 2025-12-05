@@ -56,14 +56,14 @@ const About = ({ darkMode }) => {
         <ProfileCard
           name="Hussain Wajdawala"
           title="Co-Founder & CTO"
-          handle="hussaintech"
+          handle="hxssxin_wajda"
           status="Online"
           contactText="Follow"
-          avatarUrl="/images/founder2.jpg"
+          avatarUrl="/founder2.png"
           miniAvatarUrl="/images/founder2.jpg"
-          linkedinUrl="https://linkedin.com/in/hussaintech"
-          githubUrl="https://github.com/hussaintech"
-          twitterUrl="https://twitter.com/hussaintech"
+          linkedinUrl="https://www.linkedin.com/in/hussain-wajda-ba9a09265?utm_source=share_via&utm_content=profile&utm_medium=member_android"
+          githubUrl="https://github.com/hussainwajda"
+          // twitterUrl="https://twitter.com/hussaintech"
           showUserInfo={true}
           enableTilt={true}
           innerGradient={
@@ -75,7 +75,7 @@ const About = ({ darkMode }) => {
             darkMode ? "rgba(0,168,232,0.4)" : "rgba(126,214,223,0.5)"
           }
           onContactClick={() =>
-            window.open("https://linkedin.com/in/hussaintech", "_blank")
+            window.open("https://www.instagram.com/hxssxin_wajda?igsh=MWwwYnVlbzRsdjRnMg==", "_blank")
           }
         />
 
