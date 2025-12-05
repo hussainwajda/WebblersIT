@@ -34,7 +34,7 @@ body.menu-open {
   justify-content: space-between;
   align-items: center;
   z-index: 1000;
-  transition: background 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+  transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1), background 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
   height: 70px;
   overflow: hidden;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
@@ -84,7 +84,6 @@ body.menu-open {
 /* Scroll State */
 .navbar-container.scrolled {
   width: 90%;
-  transition: all 0.3s ease-in-out;
 }
 
 .navbar-container.scrolled .navbar-logo img {
@@ -236,11 +235,22 @@ body.dark-mode .theme-toggle {
 .theme-toggle-inner.dark  .sun-icon  { opacity: 0; }
 
 
+/* MEDIUM & SMALL DEVICES - Keep navbar at 90% width */
+@media (max-width: 1200px) {
+  .navbar-container {
+    width: 90% !important;
+    transition: background 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease !important;
+  }
+  
+  .navbar-container.scrolled {
+    width: 90% !important;
+  }
+}
+
 /* MOBILE */
 @media (max-width: 900px) {
   .navbar-menu { display: none; }
  
-
   .bubble-menu { top: 80px !important; }
 }
 
@@ -249,7 +259,7 @@ body.dark-mode .theme-toggle {
   .bubble-menu { display: none; }
 }
 /* Smooth theme transitions */
-body, .navbar-container, .nav-link, .theme-toggle, .toggle-knob {
+body, .nav-link, .theme-toggle, .toggle-knob {
   transition: 
     background-color 0.25s ease,
     color 0.25s ease,

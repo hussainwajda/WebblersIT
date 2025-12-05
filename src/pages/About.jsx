@@ -62,7 +62,7 @@ const About = ({ darkMode }) => {
           avatarUrl="/images/founder2.jpg"
           miniAvatarUrl="/images/founder2.jpg"
           linkedinUrl="https://linkedin.com/in/hussaintech"
-          githubUrl="https://github.com/hussaintech"
+          githubUrl="https://github.com/hussainwajda"
           twitterUrl="https://twitter.com/hussaintech"
           showUserInfo={true}
           enableTilt={true}

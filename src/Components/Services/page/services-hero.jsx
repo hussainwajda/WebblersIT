@@ -2,8 +2,8 @@
 
 import { motion } from "framer-motion"
 import { ArrowRight } from "lucide-react"
-import image1 from "@/assets/servpage1.jpg"
-import image2 from "@/assets/servpage2.jpg"
+// import image1 from "@/assets/servpage1.jpg"
+// import image2 from "@/assets/servpage2.jpg"
 import "./services-page.css"
 import newimg from "../../../assets/coding-workshop-animate.svg"
 

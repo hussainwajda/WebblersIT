@@ -111,7 +111,7 @@ export function ProcessSection() {
                 >
                   <div className="flex items-center justify-center gap-2">
                     <Icon className="w-4 h-4" />
-                    <span>STEP {step.id}</span>
+                    <span className="hidden sm:inline">STEP {step.id}</span>
                   </div>
                 </button>
               )

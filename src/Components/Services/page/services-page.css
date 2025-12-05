@@ -324,6 +324,7 @@ body.dark-mode .competitive-edge-card {
   background: var(--bg-card);
   border: 1px solid var(--border-primary);
   transition: background-color 0.25s ease, border-color 0.25s ease;
+  overflow-x: hidden;
 }
 
 .process-step-button {
@@ -388,6 +389,37 @@ body.dark-mode .competitive-edge-card {
 
 .process-step-badge-icon {
   color: var(--primary);
+}
+
+/* Responsive styles for Process Section */
+@media (max-width: 640px) {
+  .process-content-card {
+    padding: 1.5rem !important;
+  }
+  
+  .process-section .flex {
+    flex-wrap: wrap;
+    gap: 0.5rem !important;
+  }
+  
+  .process-step-button,
+  .process-step-button-active {
+    min-width: 0;
+    flex: 0 0 calc(20% - 0.4rem);
+    padding: 0.5rem 0.25rem !important;
+    font-size: 0.625rem;
+  }
+  
+  .process-step-button .flex,
+  .process-step-button-active .flex {
+    gap: 0 !important;
+  }
+  
+  .process-step-button svg,
+  .process-step-button-active svg {
+    width: 1rem;
+    height: 1rem;
+  }
 }
 
 /* Dark Mode Overrides */
