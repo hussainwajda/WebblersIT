@@ -1,5 +1,6 @@
 import "./Home.css";
 import { useEffect, useState, useContext } from "react";
+import { Link } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import DotGrid from "../Components/Hero-Bg";
 import { ThemeContext } from "../ThemeContext.jsx";
@@ -11,6 +12,7 @@ import { BottomRevealBlur } from "../Components/ui/bottom-reveal-blur";
 const Home = () => {
   const { darkMode } = useContext(ThemeContext);
 
+  // ... (background color handling and other logic remains the same) ...
   // 🌈 Background color handling
   const [bgColor, setBgColor] = useState(() => {
     try {
@@ -62,10 +64,12 @@ const Home = () => {
     return () => clearInterval(interval);
   }, [carouselItems.length]);
 
+
   return (
     <div className="relative">
       <div className="home-container">
-      {/* 🌌 HERO SECTION */}
+        
+        {/* ... (Hero Section, Services, WhyChooseUs, ProcessSection, Portfolio Preview remain the same) ... */}
       <section className="hero-section">
         <div className="hero-bg">
           <DotGrid
@@ -128,98 +132,101 @@ const Home = () => {
       <ServicesSection />
       <WhyChooseUs />
       <ProcessSection />
+        {/* 🎨 PORTFOLIO PREVIEW SECTION */}
+        <motion.section
+          className="portfolio-preview-section"
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
+          viewport={{ once: true, amount: 0.2 }}
+        >
+          <h2 className="section-title">Our Recent Work</h2>
+          
+          <div className="portfolio-grid">
+            {/* Project 1 */}
+            <Link to="/portfolio" className="portfolio-link-wrapper">
+              <motion.div 
+                className="portfolio-card"
+                whileHover={{ y: -10 }}
+                transition={{ type: "spring", stiffness: 300 }}
+              >
+                <div className="portfolio-img-wrapper">
+                  <img src="src/assets/previews/securesharethumb.png" alt="Project 1" />
+                  <div className="portfolio-overlay">
+                    <span>View Project</span>
+                  </div>
+                </div>
+                <div className="portfolio-info">
+                  <h3>Secure Share</h3>
+                  <p>File Sharing Platform</p>
+                </div>
+              </motion.div>
+            </Link>
 
-      {/* WHY SECTION */}
-      {/* <motion.section
-        className="benefits-section"
-        initial={{ opacity: 0, y: 40 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, ease: "easeOut" }}
-        viewport={{ once: true, amount: 0.2 }}
-      >
-        <h2 className="section-title">Why Every Business Needs a Website?</h2>
+            {/* Project 2 */}
+            <Link to="/portfolio" className="portfolio-link-wrapper">
+              <motion.div 
+                className="portfolio-card"
+                whileHover={{ y: -10 }}
+                transition={{ type: "spring", stiffness: 300 }}
+              >
+                <div className="portfolio-img-wrapper">
+                  <img src="src/assets/previews/theboringteethumb.png" alt="Project 2" />
+                  <div className="portfolio-overlay">
+                    <span>View Project</span>
+                  </div>
+                </div>
+                <div className="portfolio-info">
+                  <h3>The Boring Tee</h3>
+                  <p>E-Commerce Store</p>
+                </div>
+              </motion.div>
+            </Link>
 
-        <div className="benefits-grid">
-          <motion.div
-            className="benefit-card"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.05 }}
-            viewport={{ once: true, amount: 0.2 }}
-          >
-            <span className="benefit-icon">🌐</span>
-            <h3>24/7 Presence</h3>
-            <p>Your business is always reachable — even while you sleep.</p>
-          </motion.div>
-
-          <motion.div
-            className="benefit-card"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.12 }}
-            viewport={{ once: true, amount: 0.2 }}
-          >
-            <span className="benefit-icon">📈</span>
-            <h3>More Customers</h3>
-            <p>Appear on Google and attract customers from everywhere.</p>
-          </motion.div>
-
-          <motion.div
-            className="benefit-card"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.18 }}
-            viewport={{ once: true, amount: 0.2 }}
-          >
-            <span className="benefit-icon">✅</span>
-            <h3>Build Trust</h3>
-            <p>A professional website increases credibility and confidence.</p>
-          </motion.div>
-        </div>
-      </motion.section> */}
-
-      {/* SERVICES SECTION
-      <motion.section
-        className="services-section"
-        initial={{ opacity: 0, y: 40 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, ease: "easeOut" }}
-        viewport={{ once: true, amount: 0.2 }}
-      >
-        <h2 className="section-title">What We Offer</h2>
-
-        <div className="services">
-          <div className="service-box">
-            <div className="icon">💻</div>
-            <h4>Modern Web Design</h4>
-            <p>Clean, fast, responsive websites that convert customers.</p>
+            {/* Project 3 */}
+            <Link to="/portfolio" className="portfolio-link-wrapper">
+              <motion.div 
+                className="portfolio-card"
+                whileHover={{ y: -10 }}
+                transition={{ type: "spring", stiffness: 300 }}
+              >
+                <div className="portfolio-img-wrapper">
+                  <img src="src/assets/previews/website3.png" alt="Project 3" />
+                  <div className="portfolio-overlay">
+                    <span>View Project</span>
+                  </div>
+                </div>
+                <div className="portfolio-info">
+                  <h3>Anchor Trading</h3>
+                  <p>Corporate Website</p>
+                </div>
+              </motion.div>
+            </Link>
           </div>
 
-          <div className="service-box">
-            <div className="icon">🛒</div>
-            <h4>E-Commerce Setup</h4>
-            <p>Start selling online with secure checkout & smart catalog.</p>
+          <div className="portfolio-cta-container">
+            <Link to="/portfolio">
+              <button className="cta-button">View All Projects →</button>
+            </Link>
           </div>
+        </motion.section>
 
-          <div className="service-box">
-            <div className="icon">🚀</div>
-            <h4>SEO Optimization</h4>
-            <p>Improve visibility, rank higher & boost brand presence.</p>
+        {/* CTA FOOTER - UPDATED */}
+        <motion.section
+          className="cta-section"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true, amount: 0.2 }}
+        >
+          {/* New Glass Container */}
+          <div className="cta-content-glass">
+            <h2>Ready to Boost Your Business?</h2>
+            <a href="/Contact">
+              <button className="cta-button">Get Free Consultation</button>
+            </a>
           </div>
-        </div>
-      </motion.section> */}
-
-      {/* CTA FOOTER */}
-      <motion.section
-        className="cta-section"
-        initial={{ opacity: 0, y: 30 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6 }}
-        viewport={{ once: true, amount: 0.2 }}
-      >
-        <h2 className="!text-primary">Ready to Boost Your Business?</h2>
-        <a href="/Contact"> <button className="cta-button !bg-primary !text-white">Get Free Consultation</button> </a>
-      </motion.section>
+        </motion.section>
       </div>
       {/* Fixed bottom blur that reveals sections as you scroll, hidden near page end */}
       <BottomRevealBlur height="20vh" />

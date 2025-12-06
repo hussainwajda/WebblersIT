@@ -67,7 +67,7 @@
   background: linear-gradient(
     135deg, 
     var(--primary) 0%, 
-    #a855f7 50%, /* Purple accent */
+    #221eff 50%, /* Purple accent */
     #3b82f6 100% /* Blue accent */
   );
   background-size: 200% auto;
@@ -358,6 +358,7 @@
   }
   .section-badge {
     font-size: 0.75rem;
+    margin-top: 20px;
   }
 }
 
