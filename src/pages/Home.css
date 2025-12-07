@@ -437,163 +437,99 @@ html, body {
 } */
 
 /* 🌟 CTA SECTION */
+/* =========================================
+   🌟 CTA SECTION (Unified Glass Design)
+   ========================================= */
+
+/* 1. Base Container (Background Layer) */
 .cta-section {
   position: relative;
-  padding: 100px 20px;
+  padding: 1  0px 10px;
   text-align: center;
-  color: #fff;
-  background: linear-gradient(135deg, #0052cc, #0a66c2);
-  overflow: hidden;
   border-radius: 60px 60px 0 0;
-  margin-top: 60px;
+  bottom: 50px;
+  overflow: hidden;
+
+  /* Smooth Transition for Background Color */
+  transition: background 0.5s ease, border-color 0.5s ease;
+
+  /* LIGHT MODE DEFAULT: Soft Gradient Background */
+  background: linear-gradient(135deg, #f0f4ff 0%, #e6f0ff 100%);
+  color: #333;
 }
 
-/* ✨ Soft glow and floating effect */
+/* Remove old blobs completely */
 .cta-section::before,
 .cta-section::after {
-  content: "";
-  position: absolute;
-  border-radius: 50%;
-  filter: blur(120px);
-  opacity: 0.35;
-  z-index: 0;
-  transition: all 0.5s ease;
+  display: none;
 }
 
-.cta-section::before {
-  width: 400px;
-  height: 400px;
-  top: -100px;
-  left: -100px;
-  background: #00b4d8;
+/* 2. Glass Box Content (The "Card") */
+.cta-content-glass {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; /* Centered by default */
+  width: 100%;
+  max-width: 900px; /* Limit width on desktop */
+  margin: 0 auto;
+  padding: 50px 60px;
+  border-radius: 40px;
+  
+  /* Smooth Transition for Glass Properties */
+  transition: 
+    background 0.5s ease, 
+    border-color 0.5s ease, 
+    box-shadow 0.5s ease,
+    backdrop-filter 0.5s ease;
+
+  /* LIGHT MODE GLASS */
+  background: rgba(255, 255, 255, 0.65); /* Milky glass */
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  box-shadow: 
+    0 15px 35px rgba(0, 0, 0, 0.05),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.5);
 }
 
-.cta-section::after {
-  width: 450px;
-  height: 450px;
-  bottom: -120px;
-  right: -80px;
-  background: #ff6b6b;
-}
-
-/* 📦 CTA content container */
-.cta-section h2 {
+/* 3. Text Styling (Smooth Color Transition) */
+.cta-content-glass h2 {
   font-size: 2.4rem;
   font-weight: 700;
   margin-bottom: 25px;
-  color: #000000;
-  z-index: 1;
-  position: relative;
+  margin-top: 0;
+  
+  /* Transition Text Color */
+  transition: color 0.5s ease, text-shadow 0.5s ease;
+  
+  /* Light Mode Text Color */
+  color: #003366 !important; 
+  text-shadow: none;
 }
 
-/* 🎯 Frosted glass wrapper (optional) */
-.cta-section .cta-glass {
-  display: inline-block;
-  background: rgba(255, 255, 255, 0.08);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  padding: 40px 60px;
-  border-radius: 24px;
-  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.25);
-  position: relative;
-  z-index: 1;
-}
-
-
-
-/* ⚡ CTA Button */
-.cta-section  {
-  background: #fff;
-  color: #0052cc;
-  border: none;
+/* 4. Button Styling */
+.cta-content-glass .cta-button {
   padding: 15px 38px;
   font-size: 1.1rem;
-  border-radius: 30px;
-  cursor: pointer;
+  border-radius: 50px;
   font-weight: 600;
+  cursor: pointer;
+  border: none;
+  
+  /* Smooth Transition */
   transition: all 0.3s ease;
-  box-shadow: 0 6px 20px rgba(255, 255, 255, 0.15);
-  margin-top: 12px;
-  margin-bottom: 17px;
-}
-.cta-button {
-  /* 1. Base Setup */
-  position: relative;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 12px 24px;
-  margin-top: -5px;
-  font-size: 1rem;
-  font-weight: 600;
-  text-decoration: none;
-  border-radius: 50px; /* Full rounded corners for pill shape */
-  cursor: pointer;
-  overflow: hidden;
-  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
 
-  /* 2. Liquid Glass Translucency */
-  /* Semi-transparent white background */
-  background: rgba(255, 255, 255, 0.1); 
-  /* The "Magic": Blurs what is behind the button */
-  backdrop-filter: blur(12px) saturate(180%);
-  -webkit-backdrop-filter: blur(12px) saturate(180%);
-
-  /* 3. Reflective Borders & Highlights */
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  box-shadow: 
-    0 4px 15px rgba(0, 0, 0, 0.1), /* Soft outer shadow */
-    inset 0 1px 0 rgba(255, 255, 255, 0.4), /* Top inner highlight (reflection) */
-    inset 0 -1px 0 rgba(0, 0, 0, 0.05); /* Bottom inner shadow (depth) */
-
-  color: #000000; /* Default text color (adjust as needed) */
+  /* Light Mode Button */
+  background: #0052cc !important;
+  color: #ffffff !important;
+  box-shadow: 0 8px 20px rgba(0, 82, 204, 0.25);
 }
 
-/* Hover State - Brighter & "Closer" */
-.cta-button:hover {
-  background: rgba(255, 255, 255, 0.2); /* Slightly more opaque */
-  border-color: rgba(255, 255, 255, 0.6);
-  transform: translateY(-2px);
-  box-shadow: 
-    0 8px 25px rgba(0, 0, 0, 0.15),
-    inset 0 1px 0 rgba(255, 255, 255, 0.6),
-    inset 0 -1px 0 rgba(0, 0, 0, 0.1);
-}
-
-/* Active/Click State - Pressed Down */
-.cta-button:active {
-  transform: translateY(1px) scale(0.98);
-  background: rgba(255, 255, 255, 0.15);
-  box-shadow: 
-    0 2px 10px rgba(0, 0, 0, 0.1),
-    inset 0 1px 0 rgba(255, 255, 255, 0.3);
-}
-
-/* Optional: Add a sliding shine effect on hover */
-.cta-button::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(
-    90deg, 
-    transparent, 
-    rgba(255, 255, 255, 0.2), 
-    transparent
-  );
-  transition: 0.5s;
-}
-
-.cta-button:hover::after {
-  left: 100%;
-}
-
-.cta-section .cta-button:hover {
-  background: #f1f5ff;
+.cta-content-glass .cta-button:hover {
+  background: #003d99 !important;
   transform: translateY(-3px);
-  box-shadow: 0 10px 28px rgba(255, 255, 255, 0.25);
+  box-shadow: 0 12px 25px rgba(0, 82, 204, 0.35);
 }
 
 /* 📱 Responsive */
@@ -606,89 +542,35 @@ html, body {
    ========================================= */
 
 @media (max-width: 768px) {
-  
-  /* 1. Main Container: Deep Animated Gradient */
   .cta-section {
-    height: auto;
-    margin-right:240px;
-    align-items: center;
-    justify-content: center;
-    padding: 50px 20px;
-    margin-top: 40px;
-    border-radius: 40px 40px 40px 40px;
-    margin-bottom: 40px;
-    /* Premium Deep Blue Gradient */
-    background: linear-gradient(-45deg, #001f3f, #003366, #0052cc, #0a66c2);
-    background-size: 250% 200%;
-    animation: mobileGradientFlow 8s ease infinite;
+    padding: 60px 20px;
+    border-radius: 40px 40px 0 0;
     
-    /* Remove old blob effects */
-    overflow: hidden;
+    /* Mobile Light Mode Gradient */
+    background: linear-gradient(180deg, #f0f4ff 0%, #ffffff 100%);
   }
 
-  .cta-section::before, 
-  .cta-section::after {
-    display: none;
-  }
-
-  /* 2. Glassmorphic Content Box */
   .cta-content-glass {
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px); /* Safari support */
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    border-radius: 28px;
-    padding: 40px 25px;
-    box-shadow: 
-      0 8px 32px 0 rgba(0, 0, 0, 0.3),
-      inset 0 0 0 1px rgba(255, 255, 255, 0.1);
-    
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
+    padding: 30px 20px;
+    border-radius: 24px;
   }
 
-  /* 3. Text Animation: Shimmering Metallic Effect */
   .cta-content-glass h2 {
-    font-size: 1.9rem;
-    font-weight: 800;
-    line-height: 1.3;
-    margin-bottom: 25px;
-    text-align: center;
-    
-    /* Shimmer Gradient Text */
-    background: linear-gradient(
-      to right, 
-      #ffffff 0%, 
-      #8ec5fc 20%, 
-      #ffffff 40%, 
-      #ffffff 100%
-    );
-    background-size: 200% auto;
-    color: #fff; /* Fallback */
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    animation: textShimmer 3s linear infinite;
-    
-    text-shadow: 0 4px 10px rgba(0,0,0,0.2);
-  }
-
-  /* 4. Button: Full Width & Touchable */
-  .cta-content-glass .cta-button {
-    width: 100%;
-    max-width: 100%;
-    padding: 18px;
-    font-size: 1.1rem;
-    background: #ffffff !important;
-    color: #0052cc !important;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.25);
-    border: none;
+    font-size: 1.8rem;
   }
   
-  .cta-content-glass .cta-button:active {
-    transform: scale(0.98);
+  .cta-content-glass .cta-button {
+    width: 100%; /* Full width button on mobile */
   }
+
+  /* Dark Mode Mobile Specifics */
+  body.dark-mode .cta-section {
+    /* Re-add the animated gradient for mobile dark mode attraction */
+    background: linear-gradient(-45deg, #001f3f, #003366, #0052cc, #0a66c2);
+    background-size: 300% 300%;
+    animation: mobileGradientFlow 8s ease infinite;
+  }
+}
 
   /* Other mobile adjustments (Keep existing) */
   .portfolio-preview-section {
@@ -697,7 +579,7 @@ html, body {
   .portfolio-img-wrapper {
     height: 200px;
   }
-}
+
 
 /* ✨ KEYFRAMES FOR MOBILE ANIMATIONS */
 @keyframes mobileGradientFlow {
@@ -813,68 +695,36 @@ body.dark-mode .service-box p {
 /* ✨ UPDATED: Dark Mode CTA - Transparent Section, Glass Box */
 
 body.dark-mode .cta-section {
-  /* 1. Remove the Blue Background */
-  background: transparent;
-  background-image: none;
-  border: none;
-  box-shadow: none;
-  padding-top: 20px; /* Reduced padding since background is gone */
+  /* Dark Mode Background: Transparent (lets page bg show) or Dark Gradient */
+  background: transparent; 
+  /* Or use a dark gradient if you prefer the section to stand out:
+     background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); 
+  */
 }
 
-/* 2. The Glass Box itself */
 body.dark-mode .cta-content-glass {
-  width: auto;
-  height: 140px;
-  
-  /* Glass Effect: Slight white tint + Blur */
+  /* DARK MODE GLASS: Dark, Glossy, Deep */
   background: rgba(255, 255, 255, 0.03); 
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  
-  /* Border & Shadow */
   border: 1px solid rgba(255, 255, 255, 0.08);
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2); 
-  
-  border-radius: 40px;
-  
-  /* Layout: Center content nicely without manual margins if possible */
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start; /* Or 'center' if you want center alignment */
-  padding-left: 70px; /* Matching your previous spacing */
-  position: relative;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4); 
 }
 
-/* Button Styling */
+body.dark-mode .cta-content-glass h2 {
+  /* White text with glow */
+  color: #ffffff !important;
+  text-shadow: 0 4px 10px rgba(0,0,0,0.5);
+}
+
 body.dark-mode .cta-content-glass .cta-button {
+  /* White Button with Dark Text */
   background: #ffffff !important;
   color: #002b55 !important;
   box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
-  border-radius: 200px;
-  
-  /* Positioning relative to the flex container */
-  margin-top: 15px; 
-  margin-left: 550px; /* Reset manual margin since we use padding on container */
-  top: -7px;
 }
 
 body.dark-mode .cta-content-glass .cta-button:hover {
   background: #e6e6e6 !important;
-  transform: translateY(-3px);
-  box-shadow: 0 0 25px rgba(255, 255, 255, 0.2);
-}
-
-/* Text Styling */
-body.dark-mode .cta-content-glass h2 {
-  color: #ffffff !important;
-  text-shadow: 0 4px 10px rgba(0,0,0,0.5);
-  font-size: 2rem;
-  
-  /* Reset manual margins */
-  margin-left: 412px;
-  margin-top: 0;
-  margin-bottom: 5px;
+  box-shadow: 0 0 25px rgba(255, 255, 255, 0.25);
 }
 
 

@@ -33,10 +33,10 @@ const About = ({ darkMode }) => {
           status="Online"
           contactText="Follow"
           avatarUrl="/founder1.jpg"
-          miniAvatarUrl="/avatar1.png"
-          linkedinUrl="https://linkedin.com/in/murtazaali"
+          miniAvatarUrl="/image.png"
+          linkedinUrl="https://www.linkedin.com/in/murtaza-dawoodjee/"
           githubUrl="https://github.com/murtzdev07"
-          twitterUrl="https://twitter.com/murtazaali"
+          // twitterUrl="https://twitter.com/murtazaali"
           showUserInfo={true}
           enableTilt={true}
           innerGradient={
@@ -60,7 +60,7 @@ const About = ({ darkMode }) => {
           status="Online"
           contactText="Follow"
           avatarUrl="/founder2.png"
-          miniAvatarUrl="/images/founder2.jpg"
+          miniAvatarUrl="/avatar2.png"
           linkedinUrl="https://www.linkedin.com/in/hussain-wajda-ba9a09265?utm_source=share_via&utm_content=profile&utm_medium=member_android"
           githubUrl="https://github.com/hussainwajda"
           // twitterUrl="https://twitter.com/hussaintech"
@@ -87,7 +87,7 @@ const About = ({ darkMode }) => {
           status="Online"
           contactText="Follow"
           avatarUrl="/CA.jpg"
-          miniAvatarUrl="/images/founder2.jpg"
+          miniAvatarUrl="/CAavatar.png"
           linkedinUrl="https://www.linkedin.com/in/sakina-kalabhai-8979b4330"
           showUserInfo={true}
           enableTilt={true}
