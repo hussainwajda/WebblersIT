@@ -6,6 +6,7 @@ import AboutMain from "../Components/about/about-main";
 import About2nd from "../Components/about/about-2nd";
 import FAQSection from "../Components/about/faq";
 import { BottomRevealBlur } from "../Components/ui/bottom-reveal-blur";
+import { motion } from "framer-motion";
 
 const About = ({ darkMode }) => {
   return (
@@ -100,6 +101,21 @@ const About = ({ darkMode }) => {
       </div>
       )}
       <FAQSection />
+      <motion.section
+          className="cta-section"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true, amount: 0.2 }}
+        >
+          {/* New Glass Container */}
+          <div className="cta-content-glass">
+            <h2>Ready to Boost Your Business?</h2>
+            <a href="/Contact">
+              <button className="cta-button">Get Free Consultation</button>
+            </a>
+          </div>
+        </motion.section>
       {/* Fixed bottom blur that reveals sections as you scroll, hidden near page end */}
       <BottomRevealBlur height="20vh" />
     </div>

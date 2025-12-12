@@ -6,7 +6,7 @@ import "./Navbar.css";
 import { ShineBorder } from "./ui/shine-border";
 import { AnimatedThemeTogglerAdapted } from "./ui/animated-theme-toggler-adapted";
 
-const Navbar = () => {
+const Navbar = () => { 
   const navItems = [
     { name: "Home", path: "/" },
     { name: "Services", path: "/services" },

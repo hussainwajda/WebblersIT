@@ -8,6 +8,7 @@ import WhyChooseUs from "../Components/WhyChooseUs";
 import ServicesSection from "../Components/services-section";
 import { ProcessSection } from "../Components/Services/page/ProcessSection";
 import { BottomRevealBlur } from "../Components/ui/bottom-reveal-blur";
+import FAQSection from "../Components/about/faq.jsx";
 
 const Home = () => {
   const { darkMode } = useContext(ThemeContext);
@@ -210,6 +211,7 @@ const Home = () => {
             </Link>
           </div>
         </motion.section>
+        <FAQSection />
 
         {/* CTA FOOTER - UPDATED */}
         <motion.section

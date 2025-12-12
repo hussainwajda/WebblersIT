@@ -76,16 +76,21 @@ const Services = () => {
       </div> 
       </section>
       */}
-      <motion.section
-        className="cta-section"
-        initial={{ opacity: 0, y: 30 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6 }}
-        viewport={{ once: true, amount: 0.2 }}
-      >
-        <h2 className="!text-primary">Ready to Boost Your Business?</h2>
-        <a href="/Contact"> <button className="cta-button !bg-primary !text-white">Get Free Consultation</button> </a>
-      </motion.section>
+     <motion.section
+          className="cta-section"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true, amount: 0.2 }}
+        >
+          {/* New Glass Container */}
+          <div className="cta-content-glass">
+            <h2>Ready to Boost Your Business?</h2>
+            <a href="/Contact">
+              <button className="cta-button">Get Free Consultation</button>
+            </a>
+          </div>
+        </motion.section>
     </div>
   );
 };
