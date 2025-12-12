@@ -43,6 +43,9 @@
 }
 
 .service-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   font-size: 38px;
   color: #0054a6;
   margin-bottom: 20px;

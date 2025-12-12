@@ -1,0 +1,141 @@
+:root {
+  --blue: #1565ff;
+  --web-size: 200px;
+}
+
+/* Base Preloader Setup */
+.preloader {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  /* Glass effect */
+  backdrop-filter: blur(18px) saturate(120%);
+  -webkit-backdrop-filter: blur(18px) saturate(120%);
+  background: rgba(255, 255, 255, 0.35);
+  overflow: hidden; /* Important for the spider drop from outside */
+}
+
+/* Hide when loaded */
+body.loaded .preloader {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+
+.preloader-stage {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.web-wrapper {
+  position: relative;
+  width: var(--web-size);
+  height: var(--web-size);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* --- WEB & TEXT CONTAINER --- */
+.web-container {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+/* Fade out web when spider comes */
+.web-container.fade-out {
+  opacity: 0;
+  transform: scale(0.8);
+}
+
+.web-svg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.035s linear; 
+}
+
+.percentage-text {
+  position: relative;
+  z-index: 2;
+  font-family: sans-serif;
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--blue);
+  letter-spacing: -1px;
+}
+
+/* --- SPIDER STYLES --- */
+.spider-container {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+  
+  /* Start positioned above the screen */
+  transform: translateY(-150vh); 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.spider-svg {
+  width: 120px; /* Spider size relative to web */
+  height: 120px;
+  filter: drop-shadow(0 10px 10px rgba(0,0,0,0.3));
+}
+
+/* 1. DROP ANIMATION */
+.spider-container.dropping {
+  animation: spiderDrop 0.6s cubic-bezier(0.5, 0, 0.5, 1.5) forwards;
+}
+
+/* 2. ZOOM ANIMATION */
+.spider-container.zooming {
+  /* Keep it centered (0) but scale it up */
+  transform: translateY(0) scale(1);
+  animation: spiderZoom 0.8s ease-in forwards;
+}
+
+/* Keyframes */
+
+@keyframes spiderDrop {
+  0% {
+    transform: translateY(-150vh) scale(0.8);
+  }
+  60% {
+    transform: translateY(20px) scale(1.1); /* Overshoot slightly */
+  }
+  100% {
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes spiderZoom {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  100% {
+    /* Scale MASSIVE so the hole in the body fills the screen */
+    transform: scale(60); 
+    opacity: 0; /* Fade out at the very end for smoothness */
+  }
+}
+
+/* Optional: Mobile adjustments */
+@media (max-width: 720px) {
+  :root { --web-size: 160px; }
+  .spider-svg { width: 100px; height: 100px; }
+}

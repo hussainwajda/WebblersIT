@@ -1,112 +1,108 @@
 import React from "react";
-import { FaLinkedin, FaGithub, FaInstagram } from "react-icons/fa";
+import ProfileCard from "../Components/ProfileCard";
 import "./About.css";
+import AboutHero from "../Components/about/about-hero";
+import AboutMain from "../Components/about/about-main";
+import About2nd from "../Components/about/about-2nd";
+import FAQSection from "../Components/about/faq";
+import { BottomRevealBlur } from "../Components/ui/bottom-reveal-blur";
 
 const About = ({ darkMode }) => {
   return (
-    <section className={`about-section ${darkMode ? "dark" : ""}`}>
-      <div className="about-header">
-        <h2>About Webblers IT </h2>
-        <p>
-          Webblers is a forward-thinking tech startup driven by a passion for
-          innovation, design, and digital transformation. Our Tagline Clarifies "Keep IT Simple ".
-          We specialize in building scalable web solutions that empower businesses to grow and
-          connect seamlessly in the digital age.
-        </p>
+    <div className="relative min-h-screen" style={{ background: 'var(--bg-primary)', color: 'var(--text-primary)', overflow: 'visible' }}>
+      <AboutHero />
+      <About2nd />
+      <AboutMain />
+
+      {/* TEAM GRID (All Cards in One Line) */}
+      {true && (
+      <div className="team-grid">
+        
+        {/* Card 1: Murtaza */}
+        <ProfileCard
+          name="Murtaza Dawoodjee"
+          title="Co-Founder & CEO"
+          handle="murtaza_0710"
+          status="Online"
+          contactText="Follow"
+          avatarUrl="/avatar1.png"
+          miniAvatarUrl="/image.png"
+          linkedinUrl="https://www.linkedin.com/in/murtaza-dawoodjee/"
+          githubUrl="https://github.com/murtzdev07"
+          // twitterUrl="https://twitter.com/murtazaali"
+          showUserInfo={true}
+          enableTilt={true}
+          innerGradient={
+            darkMode
+              ? "linear-gradient(145deg, #0a192f 0%, #0f4c75 60%, #3282b8 100%)"
+              : "linear-gradient(145deg, #8ec5fc 0%, #e0c3fc 100%)"
+          }
+          behindGlowColor={
+            darkMode ? "rgba(50,130,184,0.4)" : "rgba(142,197,252,0.5)"
+          }
+          onContactClick={() =>
+            window.open("https://instagram.com/murtaza_0710", "_blank")
+          }
+        />
+
+        {/* Card 2: Hussain */}
+        <ProfileCard
+          name="Hussain W."
+          title="Co-Founder & CTO"
+          handle="hussainw"
+          status="Online"
+          contactText="Follow"
+          avatarUrl="/avatar2.jpg"
+          miniAvatarUrl="/image.png"
+          linkedinUrl="https://www.linkedin.com/in/"
+          githubUrl="https://github.com/"
+          // twitterUrl="https://twitter.com/hussaintech"
+          showUserInfo={true}
+          enableTilt={true}
+          innerGradient={
+            darkMode
+              ? "linear-gradient(145deg, #001f3f 0%, #005b96 50%, #00a8e8 100%)"
+              : "linear-gradient(145deg, #7ed6df 0%, #82ccdd 100%)"
+          }
+          behindGlowColor={
+            darkMode ? "rgba(50,130,184,0.4)" : "rgba(142,197,252,0.5)"
+          }
+          onContactClick={() =>
+            window.open("https://www.instagram.com/hxssxin_wajda?igsh=MWwwYnVlbzRsdjRnMg==", "_blank")
+          }
+        />
+
+        {/* Card 3: Sakina (Now in same line) */}
+        <ProfileCard
+          name="Sakina Kalabhai"
+          title="Company Advisor"
+          handle="sakina_kalabhai04"
+          status="Online"
+          contactText="Follow"
+          avatarUrl="/CA.jpg"
+          miniAvatarUrl="/CAavatar.png"
+          linkedinUrl="https://www.linkedin.com/in/sakina-kalabhai-8979b4330"
+          showUserInfo={true}
+          enableTilt={true}
+          innerGradient={
+            darkMode
+              ? "linear-gradient(145deg, #001f3f 0%, #005b96 50%, #00a8e8 100%)"
+              : "linear-gradient(145deg, #7ed6df 0%, #82ccdd 100%)"
+          }
+          behindGlowColor={
+            darkMode ? "rgba(0,168,232,0.4)" : "rgba(126,214,223,0.5)"
+          }
+          onContactClick={() =>
+            window.open("https://instagram.com/sakina_kalabhai04", "_blank")
+          }
+        />
+
       </div>
-
-      <div className="founders-container">
-        {/* Founder 1 */}
-        <div className="founder-card">
-          <img
-            src="/images/founder1.jpg"
-            alt="Founder 1"
-            className="founder-img"
-          />
-          <div className="founder-info">
-            <h3>Murtaza Dawoodjee</h3>
-            <p className="role">Co-Founder & CEO</p>
-            <p className="bio">
-              Vision-driven leader passionate about innovation and user-centric
-              product development. Murtaza brings creative direction and
-              strategic growth to Webblers.
-            </p>
-
-            <div className="social-links">
-              <a
-                href="https://linkedin.com/in/murtazaali"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="LinkedIn"
-              >
-                <FaLinkedin />
-              </a>
-              <a
-                href="https://github.com/murtaza"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="GitHub"
-              >
-                <FaGithub />
-              </a>
-              <a
-                href="https://instagram.com/murtaza"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Instagram"
-              >
-                <FaInstagram />
-              </a>
-            </div>
-          </div>
-        </div>
-
-        {/* Founder 2 */}
-        <div className="founder-card reverse">
-          <img
-            src="/images/founder2.jpg"
-            alt="Founder 2"
-            className="founder-img"
-          />
-          <div className="founder-info">
-            <h3>Hussain Wajdawala</h3>
-            <p className="role">Co-Founder & CTO</p>
-            <p className="bio">
-              Tech enthusiast with deep expertise in full-stack development and
-              system architecture. Ahmed leads the engineering and innovation
-              behind every Webblers project.
-            </p>
-
-            <div className="social-links">
-              <a
-                href="https://linkedin.com/in/ahmedraza"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="LinkedIn"
-              >
-                <FaLinkedin />
-              </a>
-              <a
-                href="https://github.com/ahmedraza"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="GitHub"
-              >
-                <FaGithub />
-              </a>
-              <a
-                href="https://instagram.com/ahmedraza"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Instagram"
-              >
-                <FaInstagram />
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+      )}
+      <FAQSection />
+      {/* Fixed bottom blur that reveals sections as you scroll, hidden near page end */}
+      <BottomRevealBlur height="20vh" />
+    </div>
   );
 };
 

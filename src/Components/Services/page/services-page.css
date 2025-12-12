@@ -1,0 +1,434 @@
+/* ✅ SERVICES PAGE - THEME AWARE STYLES */
+
+/* Hero Section */
+.services-hero-section {
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  transition: background-color 0.25s ease, color 0.25s ease;
+}
+
+.services-hero-title {
+  color: var(--text-primary);
+}
+
+.services-hero-accent {
+  color: var(--primary);
+}
+
+.services-hero-description {
+  color: var(--text-muted);
+}
+
+.services-hero-button {
+  background: var(--primary);
+  color: var(--text-inverse);
+  transition: background-color 0.25s ease;
+}
+
+.services-hero-button:hover {
+  background: var(--primary-hover);
+}
+
+.services-hero-stats-card {
+  background: var(--primary);
+  color: var(--text-inverse);
+}
+
+.services-hero-badge-circle {
+  background: var(--primary);
+}
+
+.services-hero-badge-text {
+  color: var(--primary);
+}
+
+.services-hero-stat-text {
+  color: var(--text-primary);
+}
+
+.services-hero-stat-muted {
+  color: var(--text-muted);
+}
+
+/* Expertise Section */
+.services-expertise-badge {
+  background: var(--bg-card);
+  border: 1px solid var(--border-primary);
+  transition: background-color 0.25s ease, border-color 0.25s ease;
+}
+
+.services-expertise-badge-dot {
+  background: var(--primary);
+}
+
+.services-expertise-badge-text {
+  color: var(--primary);
+}
+
+.services-expertise-title {
+  color: var(--text-primary);
+}
+
+.services-expertise-description {
+  color: var(--text-muted);
+}
+
+.services-expertise-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-primary);
+  transition: background-color 0.25s ease, border-color 0.25s ease;
+}
+
+.services-expertise-card:hover {
+  border-color: var(--primary);
+}
+
+.services-expertise-card-title {
+  color: var(--text-primary);
+}
+
+.services-expertise-card-description {
+  color: var(--text-muted);
+}
+
+.services-expertise-card-button {
+  background: var(--bg-secondary);
+  color: var(--text-primary);
+  border: 1px solid var(--border-primary);
+  transition: background-color 0.25s ease, border-color 0.25s ease;
+}
+
+.services-expertise-card-button:hover {
+  background: var(--bg-tertiary);
+  border-color: var(--primary);
+}
+
+.services-expertise-icon-bg {
+  background: var(--primary);
+}
+
+/* Services Overview Section */
+.services-overview-badge {
+  background: var(--bg-card);
+  border: 1px solid var(--border-primary);
+  transition: background-color 0.25s ease, border-color 0.25s ease;
+}
+
+.services-overview-badge-dot {
+  background: var(--primary);
+}
+
+.services-overview-badge-text {
+  color: var(--primary);
+}
+
+.services-overview-title {
+  color: var(--text-primary);
+}
+
+.services-overview-description {
+  color: var(--text-muted);
+}
+
+.services-overview-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-primary);
+  transition: background-color 0.25s ease, border-color 0.25s ease;
+}
+
+.services-overview-category-title {
+  color: var(--text-primary);
+}
+
+.services-overview-category-description {
+  color: var(--text-muted);
+}
+
+.services-overview-category-button {
+  background: var(--bg-secondary);
+  color: var(--text-primary);
+  border: 1px solid var(--border-primary);
+  transition: background-color 0.25s ease, border-color 0.25s ease;
+}
+
+.services-overview-category-button:hover {
+  background: var(--bg-tertiary);
+  border-color: var(--primary);
+}
+
+.services-overview-category-icon-bg {
+  background: var(--primary);
+}
+
+.services-overview-subservice-card {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-primary);
+  transition: background-color 0.25s ease, border-color 0.25s ease;
+}
+
+.services-overview-subservice-card:hover {
+  border-color: var(--primary);
+  background: var(--bg-tertiary);
+}
+
+.services-overview-subservice-icon-bg {
+  background: var(--bg-card);
+  border: 1px solid var(--border-primary);
+}
+
+.services-overview-subservice-icon {
+  color: var(--primary);
+}
+
+.services-overview-subservice-title {
+  color: var(--text-primary);
+}
+
+/* Competitive Edge / Key Features Section */
+.competitive-edge-section {
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  transition: background-color 0.25s ease, color 0.25s ease;
+}
+
+.competitive-edge-badge {
+  background: var(--bg-card);
+  border: 1px solid var(--border-primary);
+  color: var(--primary);
+  transition: background-color 0.25s ease, border-color 0.25s ease;
+}
+
+.competitive-edge-badge-dot {
+  background: var(--primary);
+}
+
+.competitive-edge-title {
+  color: var(--text-primary);
+}
+
+.competitive-edge-description {
+  color: var(--text-muted);
+}
+
+.competitive-edge-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-primary);
+  transition: background-color 0.25s ease, border-color 0.25s ease;
+}
+
+.competitive-edge-card:hover {
+  border-color: var(--primary);
+}
+
+.competitive-edge-card-hover-bg {
+  background: var(--bg-secondary);
+}
+
+.competitive-edge-icon-bg {
+  position: relative;
+  transition: background-color 0.25s ease;
+}
+
+.competitive-edge-icon-bg::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-color: var(--primary);
+  opacity: 0.2;
+  border-radius: 0.5rem;
+  transition: opacity 0.25s ease;
+  z-index: 0;
+}
+
+.competitive-edge-icon-bg:hover::before {
+  opacity: 0.3;
+}
+
+.competitive-edge-icon-bg > * {
+  position: relative;
+  z-index: 1;
+}
+
+.competitive-edge-icon {
+  color: var(--primary);
+}
+
+.competitive-edge-card-title {
+  color: var(--text-primary);
+}
+
+.competitive-edge-card-description {
+  color: var(--text-muted);
+}
+
+.competitive-edge-image-border {
+  border: 1px solid var(--border-primary);
+  opacity: 0.5;
+}
+
+.competitive-edge-accent-line {
+  background: linear-gradient(to right, var(--primary), var(--primary), transparent);
+}
+
+/* Dark Mode Overrides */
+body.dark-mode .services-hero-section {
+  background: var(--bg-primary);
+}
+
+body.dark-mode .services-expertise-card {
+  background: var(--bg-card);
+}
+
+body.dark-mode .services-overview-card {
+  background: var(--bg-card);
+}
+
+body.dark-mode .services-overview-subservice-card {
+  background: var(--bg-secondary);
+}
+
+body.dark-mode .competitive-edge-card {
+  background: var(--bg-card);
+}
+
+/* Process Section */
+.process-section {
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  transition: background-color 0.25s ease, color 0.25s ease;
+}
+
+.process-badge {
+  background: var(--bg-card);
+  border: 1px solid var(--border-primary);
+  transition: background-color 0.25s ease, border-color 0.25s ease;
+}
+
+.process-badge-dot {
+  background: var(--primary);
+}
+
+.process-badge-text {
+  color: var(--primary);
+}
+
+.process-title {
+  color: var(--text-primary);
+}
+
+.process-description {
+  color: var(--text-muted);
+}
+
+.process-content-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-primary);
+  transition: background-color 0.25s ease, border-color 0.25s ease;
+  overflow-x: hidden;
+}
+
+.process-step-button {
+  background: transparent;
+  color: var(--text-muted);
+  border: 1px solid var(--border-primary);
+  transition: all 0.3s ease;
+}
+
+.process-step-button:hover {
+  border-color: var(--primary);
+  color: var(--text-primary);
+}
+
+.process-step-button-active {
+  background: var(--primary);
+  color: var(--text-inverse);
+  border-color: var(--primary);
+}
+
+.process-image-container {
+  border: 1px solid var(--border-primary);
+}
+
+.process-image-glow {
+  background: linear-gradient(to right, var(--primary), transparent);
+  opacity: 0.2;
+}
+
+.process-step-number-bg {
+  background: var(--bg-card);
+  border: 1px solid var(--border-primary);
+}
+
+.process-step-number {
+  color: var(--primary);
+}
+
+.process-step-accent-line {
+  background: linear-gradient(to right, var(--primary), transparent);
+}
+
+.process-step-title {
+  color: var(--text-primary);
+}
+
+.process-step-description {
+  color: var(--text-muted);
+}
+
+.process-step-badge {
+  background: var(--bg-card);
+  border: 1px solid var(--border-primary);
+  color: var(--primary);
+  transition: all 0.25s ease;
+}
+
+.process-step-badge:hover {
+  border-color: var(--primary);
+  background: var(--bg-secondary);
+}
+
+.process-step-badge-icon {
+  color: var(--primary);
+}
+
+/* Responsive styles for Process Section */
+@media (max-width: 640px) {
+  .process-content-card {
+    padding: 1.5rem !important;
+  }
+  
+  .process-section .flex {
+    flex-wrap: wrap;
+    gap: 0.5rem !important;
+  }
+  
+  .process-step-button,
+  .process-step-button-active {
+    min-width: 0;
+    flex: 0 0 calc(20% - 0.4rem);
+    padding: 0.5rem 0.25rem !important;
+    font-size: 0.625rem;
+  }
+  
+  .process-step-button .flex,
+  .process-step-button-active .flex {
+    gap: 0 !important;
+  }
+  
+  .process-step-button svg,
+  .process-step-button-active svg {
+    width: 1rem;
+    height: 1rem;
+  }
+}
+
+/* Dark Mode Overrides */
+body.dark-mode .process-content-card {
+  background: var(--bg-card);
+}
+
+body.dark-mode .process-step-number-bg {
+  background: var(--bg-card);
+  border-color: var(--border-primary);
+}
+
