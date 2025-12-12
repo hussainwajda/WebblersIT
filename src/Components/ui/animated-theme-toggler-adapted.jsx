@@ -1,8 +1,8 @@
 import { useCallback, useRef, useContext } from "react"
 import { Moon, Sun } from "lucide-react"
 import { flushSync } from "react-dom"
-import { ThemeContext } from "../../ThemeContext"
-import { cn } from "../../lib/utils"
+import { ThemeContext } from "@/ThemeContext"
+import { cn } from "@/lib/utils"
 
 export const AnimatedThemeTogglerAdapted = ({
   className,
@@ -120,4 +120,3 @@ export const AnimatedThemeTogglerAdapted = ({
     </div>
   )
 }
-

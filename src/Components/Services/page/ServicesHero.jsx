@@ -5,7 +5,7 @@ import { ArrowRight } from "lucide-react"
 // import image1 from "@/assets/servpage1.jpg"
 // import image2 from "@/assets/servpage2.jpg"
 import "./services-page.css"
-import newimg from "../../../assets/coding-workshop-animate.svg"
+import newimg from "@/assets/coding-workshop-animate.svg"
 
 export function ServicesHero() {
   return (
