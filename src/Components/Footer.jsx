@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import "./Footer.css";
-import { ThemeContext } from "../ThemeContext";
+import { ThemeContext } from "@/ThemeContext.jsx";
 import { FaLinkedin, FaGithub, FaEnvelope, FaWhatsapp, FaInstagram } from "react-icons/fa";
 
 const Footer = () => {

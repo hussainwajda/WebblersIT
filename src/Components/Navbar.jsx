@@ -3,8 +3,8 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import "./Navbar.css";
-import { ShineBorder } from "./ui/shine-border";
-import { AnimatedThemeTogglerAdapted } from "./ui/animated-theme-toggler-adapted";
+import { ShineBorder } from "./ui/shine-border.jsx";
+import { AnimatedThemeTogglerAdapted } from "./ui/animated-theme-toggler-adapted.jsx";
 
 const Navbar = () => { 
   const navItems = [

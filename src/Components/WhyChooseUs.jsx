@@ -1,9 +1,9 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { InteractiveClock } from "./interactive-clock"
-import { InteractiveBarChart } from "./interactive-bar-chart"
-import { InteractiveNetwork } from "./interactive-network"
+import { InteractiveClock } from "./interactive-clock.jsx"
+import { InteractiveBarChart } from "./interactive-bar-chart.jsx"
+import { InteractiveNetwork } from "./interactive-network.jsx"
 import "./WhyChooseUs.css"
 
 export default function WhyChooseUs() {

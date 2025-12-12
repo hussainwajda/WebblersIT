@@ -3,7 +3,7 @@ import {
   AnimatedSpan,
   Terminal,
   TypingAnimation,
-} from "../ui/terminal"
+} from "../ui/terminal.jsx"
 
 export function TerminalDemo() {
   const [loopKey, setLoopKey] = useState(0)

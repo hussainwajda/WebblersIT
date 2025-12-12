@@ -2,8 +2,8 @@ import { useMemo, useRef } from "react"
 import { motion } from "motion/react"
 import { Users } from "lucide-react"
 
-import { Globe } from "@/components/ui/globe"
-import { AnimatedBeam } from "@/components/ui/animated-beam"
+import { Globe } from "@/components/ui/globe.jsx"
+import { AnimatedBeam } from "@/components/ui/animated-beam.jsx"
 
 const NODE_COUNT = 15
 

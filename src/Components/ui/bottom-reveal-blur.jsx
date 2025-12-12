@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react"
-import { ProgressiveBlur } from "./progressive-blur"
+import { ProgressiveBlur } from "./progressive-blur.jsx"
 
 // Fixed bottom blur overlay that reveals sections as they scroll up
 // and disappears near the very end of the page.

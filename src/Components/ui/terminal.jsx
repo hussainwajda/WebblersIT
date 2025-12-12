@@ -9,7 +9,7 @@ import {
 } from "react"
 import { motion, useInView } from "motion/react";
 
-import { cn } from "@/lib/utils"
+import { cn } from "@/lib/utils.js"
 
 const SequenceContext = createContext(null)
 
