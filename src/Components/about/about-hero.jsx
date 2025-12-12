@@ -25,7 +25,7 @@ export default function AboutHero() {
 
   return (
     <motion.section
-      className="min-h-screen flex flex-col items-center justify-center px-4 py-20 text-center"
+      className="min-h-screen flex flex-col items-center justify-center px-4 py-5 text-center"
       style={{ background: 'var(--bg-primary)', color: 'var(--text-primary)' }}
       variants={containerVariants}
       initial="hidden"

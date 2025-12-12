@@ -25,7 +25,7 @@ const About = ({ darkMode }) => {
           handle="murtaza_0710"
           status="Online"
           contactText="Follow"
-          avatarUrl="/avatar1.png"
+          avatarUrl="/founder1.jpg"
           miniAvatarUrl="/image.png"
           linkedinUrl="https://www.linkedin.com/in/murtaza-dawoodjee/"
           githubUrl="https://github.com/murtzdev07"
@@ -68,7 +68,7 @@ const About = ({ darkMode }) => {
             darkMode ? "rgba(50,130,184,0.4)" : "rgba(142,197,252,0.5)"
           }
           onContactClick={() =>
-            window.open("https://www.instagram.com/hxssxin_wajda?igsh=MWwwYnVlbzRsdjRnMg==", "_blank")
+            window.open("https://www.instagram.com/webblersdotcom", "_blank")
           }
         />
 

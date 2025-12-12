@@ -1,265 +1,239 @@
-import { useState, useRef, useEffect } from "react"
-import { motion, AnimatePresence } from "framer-motion"
+import { useState, useRef, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 
 const cards = [
   {
     id: 1,
     icon: "📦",
     label: "Innovate",
-    title: "Built for Cutting-Edge AI Teams",
+    title: "Crafting Unique Digital Identities",
     description:
-      "Whether you're developing LLMs, intelligent tools, or autonomous agents, Webblers gives you a launch-ready site that speaks the language of innovation. The layout is purpose-built to help you showcase your services, and vision clearly.",
-    tags: ["AI Agency", "Future Ready"],
+      "We move beyond templates to build bespoke web solutions. Whether you're a startup or an established enterprise, Webblers creates a digital footprint that truly speaks your brand's language of innovation.",
+    tags: ["Custom Dev", "React Expert"],
   },
   {
     id: 2,
     icon: "🚀",
     label: "Transform",
-    title: "Scale Your Vision Effortlessly",
+    title: "Future-Proof Scalability",
     description:
-      "Our platform is designed to grow with your business. As you expand your AI capabilities and reach new markets, our infrastructure scales seamlessly to support your ambitions without compromise.",
-    tags: ["Scalable", "Enterprise"],
+      "Your business is dynamic, and your website should be too. We engineer robust platforms designed to scale effortlessly, ensuring your digital infrastructure supports your growth every step of the way without compromise.",
+    tags: ["Scalable", "Growth Ready"],
   },
   {
     id: 3,
     icon: "✨",
     label: "Excel",
-    title: "Premium Features at Your Fingertips",
+    title: "Excellence in Every Pixel",
     description:
-      "Access cutting-edge tools and features built specifically for AI innovators. From analytics to automation, everything you need to stay ahead is integrated and ready to deploy immediately.",
-    tags: ["Premium", "Advanced Tools"],
+      "We combine aesthetic brilliance with technical mastery. From seamless animations to optimized performance, we ensure every aspect of your project excels in user experience and meets the highest industry standards.",
+    tags: ["Premium UI/UX", "High Performance"],
   },
-]
+];
 
 export default function About2nd() {
-  const [currentCardIndex, setCurrentCardIndex] = useState(0)
-  const carouselIntervalRef = useRef(null)
+  const [currentCardIndex, setCurrentCardIndex] = useState(0);
+  const carouselIntervalRef = useRef(null);
 
+  // Auto-rotate carousel on mobile only
   useEffect(() => {
-    const isMobile = window.innerWidth < 1024
+    const isMobile = window.innerWidth < 1024;
 
     if (!isMobile) {
-      if (carouselIntervalRef.current) {
-        clearInterval(carouselIntervalRef.current)
-      }
-      return
+      if (carouselIntervalRef.current) clearInterval(carouselIntervalRef.current);
+      return;
     }
 
     carouselIntervalRef.current = setInterval(() => {
-      setCurrentCardIndex((prev) => (prev + 1) % cards.length)
-    }, 5000)
+      setCurrentCardIndex((prev) => (prev + 1) % cards.length);
+    }, 5000);
 
     return () => {
-      if (carouselIntervalRef.current) {
-        clearInterval(carouselIntervalRef.current)
-      }
-    }
-  }, [])
+      if (carouselIntervalRef.current) clearInterval(carouselIntervalRef.current);
+    };
+  }, []);
 
   return (
-    <section 
-      className="py-20 px-4 md:px-8 lg:px-16" 
-      style={{ 
-        background: 'var(--bg-primary)', 
-        color: 'var(--text-primary)', 
-        minHeight: '100vh',
-        overflow: 'visible'
+    <section
+      className="py-10 px-6 md:px-12 lg:px-20 relative overflow-hidden"
+      style={{
+        background: "var(--bg-primary)",
+        color: "var(--text-primary)",
       }}
     >
-      <div className="w-full max-w-7xl mx-auto" style={{ overflow: 'visible' }}>
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-start" style={{ overflow: 'visible' }}>
-          {/* Left - Sticky Image (Desktop Only) */}
+      <div className="max-w-7xl mx-auto">
+        
+        {/* 1. HEADER SECTION (Centered & Top) */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="mb-16 md:mb-24 max-w-3xl mx-auto text-center"
+        >
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-600 font-semibold text-sm mb-6 mx-auto">
+            <span className="w-2 h-2 rounded-full bg-blue-600 animate-pulse" />
+            About Webblers
+          </div>
+          
+          <h2 className="text-4xl md:text-5xl font-bold leading-tight mb-6">
+            Shaping Tomorrow <br />
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">
+              With Bold Ideas
+            </span>
+          </h2>
+          
+          <p className="text-lg text-gray-500 dark:text-gray-400 leading-relaxed">
+            Webblers is a next-gen digital innovation partner built for bold visionaries, startups, and enterprises shaping the future of the web.
+          </p>
+        </motion.div>
+
+        {/* 2. MAIN CONTENT GRID */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-start">
+          
+          {/* LEFT: Sticky Image (Centered Alignment) */}
           <motion.div
-            initial={{ opacity: 0, x: -50 }}
+            initial={{ opacity: 0, x: -40 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, ease: "easeOut" }}
-            className="hidden lg:block"
-            style={{ overflow: 'visible', position: 'relative' }}
+            className="hidden lg:block relative h-full"
           >
-            <div 
-              className="sticky w-full max-w-md" 
-              style={{ 
-                top: '80px',
-                position: 'sticky',
-                alignSelf: 'flex-start'
-              }}
-            >
-              <div className="relative rounded-2xl overflow-hidden border border-border/50 shadow-lg" 
-                   style={{
-                     boxShadow: "0 0 30px rgba(76, 99, 255, 0.15), 0 0 60px rgba(76, 99, 255, 0.1)"
-                   }}>
-                <div className="relative h-[500px] w-full">
-                  <img
-                    src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=600&h=800&fit=crop"
-                    alt="Professional with headphones"
-                    className="w-full h-full object-cover"
+            {/* Sticky Container */}
+            <div className="sticky top-32">
+              <div
+                className="relative rounded-[2.5rem] overflow-hidden border border-white/10 shadow-2xl group"
+                style={{
+                  boxShadow: "0 30px 60px rgba(0,0,0,0.1), 0 0 0 1px rgba(255,255,255,0.1)",
+                }}
+              >
+                {/* 4:5 Aspect Ratio for Professional Portrait Look */}
+                <div className="aspect-[4/5] w-full relative overflow-hidden">
+                  <motion.img
+                    src="/handshake.png"
+                    alt="Professional Partnership"
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                    initial={{ scale: 1.1 }}
+                    whileInView={{ scale: 1 }}
+                    transition={{ duration: 1.5, ease: "easeOut" }}
                   />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent pointer-events-none" />
                 </div>
               </div>
             </div>
           </motion.div>
 
-          {/* Right - Content scrolls with page (Header + Cards) */}
-          <div className="flex flex-col">
-            {/* Desktop: All content scrolls with page */}
-            <div className="hidden lg:flex flex-col gap-8">
-              {/* Header Section */}
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, ease: "easeOut" }}
-              >
-                <div className="inline-flex items-center gap-3 bg-primary/10 px-4 py-2 rounded-full border border-primary/20 mb-6 w-fit">
-                  <div className="w-3 h-3 bg-primary rounded-full animate-pulse"></div>
-                  <span className="text-xs md:text-sm text-primary font-medium">About Webblers</span>
-                </div>
-                <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 text-primary-hover leading-tight">
-                  Shaping Tomorrow <br />
-                  <span className="text-primary">With Bold Ideas</span>
-                </h2>
-                <p className="text-base md:text-lg text-muted-foreground leading-relaxed max-w-2xl">
-                  Webblers is a next-gen AI agency template built for bold visionaries, researchers, and builders shaping
-                  the future of intelligence.
-                </p>
-              </motion.div>
-
-              {/* Stacked Cards with Smooth Fade-in */}
+          {/* RIGHT: Cards Stack */}
+          <div className="flex flex-col gap-6 w-full">
+            
+            {/* DESKTOP: Vertical Stack of Cards */}
+            <div className="hidden lg:flex flex-col gap-6">
               {cards.map((card, index) => (
                 <motion.div
                   key={card.id}
-                  data-card={index}
-                  initial={{ opacity: 0, y: 40 }}
+                  initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: false, margin: "-50px", amount: 0.3 }}
-                  transition={{ 
-                    duration: 0.6, 
-                    ease: "easeOut",
-                    delay: index * 0.1
-                  }}
-                  className="bg-card border border-border rounded-2xl p-6 md:p-8 flex-shrink-0 transition-all duration-300 hover:border-primary/40 relative overflow-hidden"
-                  style={{
-                    boxShadow: "0 4px 20px rgba(0, 0, 0, 0.08), 0 0 30px rgba(76, 99, 255, 0.15), 0 0 0 1px rgba(76, 99, 255, 0.1)",
-                  }}
+                  viewport={{ once: true, margin: "-50px" }}
+                  transition={{ duration: 0.5, delay: index * 0.1 }}
+                  className="group relative p-8 rounded-3xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 overflow-hidden"
                 >
-                  {/* Subtle purple glow effect */}
-                  <div 
-                    className="absolute inset-0 rounded-2xl pointer-events-none opacity-0 hover:opacity-100 transition-opacity duration-300"
-                    style={{
-                      background: "linear-gradient(135deg, rgba(76, 99, 255, 0.05) 0%, rgba(76, 99, 255, 0.02) 100%)",
-                      boxShadow: "inset 0 0 40px rgba(76, 99, 255, 0.1)",
-                    }}
-                  />
-                  <div className="relative z-10">
-                    <div className="flex flex-col gap-6">
-                    <div>
-                      <div className="flex items-center justify-between mb-6">
-                        <div className="text-3xl">{card.icon}</div>
-                        <span className="text-xs font-medium text-primary bg-primary/10 px-3 py-1.5 rounded-full whitespace-nowrap border border-primary/20">
+                  <div className="absolute inset-0 bg-gradient-to-r from-blue-500/5 to-purple-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                  
+                  <div className="relative z-10 flex gap-6 items-start">
+                    <div className="flex-shrink-0 w-14 h-14 rounded-2xl bg-gray-50 dark:bg-gray-800 flex items-center justify-center text-3xl shadow-sm group-hover:scale-110 transition-transform duration-300">
+                      {card.icon}
+                    </div>
+                    
+                    <div className="flex-1">
+                      <div className="flex items-center justify-between mb-3">
+                        <h3 className="text-xl font-bold text-gray-900 dark:text-white group-hover:text-blue-600 transition-colors">
+                          {card.title}
+                        </h3>
+                        <span className="text-xs font-medium px-2.5 py-1 rounded-md bg-gray-100 dark:bg-gray-800 text-gray-500 border border-gray-200 dark:border-gray-700">
                           {card.label}
                         </span>
                       </div>
-                      <h3 className="text-2xl md:text-3xl font-bold mb-4 text-primary-hover">{card.title}</h3>
-                      <p className="text-sm md:text-base text-muted-foreground leading-relaxed">{card.description}</p>
-                    </div>
+                      
+                      <p className="text-gray-600 dark:text-gray-400 leading-relaxed mb-5 text-sm">
+                        {card.description}
+                      </p>
 
-                    <div className="flex gap-2 flex-wrap">
-                      {card.tags.map((tag) => (
-                        <span
-                          key={tag}
-                          className="text-xs px-3 py-1.5 rounded-full border border-border text-muted-foreground whitespace-nowrap"
-                          style={{ background: 'var(--bg-card)' }}
-                        >
-                          {tag}
-                        </span>
-                      ))}
+                      <div className="flex flex-wrap gap-2">
+                        {card.tags.map(tag => (
+                          <span key={tag} className="text-xs font-medium px-3 py-1.5 rounded-full bg-gray-50 dark:bg-gray-800/50 text-gray-600 dark:text-gray-300 border border-gray-100 dark:border-gray-700/50">
+                            {tag}
+                          </span>
+                        ))}
+                      </div>
                     </div>
-                  </div>
                   </div>
                 </motion.div>
               ))}
             </div>
 
-            {/* Mobile/Medium: Carousel with Auto-rotation */}
+            {/* MOBILE/TABLET: Carousel Layout (unchanged) */}
             <div className="lg:hidden">
-              {/* Image for Mobile */}
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.8 }}
-                className="relative h-[300px] rounded-2xl overflow-hidden mb-6 border border-border/50"
-              >
+              <div className="relative rounded-3xl overflow-hidden aspect-[4/3] mb-8 shadow-lg">
                 <img
-                  src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=600&h=800&fit=crop"
-                  alt="Professional with headphones"
+                  src="/handshake.png"
+                  alt="Visionary"
                   className="w-full h-full object-cover"
                 />
-              </motion.div>
+              </div>
 
-              {/* Carousel Cards */}
-              <div className="relative h-auto">
+              <div className="relative min-h-[320px]">
                 <AnimatePresence mode="wait">
                   <motion.div
                     key={currentCardIndex}
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0, y: -20 }}
-                    transition={{ duration: 0.5 }}
-                    className="bg-card border border-border rounded-2xl p-6"
+                    initial={{ opacity: 0, x: 20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    exit={{ opacity: 0, x: -20 }}
+                    transition={{ duration: 0.4 }}
+                    className="p-6 rounded-3xl bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 shadow-xl"
                   >
-                    {(() => {
-                      const card = cards[currentCardIndex]
-                      return (
-                        <div className="flex flex-col gap-6">
-                          <div>
-                            <div className="flex items-center justify-between mb-6">
-                              <div className="text-2xl">{card.icon}</div>
-                              <span className="text-xs font-medium text-primary bg-primary/10 px-3 py-1 rounded-full border border-primary/20">
-                                {card.label}
-                              </span>
-                            </div>
-                            <h3 className="text-2xl font-bold mb-4 text-foreground">{card.title}</h3>
-                            <p className="text-sm text-muted-foreground leading-relaxed">{card.description}</p>
-                          </div>
+                    <div className="flex items-center justify-between mb-4">
+                      <span className="text-3xl">{cards[currentCardIndex].icon}</span>
+                      <span className="text-xs font-bold text-blue-600 bg-blue-50 px-3 py-1 rounded-full uppercase tracking-wide">
+                        {cards[currentCardIndex].label}
+                      </span>
+                    </div>
+                    
+                    <h3 className="text-2xl font-bold mb-3 text-gray-900 dark:text-white">
+                      {cards[currentCardIndex].title}
+                    </h3>
+                    
+                    <p className="text-gray-600 dark:text-gray-400 text-sm leading-relaxed mb-6">
+                      {cards[currentCardIndex].description}
+                    </p>
 
-                          <div className="flex gap-2 flex-wrap">
-                            {card.tags.map((tag) => (
-                              <span
-                                key={tag}
-                                className="text-xs px-3 py-1.5 rounded-full border border-border text-muted-foreground"
-                                style={{ background: 'var(--bg-card)' }}
-                              >
-                                {tag}
-                              </span>
-                            ))}
-                          </div>
-                        </div>
-                      )
-                    })()}
+                    <div className="flex flex-wrap gap-2">
+                      {cards[currentCardIndex].tags.map(tag => (
+                        <span key={tag} className="text-xs px-3 py-1.5 rounded-lg bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300">
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
                   </motion.div>
                 </AnimatePresence>
 
-                {/* Carousel Dots */}
-                <div className="flex gap-2 justify-center mt-6">
-                  {cards.map((_, index) => (
-                    <motion.button
-                      key={index}
-                      onClick={() => setCurrentCardIndex(index)}
-                      className={`h-2 rounded-full transition-all ${
-                        index === currentCardIndex ? "bg-primary w-6" : "bg-border w-2"
+                <div className="flex justify-center gap-2 mt-6">
+                  {cards.map((_, idx) => (
+                    <button
+                      key={idx}
+                      onClick={() => setCurrentCardIndex(idx)}
+                      className={`h-2 rounded-full transition-all duration-300 ${
+                        idx === currentCardIndex ? "w-8 bg-blue-600" : "w-2 bg-gray-300 dark:bg-gray-700"
                       }`}
-                      whileHover={{ scale: 1.2 }}
-                      aria-label={`Go to card ${index + 1}`}
+                      aria-label={`Go to slide ${idx + 1}`}
                     />
                   ))}
                 </div>
               </div>
             </div>
+
           </div>
         </div>
       </div>
     </section>
-  )
+  );
 }

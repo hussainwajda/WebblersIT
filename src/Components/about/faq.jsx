@@ -6,34 +6,34 @@ import { ChevronDown } from "lucide-react"
 
 const faqItems = [
   {
-    question: "What do I need to get started?",
+    question: "How do I start a project with Webblers?",
     answer:
-      "Getting started is simple. You just need to sign up for an account, choose your plan, and begin creating your project immediately with our intuitive interface.",
+      "It's simple! Reach out to us via our contact form or WhatsApp. We'll schedule a quick consultation to understand your requirements, provide a tailored proposal, and once approved, we kick off the development immediately.",
   },
   {
-    question: "What kind of customization is available?",
+    question: "Do you offer custom designs or use templates?",
     answer:
-      "We offer extensive customization options including custom colors, fonts, layouts, and integrations to match your brand identity and specific requirements.",
+      "We specialize in fully custom solutions. While we can work with templates if you're on a tight budget, our core strength lies in hand-coding unique websites (using React & Modern Tech) that align perfectly with your specific brand identity.",
   },
   {
-    question: "How easy is it to edit for beginners?",
+    question: "Will I be able to update the website myself?",
     answer:
-      "Our platform is designed with beginners in mind. We provide drag-and-drop interfaces, templates, and comprehensive documentation to make editing accessible to everyone.",
+      "Absolutely. We believe in empowering our clients. We can integrate a user-friendly Content Management System (CMS) or admin dashboard, allowing you to easily update text and images without needing to write a single line of code.",
   },
   {
-    question: "Let me know more about moneyback guarantee?",
+    question: "Do you provide support after the website is launched?",
     answer:
-      "We offer a 30-day money-back guarantee on all plans. If you're not satisfied with our service, simply contact our support team for a full refund, no questions asked.",
+      "Yes, we don't just build and leave. We offer post-launch maintenance packages to ensure your website stays secure, updated, and bug-free. We are always just a message away for any technical assistance.",
   },
   {
-    question: "Do I need to know how to code?",
+    question: "How long does it take to build a website?",
     answer:
-      "No coding knowledge required! Our platform is built for everyone. However, advanced users can access custom code editors if needed.",
+      "The timeline depends on the project's complexity. A standard business website typically takes 2–4 weeks, while more complex web applications may take longer. We provide a clear timeline and milestone schedule before we begin.",
   },
   {
-    question: "What will I get after purchasing the template?",
+    question: "What exactly do I own after the project is complete?",
     answer:
-      "You'll get access to the complete template, all future updates, documentation, video tutorials, and lifetime email support.",
+      "You own everything. Upon project completion and final payment, we transfer full ownership of the source code, design assets, and intellectual property directly to you.",
   },
 ]
 
