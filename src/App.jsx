@@ -2,16 +2,16 @@ import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import { ReactLenis, useLenis } from "lenis/react";
 import { useEffect } from "react";
 
-import Navbar from "./Components/Navbar";
-import Footer from "./Components/Footer";
+import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
 import Home from "./pages/Home";
 import Services from "./pages/Services";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
 import Portfolio from "./pages/Portfolio";
-import CursorGlow from "./Components/CursorGlow";
-import ScrollToTopButton from "./Components/ScrollToTopButton";
-import Preloader from "./Components/Preloader.jsx";
+import CursorGlow from "./components/CursorGlow";
+import ScrollToTopButton from "./components/ScrollToTopButton";
+import Preloader from "./components/Preloader";
 
 
 // ================================

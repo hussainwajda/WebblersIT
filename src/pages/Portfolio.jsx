@@ -1,6 +1,6 @@
 import React from "react";
 import "./Portfolio.css";
-import { BottomRevealBlur } from "../Components/ui/bottom-reveal-blur";
+import { BottomRevealBlur } from "../components/ui/bottom-reveal-blur";
 import { motion } from "framer-motion";
 
 const projects = [

@@ -2,13 +2,13 @@ import "./Home.css";
 import { useEffect, useState, useContext } from "react";
 import { Link } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
-import DotGrid from "../Components/Hero-Bg";
-import { ThemeContext } from "../ThemeContext.jsx";
-import WhyChooseUs from "../Components/WhyChooseUs";
-import ServicesSection from "../Components/services-section";
-import { ProcessSection } from "../Components/Services/page/ProcessSection";
-import { BottomRevealBlur } from "../Components/ui/bottom-reveal-blur";
-import FAQSection from "../Components/about/faq.jsx";
+import DotGrid from "../components/Hero-Bg";
+import { ThemeContext } from "../ThemeContext";
+import WhyChooseUs from "../components/WhyChooseUs";
+import ServicesSection from "../components/services-section";
+import { ProcessSection } from "../components/services/page/ProcessSection";
+import { BottomRevealBlur } from "../components/ui/bottom-reveal-blur";
+import FAQSection from "../components/about/faq";
 
 const Home = () => {
   const { darkMode } = useContext(ThemeContext);

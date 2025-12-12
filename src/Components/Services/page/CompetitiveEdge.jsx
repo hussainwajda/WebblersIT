@@ -3,8 +3,8 @@
 import { motion } from "framer-motion"
 import { Zap, Users, BarChart3, Lightbulb, TrendingUp, Shield } from "lucide-react"
 import "./services-page.css"
-import img1 from "../../../assets/servpage2.png"
-import img2 from "../../../assets/servpage1.png"
+import img1 from "@/assets/servpage2.png"
+import img2 from "@/assets/servpage1.png"
 export function KeyFeatures() {
   const features = [
     {
