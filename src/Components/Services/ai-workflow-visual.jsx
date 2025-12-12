@@ -68,24 +68,24 @@ export default function AIAutomationsReel() {
     }
   }, [isPlaying, slideDuration])
 
-  const handleNext = () => {
-    setCurrentSlide((prev) => (prev + 1) % slides.length)
-    setProgress(0)
-  }
+  // const handleNext = () => {
+  //   setCurrentSlide((prev) => (prev + 1) % slides.length)
+  //   setProgress(0)
+  // }
 
-  const handlePrev = () => {
-    setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length)
-    setProgress(0)
-  }
+  // const handlePrev = () => {
+  //   setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length)
+  //   setProgress(0)
+  // }
 
-  const handlePlayPause = () => {
-    setIsPlaying((prev) => !prev)
-  }
+  // const handlePlayPause = () => {
+  //   setIsPlaying((prev) => !prev)
+  // }
 
-  const handleDotClick = (index) => {
-    setCurrentSlide(index)
-    setProgress(0)
-  }
+  // const handleDotClick = (index) => {
+  //   setCurrentSlide(index)
+  //   setProgress(0)
+  // }
 
   return (
     <div className="ai-workflow-reel">
@@ -106,7 +106,7 @@ export default function AIAutomationsReel() {
       </div>
 
       {/* Play/Pause button */}
-      <motion.button
+      {/* <motion.button
         onClick={handlePlayPause}
         whileTap={{ scale: 0.95 }}
         className="ai-reel-control-btn ai-reel-control-btn-play"
@@ -116,7 +116,7 @@ export default function AIAutomationsReel() {
         ) : (
           <Play className="ai-reel-control-btn-icon" />
         )}
-      </motion.button>
+      </motion.button> */}
 
       {/* Slides */}
       <AnimatePresence mode="wait">
@@ -146,9 +146,9 @@ export default function AIAutomationsReel() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2 }}
             >
-              <span className="ai-reel-slide-number">
+              {/* <span className="ai-reel-slide-number">
                 Slide {currentSlide + 1} of {slides.length}
-              </span>
+              </span> */}
               <h3 className="ai-reel-slide-title">{slides[currentSlide].title}</h3>
               <p className="ai-reel-slide-description">{slides[currentSlide].description}</p>
             </motion.div>
@@ -157,26 +157,26 @@ export default function AIAutomationsReel() {
       </AnimatePresence>
 
       {/* Navigation arrows */}
-      <motion.button
+      {/* <motion.button
         onClick={handlePrev}
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.95 }}
         className="ai-reel-control-btn ai-reel-control-btn-prev"
       >
         <ChevronLeft className="ai-reel-control-btn-icon" />
-      </motion.button>
+      </motion.button> */}
 
-      <motion.button
+      {/* <motion.button
         onClick={handleNext}
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.95 }}
         className="ai-reel-control-btn ai-reel-control-btn-next"
       >
         <ChevronRight className="ai-reel-control-btn-icon" />
-      </motion.button>
+      </motion.button> */}
 
       {/* Dots indicator */}
-      <div className="ai-reel-dots">
+      {/* <div className="ai-reel-dots">
         {slides.map((_, index) => (
           <motion.button
             key={index}
@@ -187,7 +187,7 @@ export default function AIAutomationsReel() {
             }`}
           />
         ))}
-      </div>
+      </div> */}
     </div>
   )
 }
