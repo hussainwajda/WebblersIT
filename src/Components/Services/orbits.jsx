@@ -1,4 +1,4 @@
-import { OrbitingCircles } from "../ui/orbiting-circles"
+import { OrbitingCircles } from "../ui/orbiting-circles.jsx"
 
 // Define the SVG icons as components
 const Icons = {

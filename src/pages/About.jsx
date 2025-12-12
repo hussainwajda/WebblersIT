@@ -1,11 +1,11 @@
 import React from "react";
-import ProfileCard from "../components/ProfileCard";
+import ProfileCard from "@/components/ProfileCard.jsx";
 import "./About.css";
-import AboutHero from "../components/about/about-hero";
-import AboutMain from "../components/about/about-main";
-import About2nd from "../components/about/about-2nd";
-import FAQSection from "../components/about/faq";
-import { BottomRevealBlur } from "../components/ui/bottom-reveal-blur";
+import AboutHero from "@/components/about/about-hero.jsx";
+import AboutMain from "@/components/about/about-main.jsx";
+import About2nd from "@/components/about/about-2nd.jsx";
+import FAQSection from "@/components/about/faq.jsx";
+import { BottomRevealBlur } from "@/components/ui/bottom-reveal-blur.jsx";
 import { motion } from "framer-motion";
 
 const About = ({ darkMode }) => {

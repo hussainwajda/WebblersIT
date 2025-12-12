@@ -1,14 +1,14 @@
 import React, { useContext } from "react";
 // import "./Services.css";
-import { ThemeContext } from "../ThemeContext";
+import { ThemeContext } from "@/ThemeContext.jsx";
 import { motion } from "framer-motion";
 // import { FaCode, FaMobileAlt, FaCloud, FaDatabase, FaPaintBrush, FaLock } from "react-icons/fa";
-import { ServicesHero } from "@/components/services/page/ServicesHero"
-import { ExpertiseSection } from "@/components/services/page/expertise-section"
-import { ServicesOverview } from "@/components/services/page/services-overview"
-import { KeyFeatures } from "../components/services/page/CompetitiveEdge";
-import { ProcessSection } from "../components/services/page/ProcessSection";
-import { BottomRevealBlur } from "../components/ui/bottom-reveal-blur";
+import { ServicesHero } from "@/components/services/page/ServicesHero.jsx"
+import { ExpertiseSection } from "@/components/services/page/expertise-section.jsx"
+import { ServicesOverview } from "@/components/services/page/services-overview.jsx"
+import { KeyFeatures } from "@/components/services/page/CompetitiveEdge.jsx";
+import { ProcessSection } from "@/components/services/page/ProcessSection.jsx";
+import { BottomRevealBlur } from "@/components/ui/bottom-reveal-blur.jsx";
 
 const Services = () => {
   const { darkMode } = useContext(ThemeContext);
