@@ -77,6 +77,7 @@
 }
 
 .footer-center h4,
+.footer-services h4,
 .footer-right h4 {
   margin-bottom: 20px;
   font-size: 1.1rem;
@@ -90,6 +91,7 @@
 
 /* Small underline decoration for headers */
 .footer-center h4::after,
+.footer-services h4::after,
 .footer-right h4::after {
   content: "";
   position: absolute;
@@ -101,17 +103,20 @@
   border-radius: 2px;
 }
 
-.footer-center ul {
+.footer-center ul,
+.footer-services ul {
   list-style: none;
   padding: 0;
   margin: 0;
 }
 
-.footer-center ul li {
+.footer-center ul li,
+.footer-services ul li {
   margin-bottom: 12px;
 }
 
-.footer-center ul li a {
+.footer-center ul li a,
+.footer-services ul li a {
   color: #555;
   text-decoration: none;
   font-size: 1rem;
@@ -120,10 +125,18 @@
   display: inline-block;
 }
 
-.footer-center ul li a:hover {
+.footer-center ul li a:hover,
+.footer-services ul li a:hover {
   color: #0054a6;
   transform: translateX(6px);
   text-shadow: 0 0 20px rgba(0, 84, 166, 0.2);
+}
+
+/* =========================================
+   2.5 SERVICES SECTION
+   ========================================= */
+.footer-services {
+  margin-top: 10px;
 }
 
 /* =========================================
@@ -204,16 +217,20 @@ body.dark-mode .footer-left p { color: #8ec5fc; }
 body.dark-mode .footer-left p .highlight-it { color: #ffffff; }
 
 body.dark-mode .footer-center h4,
+body.dark-mode .footer-services h4,
 body.dark-mode .footer-right h4 {
   color: #ffffff;
 }
 body.dark-mode .footer-center h4::after,
+body.dark-mode .footer-services h4::after,
 body.dark-mode .footer-right h4::after {
   background: #4c63ff;
 }
 
-body.dark-mode .footer-center ul li a { color: #b0b0b0; }
-body.dark-mode .footer-center ul li a:hover { color: #4c63ff; }
+body.dark-mode .footer-center ul li a,
+body.dark-mode .footer-services ul li a { color: #b0b0b0; }
+body.dark-mode .footer-center ul li a:hover,
+body.dark-mode .footer-services ul li a:hover { color: #4c63ff; }
 
 /* Dark Mode Social Pill */
 body.dark-mode .social-icons {
@@ -247,11 +264,13 @@ body.dark-mode .footer-bottom {
     display: grid;
     /* Create a 2-column grid. 
        Top row: Logo (spans 2 cols). 
-       Bottom row: Links (col 1) + Socials (col 2) */
+       Bottom row: Links (col 1) + Services (col 2)
+       Third row: Socials (spans 2 cols) */
     grid-template-columns: 1fr 1fr; 
     grid-template-areas: 
       "logo logo"
-      "links socials";
+      "links services"
+      "socials socials";
     gap: 30px 15px; /* Vertical gap 30px, Horizontal gap 15px */
     width: 100%;
     justify-items: center;
@@ -306,16 +325,44 @@ body.dark-mode .footer-bottom {
     font-size: 0.9rem;
   }
 
-  /* 3. Social/Connect Section (Right Column) */
+  /* 2.5. Services Section (Right Column) */
+  .footer-services {
+    grid-area: services;
+    margin-top: 0;
+    text-align: right;
+    justify-self: end;
+    padding-right: 10px;
+  }
+
+  .footer-services h4 {
+    font-size: 0.95rem;
+    margin-bottom: 12px;
+  }
+  
+  .footer-services h4::after {
+    left: auto;
+    right: 0;
+    transform: none;
+  }
+
+  .footer-services ul li {
+    margin-bottom: 8px;
+  }
+  
+  .footer-services ul li a {
+    font-size: 0.9rem;
+  }
+
+  /* 3. Social/Connect Section (Full Width) */
   .footer-right {
     grid-area: socials;
     margin-top: 0;
-    text-align: right; /* Align text to right */
-    justify-self: end; /* Align to right side of its column */
-    padding-right: 10px;
+    text-align: center;
+    justify-self: center;
+    width: 100%;
     display: flex;
     flex-direction: column;
-    align-items: flex-end;
+    align-items: center;
   }
 
   .footer-right h4 {
