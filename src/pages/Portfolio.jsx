@@ -1,6 +1,7 @@
 import React from "react";
 import "./Portfolio.css";
 import { BottomRevealBlur } from "../Components/ui/bottom-reveal-blur";
+import { motion } from "framer-motion";
 
 const projects = [
   {
@@ -139,21 +140,65 @@ const Portfolio = () => {
       <div className="portfolio-container">
         
         {/* ANIMATED HEADER */}
-        <div className="portfolio-header">
+        <motion.div 
+          className="portfolio-header"
+          initial={{ opacity: 0, y: -30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+        >
           <span className="section-badge">Selected Projects</span>
           <h2 className="portfolio-title">
             Our <span className="highlight-text">Digital Craft</span>
           </h2>
           <p className="portfolio-subtitle">
-            Premium digital experiences we’ve built for our clients.
+            Premium digital experiences we've built for our clients.
             Bridging imagination with code.
           </p>
           <div className="header-decoration-line"></div>
-        </div>
+        </motion.div>
 
-        <div className="portfolio-list">
-          {projects.map((project) => (
-            <div className="portfolio-horizontal-card" key={project.id}>
+        <motion.div 
+          className="portfolio-list"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-100px" }}
+          variants={{
+            visible: {
+              transition: {
+                staggerChildren: 0.2,
+                delayChildren: 0.1,
+              },
+            },
+          }}
+        >
+          {projects.map((project, index) => {
+            // Odd-numbered cards (1st, 3rd, 5th...) = index 0, 2, 4... come from left
+            // Even-numbered cards (2nd, 4th, 6th...) = index 1, 3, 5... come from right
+            const isOddCard = index % 2 === 0;
+            return (
+            <motion.div 
+              className="portfolio-horizontal-card" 
+              key={project.id}
+              variants={{
+                hidden: { 
+                  opacity: 0, 
+                  y: 80,
+                  x: isOddCard ? -100 : 100,
+                  scale: 0.85
+                },
+                visible: { 
+                  opacity: 1, 
+                  y: 0,
+                  x: 0,
+                  scale: 1,
+                  transition: {
+                    duration: 0.8,
+                    ease: [0.25, 0.1, 0.25, 1]
+                  }
+                },
+              }}
+            >
               <div className="portfolio-image-area">
                 <img
                   src={project.image}
@@ -190,22 +235,72 @@ const Portfolio = () => {
                   </ul>
                 </div>
               </div>
-            </div>
-          ))}
-        </div>
+            </motion.div>
+            );
+          })}
+        </motion.div>
       </div>
-
-      {/* PERSONALIZED DASHBOARDS SECTION */}
-      <div className="portfolio-container" style={{ marginTop: "6rem" }}>
-        <div className="portfolio-header">
+      <motion.div 
+        className="portfolio-container" 
+        style={{ marginTop: "6rem" }}
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.6 }}
+      >
+        <motion.div 
+          className="portfolio-header"
+          initial={{ opacity: 0, y: -30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+        >
           <h2 className="portfolio-title">
             Personalized <span className="highlight-text">Dashboards</span>
           </h2>
-        </div>
+        </motion.div>
 
-        <div className="portfolio-list">
-          {dashboardProjects.map((project) => (
-            <div className="portfolio-horizontal-card" key={project.id}>
+        <motion.div 
+          className="portfolio-list"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-100px" }}
+          variants={{
+            visible: {
+              transition: {
+                staggerChildren: 0.2,
+                delayChildren: 0.1,
+              },
+            },
+          }}
+        >
+          {dashboardProjects.map((project, index) => {
+            // Odd-numbered cards (1st, 3rd, 5th...) = index 0, 2, 4... come from left
+            // Even-numbered cards (2nd, 4th, 6th...) = index 1, 3, 5... come from right
+            const isOddCard = index % 2 === 0;
+            return (
+            <motion.div 
+              className="portfolio-horizontal-card" 
+              key={project.id}
+              variants={{
+                hidden: { 
+                  opacity: 0, 
+                  y: 80,
+                  x: isOddCard ? -100 : 100,
+                  scale: 0.85
+                },
+                visible: { 
+                  opacity: 1, 
+                  y: 0,
+                  x: 0,
+                  scale: 1,
+                  transition: {
+                    duration: 0.8,
+                    ease: [0.25, 0.1, 0.25, 1]
+                  }
+                },
+              }}
+            >
               <div className="portfolio-image-area">
                 <img
                   src={project.image}
@@ -242,11 +337,27 @@ const Portfolio = () => {
                   </ul>
                 </div>
               </div>
-            </div>
-          ))}
-        </div>
-      </div>
+            </motion.div>
+            );
+          })}
+        </motion.div>
+      </motion.div>
 
+      <motion.section
+          className="cta-section"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true, amount: 0.2 }}
+        >
+          {/* New Glass Container */}
+          <div className="cta-content-glass">
+            <h2>Ready to Boost Your Business?</h2>
+            <a href="/Contact">
+              <button className="cta-button">Get Free Consultation</button>
+            </a>
+          </div>
+        </motion.section>
       <BottomRevealBlur height="20vh" />
     </section>
   );
