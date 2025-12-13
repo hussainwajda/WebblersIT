@@ -25,6 +25,7 @@ import {
   Bot,
 } from "lucide-react"
 import "./services-page.css"
+import { Link } from "react-router-dom";
 
 const services = [
   {
@@ -206,17 +207,15 @@ export function ServicesOverview() {
                   <p className="services-overview-category-description mb-6 text-sm">
                     {service.description}
                   </p>
-
-                  {/* ✅ WRAPPED IN LINK AND REMOVED ONCLICK */}
-                  <Link to="/contact" className="mt-auto w-full">
-                    <motion.button
-                      whileHover={{ scale: 1.02 }}
-                      whileTap={{ scale: 0.98 }}
-                      className="services-overview-category-button flex w-full items-center justify-center gap-2 rounded-full px-4 py-3 text-sm font-medium transition-colors"
-                    >
-                      Book a Call
-                      <ArrowRight className="h-4 w-4" />
-                    </motion.button>
+                  <Link to="/Contact">
+                  <motion.button
+                    whileHover={{ scale: 1.02 }}
+                    whileTap={{ scale: 0.98 }}
+                    className="services-overview-category-button cursor-pointer mt-auto flex w-full items-center justify-center gap-2 rounded-full px-4 py-3 text-sm font-medium transition-colors"
+                  >
+                    Book a Call
+                    <ArrowRight className="h-4 w-4" />
+                  </motion.button>
                   </Link>
                 </motion.div>
 
