@@ -6,7 +6,7 @@ import DotGrid from "@/components/Hero-Bg.jsx";
 import { ThemeContext } from "@/ThemeContext.jsx";
 import WhyChooseUs from "@/components/WhyChooseUs.jsx";
 import ServicesSection from "@/components/services-section.jsx";
-import { ProcessSection } from "@/components/services/page/ProcessSection.jsx";
+import { ProcessSection } from "@/components/Services/page/ProcessSection.jsx";
 import { BottomRevealBlur } from "@/components/ui/bottom-reveal-blur.jsx";
 import FAQSection from "@/components/about/faq.jsx";
 
