@@ -2,7 +2,7 @@ import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import { ReactLenis, useLenis } from "lenis/react";
 import { useEffect } from "react";
 
-import Navbar from "@/components/Navbar.jsx";
+import Navbar from "@/components/Navigation.jsx";
 import Footer from "@/components/Footer.jsx";
 import Home from "@/pages/Home.jsx";
 import Services from "@/pages/Services.jsx";
