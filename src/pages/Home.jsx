@@ -9,6 +9,9 @@ import ServicesSection from "@/components/services-section.jsx";
 import { ProcessSection } from "@/components/Services/page/ProcessSection.jsx";
 import { BottomRevealBlur } from "@/components/ui/bottom-reveal-blur.jsx";
 import FAQSection from "@/components/about/faq.jsx";
+import secureshareDashboard from "@/assets/previews/securesharethumb.png";
+import theboringteethumb from "@/assets/previews/theboringteethumb.png";
+import website3 from "@/assets/previews/website3.png";
 
 const Home = () => {
   const { darkMode } = useContext(ThemeContext);
@@ -51,9 +54,9 @@ const Home = () => {
 
   // 🖼️ Website Preview Carousel
   const carouselItems = [
-    { image: "src/assets/previews/securesharethumb.png", alt: "Website Preview 1" },
-    { image: "src/assets/previews/theboringteethumb.png", alt: "Website Preview 2" },
-    { image: "src/assets/previews/website3.png", alt: "Website Preview 3" },
+    { image: secureshareDashboard, alt: "Website Preview 1" },
+    { image: theboringteethumb, alt: "Website Preview 2" },
+    { image: website3, alt: "Website Preview 3" },
   ];
 
   const [carouselIndex, setCarouselIndex] = useState(0);
@@ -155,7 +158,7 @@ const Home = () => {
                 transition={{ type: "spring", stiffness: 300 }}
               >
                 <div className="portfolio-img-wrapper">
-                  <img src="src/assets/previews/securesharethumb.png" alt="Project 1" />
+                  <img src={secureshareDashboard} alt="Project 1" />
                   <div className="portfolio-overlay">
                     <span>View Project</span>
                   </div>
@@ -175,7 +178,7 @@ const Home = () => {
                 transition={{ type: "spring", stiffness: 300 }}
               >
                 <div className="portfolio-img-wrapper">
-                  <img src="src/assets/previews/theboringteethumb.png" alt="Project 2" />
+                  <img src={theboringteethumb} alt="Project 2" />
                   <div className="portfolio-overlay">
                     <span>View Project</span>
                   </div>
@@ -195,7 +198,7 @@ const Home = () => {
                 transition={{ type: "spring", stiffness: 300 }}
               >
                 <div className="portfolio-img-wrapper">
-                  <img src="src/assets/previews/website3.png" alt="Project 3" />
+                  <img src={website3} alt="Project 3" />
                   <div className="portfolio-overlay">
                     <span>View Project</span>
                   </div>
