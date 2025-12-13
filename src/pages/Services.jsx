@@ -3,11 +3,11 @@ import React, { useContext } from "react";
 import { ThemeContext } from "@/ThemeContext.jsx";
 import { motion } from "framer-motion";
 // import { FaCode, FaMobileAlt, FaCloud, FaDatabase, FaPaintBrush, FaLock } from "react-icons/fa";
-import { ServicesHero } from "@/components/services/page/ServicesHero.jsx"
-import { ExpertiseSection } from "@/components/services/page/expertise-section.jsx"
-import { ServicesOverview } from "@/components/services/page/services-overview.jsx"
-import { KeyFeatures } from "@/components/services/page/CompetitiveEdge.jsx";
-import { ProcessSection } from "@/components/services/page/ProcessSection.jsx";
+import { ServicesHero } from "@/components/Services/page/ServicesHero.jsx"
+import { ExpertiseSection } from "@/components/Services/page/expertise-section.jsx"
+import { ServicesOverview } from "@/components/Services/page/services-overview.jsx"
+import { KeyFeatures } from "@/components/Services/page/CompetitiveEdge.jsx";
+import { ProcessSection } from "@/components/Services/page/ProcessSection.jsx";
 import { BottomRevealBlur } from "@/components/ui/bottom-reveal-blur.jsx";
 
 const Services = () => {
