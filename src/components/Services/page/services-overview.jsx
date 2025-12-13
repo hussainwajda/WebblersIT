@@ -1,5 +1,6 @@
 "use client"
 
+import { Link } from "react-router-dom" // ✅ Import Link
 import { motion } from "framer-motion"
 import {
   ArrowRight,
@@ -206,14 +207,17 @@ export function ServicesOverview() {
                     {service.description}
                   </p>
 
-                  <motion.button
-                    whileHover={{ scale: 1.02 }}
-                    whileTap={{ scale: 0.98 }}
-                    className="services-overview-category-button mt-auto flex w-full items-center justify-center gap-2 rounded-full px-4 py-3 text-sm font-medium transition-colors"
-                  >
-                    Book a Call
-                    <ArrowRight className="h-4 w-4" />
-                  </motion.button>
+                  {/* ✅ WRAPPED IN LINK AND REMOVED ONCLICK */}
+                  <Link to="/contact" className="mt-auto w-full">
+                    <motion.button
+                      whileHover={{ scale: 1.02 }}
+                      whileTap={{ scale: 0.98 }}
+                      className="services-overview-category-button flex w-full items-center justify-center gap-2 rounded-full px-4 py-3 text-sm font-medium transition-colors"
+                    >
+                      Book a Call
+                      <ArrowRight className="h-4 w-4" />
+                    </motion.button>
+                  </Link>
                 </motion.div>
 
                 {/* Right - Sub Services Grid */}

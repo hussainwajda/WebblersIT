@@ -1,5 +1,6 @@
 "use client"
 
+import { Link } from "react-router-dom" // ✅ Import Link
 import { motion } from "framer-motion"
 import { ArrowRight, Paintbrush, Palette, BarChart3, Workflow, Megaphone, ShoppingBag, Webhook, Globe } from "lucide-react"
 import "./services-page.css"
@@ -111,15 +112,17 @@ export function ExpertiseSection() {
 
               <p className="services-expertise-card-description mb-6">{card.description}</p>
 
-              <motion.button
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
-                className="services-expertise-card-button flex w-full items-center justify-center cursor-pointer gap-2 rounded-full px-4 py-3 text-sm font-medium transition-colors"
-                onClick={() => window.location.href = "/contact"}
-              >
-                Get in Touch
-                <ArrowRight className="h-4 w-4" />
-              </motion.button>
+              {/* ✅ WRAPPED IN LINK AND REMOVED ONCLICK */}
+              <Link to="/contact" className="w-full block">
+                <motion.button
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
+                  className="services-expertise-card-button flex w-full items-center justify-center cursor-pointer gap-2 rounded-full px-4 py-3 text-sm font-medium transition-colors"
+                >
+                  Get in Touch
+                  <ArrowRight className="h-4 w-4" />
+                </motion.button>
+              </Link>
             </motion.div>
           ))}
         </motion.div>

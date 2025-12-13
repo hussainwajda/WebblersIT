@@ -1,6 +1,6 @@
 import "./Home.css";
 import { useEffect, useState, useContext } from "react";
-import { Link } from "react-router-dom";
+import { Link } from "react-router-dom"; // ✅ Ensure Link is imported
 import { motion, AnimatePresence } from "framer-motion";
 import DotGrid from "@/components/Hero-Bg.jsx";
 import { ThemeContext } from "@/ThemeContext.jsx";
@@ -95,7 +95,10 @@ const Home = () => {
               <p className="hero-subtitle">
                 We help brands build a strong and professional online presence.
               </p>
-          <a href="/Contact" > <button  className="cta-button">Build My Website</button></a>
+              {/* ✅ CHANGED TO LINK */}
+              <Link to="/contact">
+                 <button className="cta-button">Build My Website</button>
+              </Link>
             </div>
 
             {/* Right Carousel */}
@@ -224,9 +227,10 @@ const Home = () => {
           {/* New Glass Container */}
           <div className="cta-content-glass">
             <h2>Ready to Boost Your Business?</h2>
-            <a href="/Contact">
+            {/* ✅ CHANGED TO LINK */}
+            <Link to="/contact">
               <button className="cta-button">Get Free Consultation</button>
-            </a>
+            </Link>
           </div>
         </motion.section>
       </div>

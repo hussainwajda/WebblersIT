@@ -1,5 +1,6 @@
 
 import { motion } from "framer-motion"
+import { Link } from "react-router-dom"; // ✅ Ensure Link is imported
 // import Image from "react-image"
 
 export default function AboutMain() {
@@ -67,14 +68,18 @@ export default function AboutMain() {
             </motion.div>
 
             <motion.div variants={itemVariants} className="flex flex-col sm:flex-row items-start sm:items-center gap-6">
-              <button onClick={() => window.location.href = '/contact'} className="bg-primary text-primary-foreground px-6 py-3 rounded-lg font-semibold hover:bg-primary/90 transition-colors">
-                Book an Appointment
-              </button>
-              {/* <div className="flex items-center gap-2">
-                <span className="text-xl">⭐⭐⭐⭐⭐</span>
-                <span className="text-sm text-muted-foreground">900+ People Rated</span>
-              </div> */}
-            </motion.div>
+  {/* ✅ Wrapped in Link and removed onClick */}
+  <Link to="/contact">
+    <button className="bg-primary text-primary-foreground px-6 py-3 rounded-lg font-semibold hover:bg-primary/90 transition-colors">
+      Book an Appointment
+    </button>
+  </Link>
+  
+  {/* <div className="flex items-center gap-2">
+    <span className="text-xl">⭐⭐⭐⭐⭐</span>
+    <span className="text-sm text-muted-foreground">900+ People Rated</span>
+  </div> */}
+</motion.div>
           </motion.div>
 
           {/* Right Image */}

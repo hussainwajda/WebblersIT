@@ -1,6 +1,7 @@
 "use client"
 
 import { useState } from "react"
+import { Link } from "react-router-dom" // ✅ Import Link here
 import { motion } from "framer-motion"
 import {
   Globe,
@@ -117,13 +118,15 @@ function ServiceCard({ service }) {
 
           {/* Footer with button */}
           <div>
-            <motion.button
-              whileTap={{ scale: 0.95 }}
-              className="service-card-button"
-              onClick={() => window.location.href = "/services"}
-            >
-              Learn More
-            </motion.button>
+            {/* ✅ WRAPPED IN LINK AND REMOVED ONCLICK */}
+            <Link to="/services">
+              <motion.button
+                whileTap={{ scale: 0.95 }}
+                className="service-card-button"
+              >
+                Learn More
+              </motion.button>
+            </Link>
           </div>
         </div>
 
@@ -160,8 +163,6 @@ function VisualSwitch({ id, hovered }) {
       return null
   }
 }
-
-
 
 /* E-commerce: Stacked cards with animated checklist */
 function EcomVisual({ hovered }) {

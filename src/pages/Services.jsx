@@ -1,5 +1,6 @@
 import React, { useContext } from "react";
 // import "./Services.css";
+import { Link } from "react-router-dom"; // ✅ Ensure Link is imported
 import { ThemeContext } from "@/ThemeContext.jsx";
 import { motion } from "framer-motion";
 // import { FaCode, FaMobileAlt, FaCloud, FaDatabase, FaPaintBrush, FaLock } from "react-icons/fa";
@@ -86,9 +87,9 @@ const Services = () => {
           {/* New Glass Container */}
           <div className="cta-content-glass">
             <h2>Ready to Boost Your Business?</h2>
-            <a href="/Contact">
+             <Link to="/contact">
               <button className="cta-button">Get Free Consultation</button>
-            </a>
+            </Link>
           </div>
         </motion.section>
     </div>
