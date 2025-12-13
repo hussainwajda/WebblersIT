@@ -1,5 +1,6 @@
 "use client"
 
+import { Link } from "react-router-dom" // ✅ Import Link
 import { motion } from "framer-motion"
 import {
   ArrowRight,

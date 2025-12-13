@@ -1,6 +1,7 @@
 import React from "react";
 import ProfileCard from "@/components/ProfileCard.jsx";
 import "./About.css";
+import { Link } from "react-router-dom"; // ✅ Ensure Link is imported
 import AboutHero from "@/components/about/about-hero.jsx";
 import AboutMain from "@/components/about/about-main.jsx";
 import About2nd from "@/components/about/about-2nd.jsx";
@@ -111,9 +112,9 @@ const About = ({ darkMode }) => {
           {/* New Glass Container */}
           <div className="cta-content-glass">
             <h2>Ready to Boost Your Business?</h2>
-            <a href="/Contact">
+            <Link to="/contact">
               <button className="cta-button">Get Free Consultation</button>
-            </a>
+            </Link>
           </div>
         </motion.section>
       {/* Fixed bottom blur that reveals sections as you scroll, hidden near page end */}

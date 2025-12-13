@@ -1,5 +1,6 @@
 import React from "react";
 import "./Portfolio.css";
+import { Link } from "react-router-dom"; // ✅ Ensure Link is imported
 import { BottomRevealBlur } from "@/components/ui/bottom-reveal-blur.jsx";
 import { motion } from "framer-motion";
 import anchorTrdgWebsite from "@/assets/previews/website3.png";
@@ -359,9 +360,9 @@ const Portfolio = () => {
           {/* New Glass Container */}
           <div className="cta-content-glass">
             <h2>Ready to Boost Your Business?</h2>
-            <a href="/Contact">
+             <Link to="/contact">
               <button className="cta-button">Get Free Consultation</button>
-            </a>
+            </Link>
           </div>
         </motion.section>
       <BottomRevealBlur height="20vh" />
