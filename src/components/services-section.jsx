@@ -23,7 +23,7 @@ import AIAutomationsReel from "@/components/Services/ai-workflow-visual.jsx";
 import { AnimatedBeamMultipleOutputDemo } from "@/components/Services/animatedBeam.jsx";
 import { OrbitingCirclesDemo } from "@/components/Services/orbits.jsx";
 import { TerminalDemo } from "@/components/Services/animatedTerminal.jsx";
-import { GlobeDemo } from "@/components/services/globe.jsx";
+import { GlobeDemo } from "@/components/Services/globe.jsx";
 
 const services = [
   {
