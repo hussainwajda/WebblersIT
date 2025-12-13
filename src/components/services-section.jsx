@@ -19,11 +19,11 @@ import {
   Sparkle,
 } from "lucide-react"
 import "./services-section.css"
-import AIAutomationsReel from "./services/ai-workflow-visual.jsx"
-import { AnimatedBeamMultipleOutputDemo } from "./services/animatedBeam.jsx"
-import { OrbitingCirclesDemo } from "./services/orbits.jsx"
-import { TerminalDemo } from "./services/animatedTerminal.jsx"
-import { GlobeDemo } from "./services/globe.jsx"
+import AIAutomationsReel from "@/components/Services/ai-workflow-visual.jsx";
+import { AnimatedBeamMultipleOutputDemo } from "@/components/services/animatedBeam.jsx";
+import { OrbitingCirclesDemo } from "@/components/Services/orbits.jsx";
+import { TerminalDemo } from "@/components/Services/animatedTerminal.jsx";
+import { GlobeDemo } from "@/components/services/globe.jsx";
 
 const services = [
   {
