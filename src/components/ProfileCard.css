@@ -20,6 +20,27 @@
   --blue-3: #0a2a55;
   --card-radius: 30px;
 }
+.pc-card-wrapper,
+.pc-card,
+.pc-card * {
+  /* 1. DISBALE BLUE TEXT SELECTION HIGHLIGHT */
+  -webkit-user-select: none; /* Safari/Chrome */
+  -moz-user-select: none;    /* Firefox */
+  -ms-user-select: none;     /* IE/Edge */
+  user-select: none;         /* Standard */
+
+  /* 2. DISABLE "SAVE IMAGE" / CONTEXT MENU POPUP (iOS) */
+  -webkit-touch-callout: none;
+
+  /* 3. DISABLE GRAY TAP HIGHLIGHT BOX */
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Re-enable text selection only for the user info if needed */
+.pc-user-info {
+  -webkit-user-select: text;
+  user-select: text;
+}
 
 .pc-card-wrapper {
   perspective: 500px;
@@ -328,23 +349,112 @@
   }
 }
 
-/* --- Responsive --- */
+/* =========================================
+   MOBILE / TABLET FIXES
+   ========================================= */
 @media (max-width: 768px) {
+  /* 1. WRAPPER: Allow scrolling, Remove 3D space */
+  .pc-card-wrapper {
+    perspective: none;
+    transform: none;
+    touch-action: auto !important; /* Enables scrolling */
+    height: auto;
+    margin: 40px auto; /* Centering and spacing */
+    padding: 0 15px; /* Prevent edge touching */
+    width: 100%;
+    max-width: 400px;
+  }
+
+  /* 2. CARD: Static size, Flat background */
   .pc-card {
-    height: 70svh;
-    max-height: 450px;
+    display: block; /* Switch from Grid to Block */
+    transform: none !important;
+    transition: none;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    height: 600px; /* Fixed height is safer than auto for absolute children */
+    width: 100%;
+    aspect-ratio: auto;
+    margin: 0 auto;
+    overflow: hidden;
+    position: relative;
+    background: linear-gradient(180deg, var(--blue-1) 0%, var(--blue-2) 100%);
+  }
+
+  /* 3. RESET CHILDREN TRANSFORMS */
+  /* This prevents elements from flying off-screen */
+  .pc-card * {
+    transform: none;
+  }
+
+  /* 4. HIDE HEAVY EFFECTS */
+  .pc-shine, 
+  .pc-glare, 
+  .pc-behind {
+    display: none !important;
+  }
+
+  /* 5. AVATAR POSITIONING */
+  /* We manually position the avatar image */
+  .pc-avatar-content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+  }
+
+  .pc-avatar-content .avatar {
+    position: absolute;
+    top: 50px; /* Push down from top */
+    left: 50%;
+    /* We need !important to override the 'transform: none' rule above */
+    transform: translateX(-50%) !important; 
+    width: 100%; /* Reasonable size on mobile */
+    max-width: 350px;
+    height: auto;
+  }
+
+  /* 6. TEXT DETAILS POSITIONING */
+  .pc-content:not(.pc-avatar-content) {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 5;
+  }
+
+  .pc-details {
+    position: absolute;
+    top: 50px; /* Push text BELOW the avatar image */
+    left: 0;
+    width: 100%;
+    padding: 0 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 
   .pc-details h3 {
-    font-size: min(4svh, 2.5em);
+    font-size: 2rem;
+    margin-bottom: 5px;
   }
-
+  
   .pc-details p {
-    font-size: 14px;
+    font-size: 1rem;
   }
 
-  .pc-contact-btn {
-    padding: 6px 12px;
-    font-size: 11px;
+  /* 7. BOTTOM INFO BAR */
+  .pc-user-info {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    border-radius: 0 0 var(--card-radius) var(--card-radius);
+    background: rgba(10, 30, 60, 0.95);
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+    padding: 15px;
   }
 }
