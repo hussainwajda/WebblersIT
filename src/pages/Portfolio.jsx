@@ -2,6 +2,12 @@ import React from "react";
 import "./Portfolio.css";
 import { BottomRevealBlur } from "@/components/ui/bottom-reveal-blur.jsx";
 import { motion } from "framer-motion";
+import anchorTrdgWebsite from "@/assets/previews/website3.png";
+import asharaMubarakaWebsite from "@/assets/previews/website2.png";
+import vpKhambeWebsite from "@/assets/previews/ca.png";
+import recipixWebsite from "@/assets/previews/Recipix.png";
+import secureshareDashboard from "@/assets/previews/securesharethumb.png";
+import opsDashboard from "@/assets/previews/ops.png";
 
 const projects = [
   {
@@ -20,7 +26,7 @@ const projects = [
       "Product Gallery",
       "Search and Sort",
     ],
-    image: "src/assets/previews/website3.png",
+    image: anchorTrdgWebsite,
     live: "https://anchortrdg.co",
     code: "#",
   },
@@ -40,7 +46,7 @@ const projects = [
       "Typography System",
       "Business Card Design",
     ],
-    image: "src/assets/previews/website2.png",
+    image: asharaMubarakaWebsite,
     live: "#",
     code: "#",
   },
@@ -60,7 +66,7 @@ const projects = [
       "Blogs Page",
       "Dedicated Services Page",
     ],
-    image: "src/assets/previews/ca.png",
+    image: vpKhambeWebsite,
     live: "#",
     code: "#",
   },
@@ -81,7 +87,7 @@ const projects = [
       "UI/UX Design",
       "Fast & Interactive",
     ],
-    image: "src/assets/previews/Recipix.png",
+    image: recipixWebsite,
     live: "#",
     code: "#",
   },
@@ -106,7 +112,7 @@ const dashboardProjects = [
       "File Deletion",
       "File Management",
     ],
-    image: "src/assets/previews/securesharethumb.png",
+    image: secureshareDashboard,
     live: "https://anchortrdg.co",
     code: "#",
   },
@@ -128,7 +134,7 @@ const dashboardProjects = [
       "Server Logs",
       "Server Applications Management",
     ],
-    image: "src/assets/previews/ops.png",
+    image: opsDashboard,
     live: "#",
     code: "#",
   },
