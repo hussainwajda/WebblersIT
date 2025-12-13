@@ -20,6 +20,27 @@
   --blue-3: #0a2a55;
   --card-radius: 30px;
 }
+.pc-card-wrapper,
+.pc-card,
+.pc-card * {
+  /* 1. DISBALE BLUE TEXT SELECTION HIGHLIGHT */
+  -webkit-user-select: none; /* Safari/Chrome */
+  -moz-user-select: none;    /* Firefox */
+  -ms-user-select: none;     /* IE/Edge */
+  user-select: none;         /* Standard */
+
+  /* 2. DISABLE "SAVE IMAGE" / CONTEXT MENU POPUP (iOS) */
+  -webkit-touch-callout: none;
+
+  /* 3. DISABLE GRAY TAP HIGHLIGHT BOX */
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Re-enable text selection only for the user info if needed */
+.pc-user-info {
+  -webkit-user-select: text;
+  user-select: text;
+}
 
 .pc-card-wrapper {
   perspective: 500px;
