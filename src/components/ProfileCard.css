@@ -328,23 +328,75 @@
   }
 }
 
-/* --- Responsive --- */
-@media (max-width: 768px) {
+/* =========================================
+   MOBILE / TABLET FIXES
+   ========================================= */
+@media (max-width: 320px) {
+  /* 1. ENABLE SCROLLING */
+  .pc-card-wrapper {
+    touch-action: pan-y !important; /* Allows vertical scrolling */
+    perspective: none; /* Flattens the 3D space */
+    height: auto;
+    margin: 20px 0; /* Add spacing around card */
+  }
+
+  /* 2. DISABLE 3D TILT */
+  /* We force the card to stay flat so it renders clearly */
+  .pc-card, 
+  .pc-card:hover, 
+  .pc-card.active {
+    transform: none !important;
+    transition: none;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5); /* Simpler shadow */
+  }
+
+  /* 3. FIX SIZING & ASPECT RATIO */
   .pc-card {
-    height: 70svh;
-    max-height: 450px;
+    height: auto; /* Let content dictate height */
+    min-height: 500px; /* Ensure it's tall enough */
+    max-height: none;
+    aspect-ratio: auto; /* Remove strict aspect ratio */
+    width: 100%;
+    max-width: 400px; /* Prevent it from being too wide on tablets */
+    margin: 0 auto;
+  }
+
+  /* 4. PERFORMANCE & VISIBILITY FIXES */
+  /* Complex blend modes often glitch on mobile WebKit */
+  .pc-shine, 
+  .pc-glare, 
+  .pc-behind {
+    display: none !important; /* Hide heavy lighting effects on mobile */
+  }
+
+  /* 5. ADJUST LAYOUT FOR MOBILE */
+  .pc-avatar-content .avatar {
+    top: 40px; /* Adjust avatar position */
+    width: 90%; /* prevent avatar clipping */
+    max-width: 300px;
+  }
+
+  .pc-details {
+    position: relative;
+    top: 0;
+    margin-top: 60px; /* Push text down below avatar */
+    margin-bottom: 100px; /* Space for the bottom info bar */
+    padding: 0 20px;
   }
 
   .pc-details h3 {
-    font-size: min(4svh, 2.5em);
+    font-size: 2rem;
   }
 
-  .pc-details p {
-    font-size: 14px;
-  }
-
-  .pc-contact-btn {
-    padding: 6px 12px;
-    font-size: 11px;
+  .pc-user-info {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    border-radius: 0 0 var(--card-radius) var(--card-radius);
+    border: none;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    background: rgba(10, 30, 60, 0.95); /* Less transparency for readability */
+    backdrop-filter: none; /* Fixes lag on some Androids */
   }
 }
