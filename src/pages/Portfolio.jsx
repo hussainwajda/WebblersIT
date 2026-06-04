@@ -1,153 +1,244 @@
 import React from "react";
 import "./Portfolio.css";
-import { Link } from "react-router-dom"; // ✅ Ensure Link is imported
+import { Link } from "react-router-dom";
 import { BottomRevealBlur } from "@/components/ui/bottom-reveal-blur.jsx";
-import { motion } from "framer-motion";
+import { motion as Motion } from "framer-motion";
 import anchorTrdgWebsite from "@/assets/previews/website3.png";
-import asharaMubarakaWebsite from "@/assets/previews/website2.png";
 import vpKhambeWebsite from "@/assets/previews/ca.png";
-import recipixWebsite from "@/assets/previews/Recipix.png";
+import hulkDecorWebsite from "@/assets/previews/hulkdecor.png";
 import secureshareDashboard from "@/assets/previews/securesharethumb.png";
 import opsDashboard from "@/assets/previews/ops.png";
+import venzi from "@/assets/previews/venzio.png";
+import irasco from "@/assets/previews/irasco.png";
+import ascon from "@/assets/previews/ascon.png";
 
 const projects = [
   {
-    id: 1,
+    id: "venzio",
+    title: "Venzio — Nightlife Event Platform",
+    industryTag: "Nightlife & Events · India",
+    description:
+      "A full-stack nightlife discovery and ticketing platform for Pune where clubs and event organisers list events and users browse, search, and book tickets in one place. Currently in active development with live event data.",
+    outcomeStat: "Live events from multiple Pune venues, currently in beta",
+    liveUrl: "https://venzio.vercel.app",
+    screenshotUrl: venzi,
+    techStack: ["React", "Node.js"],
+    features: [
+      "Event discovery with city filter",
+      "Ticket booking flow",
+      "Organiser dashboard",
+      "Search by events, venues, artists",
+    ],
+  },
+  {
+    id: "hulkdecor",
+    title: "Hulk Decor Website",
+    industryTag: "Interior Design & Fit-Out · UAE",
+    description:
+      "Hulk Decor is a UAE interior design and fit-out firm with 18+ years of experience that needed a premium digital showcase. The website presents turnkey portfolios and services while giving commercial and residential clients a direct quote-request path.",
+    outcomeStat: "100+ projects showcased across 7 Emirates",
+    liveUrl: "https://www.hulkdecor.com",
+    screenshotUrl: hulkDecorWebsite,
+    techStack: ["Next.js", "Tailwind CSS"],
+    features: [
+      "Project gallery",
+      "Quote request form",
+      "Multi-region SEO",
+      "Responsive design",
+    ],
+  },
+  {
+    id: "irasco",
+    title: "IRASCO Website",
+    industryTag: "HVAC & Climate Control · UAE",
+    description:
+      "A modern service showcase for IRASCO, a UAE-based HVAC company specialising in ducting, ventilation, and living atmosphere climate systems. It converts commercial and residential enquiries through a clean, trust-building web presence.",
+    outcomeStat:
+      "Full HVAC service range presented across residential & commercial segments",
+    liveUrl: "https://irasco.vercel.app",
+    screenshotUrl: irasco,
+    techStack: ["React", "Tailwind CSS"],
+    features: ["Service showcase", "Contact integration", "Responsive design"],
+  },
+  {
+    id: "ascon",
+    title: "Ascon Constructions Website",
+    industryTag: "Construction · India",
+    description:
+      "A professional website for Ascon Constructions & Co., a trusted residential and commercial building contractor in Virar. It showcases their project portfolio and services with a clear brand promise of quality and on-time delivery.",
+    outcomeStat: "Covers residential, commercial & industrial project verticals",
+    liveUrl: "https://ascon-construction.vercel.app",
+    screenshotUrl: ascon,
+    techStack: ["React", "CSS Modules"],
+    features: [
+      "Project portfolio",
+      "Services page",
+      "Contact form",
+      "SEO optimised",
+    ],
+  },
+  {
+    id: "anchor-trading",
     title: "Anchor Tr LLC Website",
+    industryTag: "Trading & Distribution · UAE",
     description:
-      "A modern responsive website with contact automation and service showcase. based on Arabic color scheme",
-    technologies: [
-      { name: "React", icon: "devicon-react-original colored" },
-      { name: "CSS Modules", icon: "devicon-css3-plain colored" },
-      { name: "EmailJS", icon: "fa-regular fa-envelope" },
-    ],
+      "Anchor Tr LLC supplies products across the UAE and needed a clearer digital storefront. The new website makes its services and product catalogue easier to discover and enquire about.",
+    outcomeStat: "4 core services presented in one enquiry-focused experience",
+    liveUrl: "https://www.anchortrdg.com/",
+    screenshotUrl: anchorTrdgWebsite,
+    techStack: ["React", "CSS Modules", "EmailJS"],
     features: [
-      "Contact Form Integration",
-      "Responsive Design",
-      "Product Gallery",
-      "Search and Sort",
+      "Contact form integration",
+      "Responsive design",
+      "Product gallery",
+      "Search and sort",
     ],
-    image: anchorTrdgWebsite,
-    live: "https://anchortrdg.co",
-    code: "#",
   },
   {
-    id: 2,
-    title: "Website for a Religious Community Gathering ",
+    id: "vp-khambe",
+    title: "VP Khambe & Associates Website",
+    industryTag: "Chartered Accountancy · India",
     description:
-      "We Developed Responsive website for Ashara Mubaraka 1447h for community people ",
-    technologies: [
-      { name: "React", icon: "devicon-react-original colored" },
-      { name: "CSS Modules", icon: "devicon-css3-plain colored" },
-      { name: "Node.js", icon: "devicon-nodejs-plain colored" },
-    ],
+      "VP Khambe & Associates helps businesses navigate accounting and compliance in Pune. Its new website clarifies specialist services and creates a direct path for prospective clients to make contact.",
+    outcomeStat: "4 key service journeys consolidated into one website",
+    liveUrl: "https://cavinaykhambe.in",
+    screenshotUrl: vpKhambeWebsite,
+    techStack: ["React", "Tailwind CSS", "EmailJS"],
     features: [
-      "Logo Pack",
-      "Brand Colors",
-      "Typography System",
-      "Business Card Design",
+      "Contact form integration",
+      "Responsive design",
+      "Blog",
+      "Dedicated service pages",
     ],
-    image: asharaMubarakaWebsite,
-    live: "#",
-    code: "#",
-  },
-  {
-    id: 3,
-    title: "Website For a CA Firm ",
-    description:
-      "We Developed Responsive website for VP Khambe and Associates, CA Firm based in Pune, Maharashtra",
-    technologies: [
-      { name: "React", icon: "devicon-react-original colored" },
-      { name: "Tailwind css", icon: "devicon-tailwindcss-plain colored" },
-      { name: "EmailJS", icon: "fa-regular fa-envelope" },
-    ],
-    features: [
-      "Contact Form Integration",
-      "Responsive Design",
-      "Blogs Page",
-      "Dedicated Services Page",
-    ],
-    image: vpKhambeWebsite,
-    live: "#",
-    code: "#",
-  },
-  {
-    id: 4,
-    title: "Frontend Design For Recipix A Recipe Management Webapp",
-    description:
-      "Developed Responsive Frontend for Recipix A Recipe Management Webapp ",
-    technologies: [
-      { name: "React", icon: "devicon-react-original colored" },
-      { name: "CSS Modules", icon: "devicon-css3-plain colored" },
-      { name: "Tailwind CSS", icon: "devicon-tailwindcss-plain colored" },
-    ],
-    features: [
-      "Logo Pack",
-      "Brand Colors",
-      "Typography System",
-      "UI/UX Design",
-      "Fast & Interactive",
-    ],
-    image: recipixWebsite,
-    live: "#",
-    code: "#",
   },
 ];
 
 const dashboardProjects = [
   {
-    id: 1,
-    title: "SecureShare - Secure File Storing and Sharing Platform",
+    id: "secureshare",
+    title: "SecureShare File Platform",
+    industryTag: "Cybersecurity · SaaS",
     description:
-        "A modern responsive Dashboard for a file sharing and storing platform.",
-      technologies: [
-      { name: "React", icon: "devicon-react-original colored" },
-      { name: "Tailwind css", icon: "devicon-tailwindcss-plain colored" },
-      { name: "Node.js", icon: "devicon-nodejs-plain colored" },
-      { name: "AWS S3", icon: "devicon-amazonwebservices-plain-wordmark colored" },
-    ],
+      "SecureShare gives teams a protected place to store and exchange sensitive files. Its dashboard simplifies encrypted uploads, sharing, downloads, and file management in one responsive workspace.",
+    outcomeStat: "256-bit encryption across the complete file-sharing flow",
+    liveUrl: "https://webblers.com",
+    screenshotUrl: secureshareDashboard,
+    techStack: ["React", "Tailwind CSS", "Node.js", "AWS S3"],
     features: [
-      "AES256 Encryption",
-      "File Upload and Sharing",
-      "File Download and Sharing",
-      "File Deletion",
-      "File Management",
+      "AES-256 encryption",
+      "File upload and sharing",
+      "File download",
+      "File management",
     ],
-    image: secureshareDashboard,
-    live: "https://anchortrdg.co",
-    code: "#",
   },
   {
-    id: 2,
-    title: "OPs Panel - Linux Server Management panel",
+    id: "ops-panel",
+    title: "OPs Linux Server Management Panel",
+    industryTag: "Cloud Operations · Dashboard",
     description:
-      "A full stack panel for managing Linux servers using SSH.",
-    technologies: [
-      { name: "React", icon: "devicon-react-original colored" },
-      { name: "Tailwind css", icon: "devicon-tailwindcss-plain colored" },
-      { name: "Python", icon: "devicon-python-plain colored" },
-      { name: "Django", icon: "devicon-django-plain colored" },
-      { name: "SSH", icon: "devicon-ssh-original colored" },
-    ],
+      "The OPs Panel helps technical teams manage Linux servers without juggling separate tools. It brings monitoring, logs, applications, and SSH-powered administration into one operational dashboard.",
+    outcomeStat: "4 critical server workflows unified in one control panel",
+    liveUrl: "https://webblers.com",
+    screenshotUrl: opsDashboard,
+    techStack: ["React", "Tailwind CSS", "Python", "Django", "SSH"],
     features: [
-      "Server Management",
-      "Server Monitoring",
-      "Server Logs",
-      "Server Applications Management",
+      "Server management",
+      "Server monitoring",
+      "Server logs",
+      "Application management",
     ],
-    image: opsDashboard,
-    live: "#",
-    code: "#",
   },
 ];
+
+const listVariants = {
+  visible: {
+    transition: {
+      staggerChildren: 0.2,
+      delayChildren: 0.1,
+    },
+  },
+};
+
+const ProjectCard = ({ project, index }) => {
+  const isOddCard = index % 2 === 0;
+
+  return (
+    <Motion.article
+      className="portfolio-horizontal-card"
+      variants={{
+        hidden: {
+          opacity: 0,
+          y: 80,
+          x: isOddCard ? -100 : 100,
+          scale: 0.85,
+        },
+        visible: {
+          opacity: 1,
+          y: 0,
+          x: 0,
+          scale: 1,
+          transition: {
+            duration: 0.8,
+            ease: [0.25, 0.1, 0.25, 1],
+          },
+        },
+      }}
+    >
+      <a
+        className="portfolio-image-area"
+        href={project.liveUrl}
+        target="_blank"
+        rel="noreferrer"
+        aria-label={`View ${project.title} live site`}
+      >
+        <img
+          src={project.screenshotUrl}
+          alt={`${project.title} screenshot`}
+          className="portfolio-image"
+        />
+        {project.id === "venzio" && (
+          <span className="portfolio-progress-badge">In Progress</span>
+        )}
+        <span className="portfolio-image-overlay">View live site ↗</span>
+      </a>
+
+      <div className="portfolio-info-area">
+        <span className="ph-industry-tag">{project.industryTag}</span>
+        <h3 className="ph-title">{project.title}</h3>
+        <p className="ph-description">{project.description}</p>
+        <p className="ph-outcome-stat">{project.outcomeStat}</p>
+        <a
+          className="ph-project-link"
+          href={project.liveUrl}
+          target="_blank"
+          rel="noreferrer"
+        >
+          View project ↗
+        </a>
+      </div>
+    </Motion.article>
+  );
+};
+
+const ProjectList = ({ items }) => (
+  <Motion.div
+    className="portfolio-list"
+    initial="hidden"
+    whileInView="visible"
+    viewport={{ once: true, margin: "-100px" }}
+    variants={listVariants}
+  >
+    {items.map((project, index) => (
+      <ProjectCard key={project.id} project={project} index={index} />
+    ))}
+  </Motion.div>
+);
 
 const Portfolio = () => {
   return (
     <section className="portfolio-section">
       <div className="portfolio-container">
-        
-        {/* ANIMATED HEADER */}
-        <motion.div 
+        <Motion.div
           className="portfolio-header"
           initial={{ opacity: 0, y: -30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -159,103 +250,23 @@ const Portfolio = () => {
             Our <span className="highlight-text">Digital Craft</span>
           </h2>
           <p className="portfolio-subtitle">
-            Premium digital experiences we've built for our clients.
+            Premium digital experiences we&apos;ve built for our clients.
             Bridging imagination with code.
           </p>
           <div className="header-decoration-line"></div>
-        </motion.div>
+        </Motion.div>
 
-        <motion.div 
-          className="portfolio-list"
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-100px" }}
-          variants={{
-            visible: {
-              transition: {
-                staggerChildren: 0.2,
-                delayChildren: 0.1,
-              },
-            },
-          }}
-        >
-          {projects.map((project, index) => {
-            // Odd-numbered cards (1st, 3rd, 5th...) = index 0, 2, 4... come from left
-            // Even-numbered cards (2nd, 4th, 6th...) = index 1, 3, 5... come from right
-            const isOddCard = index % 2 === 0;
-            return (
-            <motion.div 
-              className="portfolio-horizontal-card" 
-              key={project.id}
-              variants={{
-                hidden: { 
-                  opacity: 0, 
-                  y: 80,
-                  x: isOddCard ? -100 : 100,
-                  scale: 0.85
-                },
-                visible: { 
-                  opacity: 1, 
-                  y: 0,
-                  x: 0,
-                  scale: 1,
-                  transition: {
-                    duration: 0.8,
-                    ease: [0.25, 0.1, 0.25, 1]
-                  }
-                },
-              }}
-            >
-              <div className="portfolio-image-area">
-                <img
-                  src={project.image}
-                  alt={project.title}
-                  className="portfolio-image"
-                />
-              </div>
-
-              <div className="portfolio-info-area">
-                <h3 className="ph-title">{project.title}</h3>
-                <p className="ph-description">{project.description}</p>
-
-                {/* TECHNOLOGIES */}
-                <div className="ph-block">
-                  <h4>Tech Stack</h4>
-                  <ul className="ph-tags">
-                    {project.technologies.map((tech, i) => (
-                      <li key={i}>
-                        <i className={tech.icon}></i> {tech.name}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-
-                {/* FEATURES */}
-                <div className="ph-block">
-                  <h4>Features</h4>
-                  <ul className="ph-features">
-                    {project.features.map((feature, i) => (
-                      <li key={i}>
-                        <i className="fa-solid fa-check"></i> {feature}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </div>
-            </motion.div>
-            );
-          })}
-        </motion.div>
+        <ProjectList items={projects} />
       </div>
-      <motion.div 
-        className="portfolio-container" 
-        style={{ marginTop: "6rem" }}
+
+      <Motion.div
+        className="portfolio-container dashboard-projects"
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         viewport={{ once: true }}
         transition={{ duration: 0.6 }}
       >
-        <motion.div 
+        <Motion.div
           className="portfolio-header"
           initial={{ opacity: 0, y: -30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -265,106 +276,25 @@ const Portfolio = () => {
           <h2 className="portfolio-title">
             Personalized <span className="highlight-text">Dashboards</span>
           </h2>
-        </motion.div>
+        </Motion.div>
 
-        <motion.div 
-          className="portfolio-list"
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-100px" }}
-          variants={{
-            visible: {
-              transition: {
-                staggerChildren: 0.2,
-                delayChildren: 0.1,
-              },
-            },
-          }}
-        >
-          {dashboardProjects.map((project, index) => {
-            // Odd-numbered cards (1st, 3rd, 5th...) = index 0, 2, 4... come from left
-            // Even-numbered cards (2nd, 4th, 6th...) = index 1, 3, 5... come from right
-            const isOddCard = index % 2 === 0;
-            return (
-            <motion.div 
-              className="portfolio-horizontal-card" 
-              key={project.id}
-              variants={{
-                hidden: { 
-                  opacity: 0, 
-                  y: 80,
-                  x: isOddCard ? -100 : 100,
-                  scale: 0.85
-                },
-                visible: { 
-                  opacity: 1, 
-                  y: 0,
-                  x: 0,
-                  scale: 1,
-                  transition: {
-                    duration: 0.8,
-                    ease: [0.25, 0.1, 0.25, 1]
-                  }
-                },
-              }}
-            >
-              <div className="portfolio-image-area">
-                <img
-                  src={project.image}
-                  alt={project.title}
-                  className="portfolio-image"
-                />
-              </div>
+        <ProjectList items={dashboardProjects} />
+      </Motion.div>
 
-              <div className="portfolio-info-area">
-                <h3 className="ph-title">{project.title}</h3>
-                <p className="ph-description">{project.description}</p>
-
-                {/* TECHNOLOGIES */}
-                <div className="ph-block">
-                  <h4>Tech Stack</h4>
-                  <ul className="ph-tags">
-                    {project.technologies.map((tech, i) => (
-                      <li key={i}>
-                        <i className={tech.icon}></i> {tech.name}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-
-                {/* FEATURES */}
-                <div className="ph-block">
-                  <h4>Features</h4>
-                  <ul className="ph-features">
-                    {project.features.map((feature, i) => (
-                      <li key={i}>
-                        <i className="fa-solid fa-check"></i> {feature}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </div>
-            </motion.div>
-            );
-          })}
-        </motion.div>
-      </motion.div>
-
-      <motion.section
-          className="cta-section"
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true, amount: 0.2 }}
-        >
-          {/* New Glass Container */}
-          <div className="cta-content-glass">
-            <h2>Ready to Boost Your Business?</h2>
-             <Link to="/contact">
-              <button className="cta-button">Get Free Consultation</button>
-            </Link>
-          </div>
-        </motion.section>
+      <Motion.section
+        className="cta-section"
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+        viewport={{ once: true, amount: 0.2 }}
+      >
+        <div className="cta-content-glass">
+          <h2>Ready to Boost Your Business?</h2>
+          <Link to="/contact">
+            <button className="cta-button">Get Free Consultation</button>
+          </Link>
+        </div>
+      </Motion.section>
       <BottomRevealBlur height="20vh" />
     </section>
   );
