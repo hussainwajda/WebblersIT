@@ -105,16 +105,6 @@ const dashboardProjects = [
   },
 ];
 
-const listVariants = {
-  hidden: {},
-  visible: {
-    transition: {
-      staggerChildren: 0.16,
-      delayChildren: 0.08,
-    },
-  },
-};
-
 const cardContentVariants = {
   hidden: { opacity: 0, y: 20 },
   visible: {
@@ -151,6 +141,9 @@ const ProjectCard = ({ project, index }) => {
       ref={cardRef}
       className="portfolio-horizontal-card"
       style={reduceMotion ? undefined : { rotateZ: cardRotate }}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, margin: "120px 0px 120px 0px", amount: 0.04 }}
       variants={{
         hidden: {
           opacity: 0,
@@ -244,17 +237,11 @@ const ProjectCard = ({ project, index }) => {
 };
 
 const ProjectList = ({ items }) => (
-  <Motion.div
-    className="portfolio-list"
-    initial="hidden"
-    whileInView="visible"
-    viewport={{ once: true, margin: "-120px", amount: 0.12 }}
-    variants={listVariants}
-  >
+  <div className="portfolio-list">
     {items.map((project, index) => (
       <ProjectCard key={project.id} project={project} index={index} />
     ))}
-  </Motion.div>
+  </div>
 );
 
 const Portfolio = () => {
