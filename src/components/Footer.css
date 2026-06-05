@@ -329,9 +329,9 @@ body.dark-mode .footer-bottom {
   .footer-services {
     grid-area: services;
     margin-top: 0;
-    text-align: right;
-    justify-self: end;
-    padding-right: 10px;
+    text-align: left;
+    justify-self: start;
+    padding-left: 10px;
   }
 
   .footer-services h4 {
@@ -340,8 +340,8 @@ body.dark-mode .footer-bottom {
   }
   
   .footer-services h4::after {
-    left: auto;
-    right: 0;
+    left: 0;
+    right: auto;
     transform: none;
   }
 
@@ -371,30 +371,15 @@ body.dark-mode .footer-bottom {
   }
 
   .footer-right h4::after {
-    left: auto;
-    right: 0; /* Align underline to right */
-    transform: none;
+    left: 50%;
+    transform: translateX(-50%);
   }
 
-  /* Compact Social Grid instead of wide row */
+  /* Keep horizontal layout but allow wrapping */
   .social-icons {
-    display: grid;
-    grid-template-columns: 1fr 1fr; /* 2x2 Grid for icons */
-    gap: 10px;
-    padding: 0;
-    background: transparent; /* Remove pill background on mobile to save space */
-    border: none;
-    box-shadow: none;
-    backdrop-filter: none;
-  }
-
-  .social-icons a {
-    width: 35px;
-    height: 35px;
-    font-size: 1.2rem;
-    background: rgba(255, 255, 255, 0.5); /* Individual icon backgrounds */
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 5px;
   }
 
   /* 4. Bottom Bar */
@@ -402,5 +387,6 @@ body.dark-mode .footer-bottom {
     margin-top: 30px;
     font-size: 0.75rem;
     padding-top: 15px;
+    padding-bottom: 50px; /* Space to avoid floating UI overlaps */
   }
 }

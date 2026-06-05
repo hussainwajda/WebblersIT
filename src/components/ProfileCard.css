@@ -229,6 +229,8 @@
   display: flex;
   align-items: center;
   gap: 12px;
+  min-width: 0;
+  flex: 1;
 }
 
 .pc-mini-avatar {
@@ -252,12 +254,18 @@
   align-items: flex-start;
   flex-direction: column;
   gap: 6px;
+  min-width: 0;
+  width: 100%;
 }
 
 .pc-handle {
   font-size: 14px;
   color: #ffffff;
   font-weight: 600;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
 }
 
 .pc-status {
@@ -266,6 +274,7 @@
 }
 
 .pc-contact-btn {
+  flex-shrink: 0;
   background: linear-gradient(135deg, #007aff, #00b8ff);
   border: none;
   color: white;

@@ -22,7 +22,7 @@ const About = ({ darkMode }) => {
         
         {/* Card 1: Murtaza */}
         <ProfileCard
-          name="Murtaza Dawoodjee"
+          name="Murtaza D."
           title="Co-Founder & CEO"
           handle="murtaza_0710"
           status="Online"
@@ -54,7 +54,7 @@ const About = ({ darkMode }) => {
           handle="hussainw"
           status="Online"
           contactText="Follow"
-          avatarUrl="/avatar2.jpg"
+          avatarUrl="/avatar2.png"
           miniAvatarUrl="/image.png"
           linkedinUrl="https://www.linkedin.com/in/"
           githubUrl="https://github.com/"
@@ -71,6 +71,31 @@ const About = ({ darkMode }) => {
           }
           onContactClick={() =>
             window.open("https://www.instagram.com/webblersdotcom", "_blank")
+          }
+        />
+        
+        <ProfileCard
+          name="Aditya Patil"
+          title="COO"
+          handle="adityyaapatil"
+          status="Online"
+          contactText="Follow"
+          avatarUrl="/aditya.png"
+          miniAvatarUrl="/aditya_avatar.jpg"
+          githubUrl="https://github.com/"
+          // twitterUrl="https://twitter.com/hussaintech"
+          showUserInfo={true}
+          enableTilt={true}
+          innerGradient={
+            darkMode
+              ? "linear-gradient(145deg, #001f3f 0%, #005b96 50%, #00a8e8 100%)"
+              : "linear-gradient(145deg, #7ed6df 0%, #82ccdd 100%)"
+          }
+          behindGlowColor={
+            darkMode ? "rgba(50,130,184,0.4)" : "rgba(142,197,252,0.5)"
+          }
+          onContactClick={() =>
+            window.open("https://www.instagram.com/adityyaapatil", "_blank")
           }
         />
 
