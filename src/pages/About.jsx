@@ -16,11 +16,10 @@ const About = ({ darkMode }) => {
       <About2nd />
       <AboutMain />
 
-      {/* TEAM GRID (All Cards in One Line) */}
+      {/* TEAM GRID - COMMENTED OUT
       {true && (
       <div className="team-grid">
         
-        {/* Card 1: Murtaza */}
         <ProfileCard
           name="Murtaza D."
           title="Co-Founder & CEO"
@@ -31,7 +30,6 @@ const About = ({ darkMode }) => {
           miniAvatarUrl="/image.png"
           linkedinUrl="https://www.linkedin.com/in/murtaza-dawoodjee/"
           githubUrl="https://github.com/murtzdev07"
-          // twitterUrl="https://twitter.com/murtazaali"
           showUserInfo={true}
           enableTilt={true}
           innerGradient={
@@ -47,7 +45,6 @@ const About = ({ darkMode }) => {
           }
         />
 
-        {/* Card 2: Hussain */}
         <ProfileCard
           name="Hussain W."
           title="Co-Founder & CTO"
@@ -58,7 +55,6 @@ const About = ({ darkMode }) => {
           miniAvatarUrl="/image.png"
           linkedinUrl="https://www.linkedin.com/in/"
           githubUrl="https://github.com/"
-          // twitterUrl="https://twitter.com/hussaintech"
           showUserInfo={true}
           enableTilt={true}
           innerGradient={
@@ -83,7 +79,6 @@ const About = ({ darkMode }) => {
           avatarUrl="/aditya.png"
           miniAvatarUrl="/aditya_avatar.jpg"
           githubUrl="https://github.com/"
-          // twitterUrl="https://twitter.com/hussaintech"
           showUserInfo={true}
           enableTilt={true}
           innerGradient={
@@ -99,7 +94,6 @@ const About = ({ darkMode }) => {
           }
         />
 
-        {/* Card 3: Sakina (Now in same line) */}
         <ProfileCard
           name="Sakina Kalabhai"
           title="Company Advisor"
@@ -126,6 +120,7 @@ const About = ({ darkMode }) => {
 
       </div>
       )}
+      END TEAM GRID */}
       <FAQSection />
       <motion.section
           className="cta-section"

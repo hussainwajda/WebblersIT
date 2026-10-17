@@ -11,7 +11,7 @@ import Contact from "@/pages/Contact.jsx";
 import Portfolio from "@/pages/Portfolio.jsx";
 import CursorGlow from "@/components/CursorGlow.jsx";
 import ScrollToTopButton from "@/components/ScrollToTopButton.jsx";
-import Preloader from "@/components/Preloader.jsx";
+// import Preloader from "@/components/Preloader.jsx";
 
 
 // ================================
@@ -40,7 +40,7 @@ function App() {
   return (
     <>
       {/* Preloader (auto hide + fallback timeout) */}
-      <Preloader autoHideDelay={5000} fallbackTimeout={6000} />
+      {/* <Preloader autoHideDelay={5000} fallbackTimeout={6000} /> */}
 
       <ReactLenis root>
         <BrowserRouter>
